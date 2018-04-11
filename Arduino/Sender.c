@@ -27,6 +27,6 @@ void sendPWM(){
 	ICR1 = 0;
 }
 
-void sendCommand(char * address, char command){
+void sendCommand(char * address, int command){
 	
 }

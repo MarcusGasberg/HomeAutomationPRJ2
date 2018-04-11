@@ -12,7 +12,7 @@
 
 void initSender();
 void sendPWM();
-void sendCommand(char *,char);
+void sendCommand(char *,int);
 
 
 
