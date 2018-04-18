@@ -13,6 +13,8 @@
 void initSender();
 void sendPWM();
 void sendCommand(char *,int);
+void sendStartCode();
+
 
 
 
