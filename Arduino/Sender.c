@@ -27,6 +27,7 @@ int index = 0;
 int mode = 0;
 unsigned int address[ADDRESS_LENGTH];
 unsigned int command[COMMAND_LENGTH];
+unsigned int timerCounter = 0;
  
 // der skal være globale variable som interrupts skal kunne anvende og ændre på. 
 
@@ -47,22 +48,22 @@ void sendPWM(){
 void sendCommand(int * adr, int * com){
 	for(int i = 1; i < ADDRESS_LENGTH+1; i++){
 		if(adr[i-1] == 1){
-			address[(i*2)-1] = 1;
-			address[(i*2)] = 0;
+			address[(i*2)-2] = 1;
+			address[(i*2)-1] = 0;
 		}
 		else{
-			address[(i*2)-1] = 0;
-			address[(i*2)] = 1;
+			address[(i*2)-2] = 0;
+			address[(i*2)-1] = 1;
 		}
 	}
 	for(int i = 1; i < COMMAND_LENGTH+1; i++){
 		if(com[i-1] == 1){							// Konvertering af kommandoer til komplimentære bits
-			command[(i*2)-1] = 1;
-			command[(i*2)] = 0;
+			command[(i*2)-2] = 1;
+			command[(i*2)-1] = 0;
 		}
 		else{
-			command[(i*2)-1] = 0;
-			command[(i*2)] = 1;
+			command[(i*2)-2] = 0;
+			command[(i*2)-1] = 1;
 		}
 	}
 	sendStartCode();
@@ -102,7 +103,6 @@ ISR(INT0_vect){
 		TCCR0B |= 0b00000100; // 256 clock prescaler
 		TIMSK0 |= 0b00000001; /
 		TCNT0 = 81;
-		sendPWM();
 		if(mode == ADDRESS) // sender addresse kode
 		{
 			if(address[index] == 1){
@@ -130,13 +130,14 @@ ISR(INT0_vect){
 			}
 		}
 		else if(mode == STOP){
-			TIMSK0 = 0;
+			cli();
 		}
 	
 }
 
 ISR(TIMER0_OVF_vect)
 {
+	timerCounter++;
 	if(mode == ADDRESS){
 		if(address[index]== 1){
 			sendPWM();
@@ -146,7 +147,7 @@ ISR(TIMER0_OVF_vect)
 			index++;
 		if(index == ADDRESS_LENGTH){
 		index = 0;
-		mode = 0;
+		mode = 3;
 		}
 		
 	}
@@ -161,6 +162,12 @@ ISR(TIMER0_OVF_vect)
 			index = 0;
 			mode = 0;
 		}
+	}
+	else if(mode == STOP)
+		cli();
+	if(timerCounter >= 2){
+		TIMSK0 = 0;
+		timerCounter = 0;
 	}
 }
 
