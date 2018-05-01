@@ -21,17 +21,18 @@ namespace GUI_PRJ2_WINFORMS
             //Sets up dummy data
             SetupData();
             //Sets up list view
-            SetupListView();
+            SetupListView(listView1);
         }
         
         /// <summary>
-        /// Funktion til setup af listview ved brug af hjælper klasse <see cref="ListViewExtender"/>
+        /// Function for setup of listview with use of helper class<see cref="ListViewExtender"/>
+        /// <paramref name="listViewToSetup">The listview to setup</paramref>
         /// </summary>
-        private void SetupListView()
+        private void SetupListView(ListView listViewToSetup)
         {
-            listView1.FullRowSelect = true;
+            listViewToSetup.FullRowSelect = true;
             //Kald af extender methods
-            ListViewExtender extender = new ListViewExtender(listView1);
+            ListViewExtender extender = new ListViewExtender(listViewToSetup);
             // extend 2nd column
             ListViewButtonColumn buttonAction = new ListViewButtonColumn(1);
             //Tilfoej Action
@@ -40,26 +41,26 @@ namespace GUI_PRJ2_WINFORMS
             //Tilfoej column med dummy data
             extender.AddColumn(buttonAction);
             //Opdater Listview
-            updateListView(listView1);
+            UpdateListView(listViewToSetup);
         }
 
         /// <summary>
-        /// Funktion til at opdatere et listview
+        /// Function for updating a listview
         /// </summary>
-        /// <param name="listView2Update">Listviewet der skal opdateres</param>
-        private void updateListView(ListView listView2Update)
+        /// <param name="listView2Update">The list view to update</param>
+        private void UpdateListView(ListView listView2Update)
         {
-            //Slet eksisterende listview items
-            for (int i = 0; i < listView1.Items.Count; i++)
+            //Delete existing listview items
+            for (int i = 0; i < listView2Update.Items.Count; i++)
             {
                 listView2Update.Items[i].Remove();
                 i--;
             }
 
-            //Tilfoej apparater
+            //Add new items
             for (int i = 0; i < myApparats.Count; i++)
             {
-                ListViewItem item = listView2Update.Items.Add(myApparats[i].Navn_);
+                ListViewItem item = listView2Update.Items.Add(myApparats[i].Name_);
                 item.SubItems.Add(myApparats[i].Port_.ToString());
             }
 
@@ -78,14 +79,14 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         private void SetupData()
         {
-            //Add default objekt som dummy data
+            //Add default object as dummy data
             myApparats.Add(new Apparat());
         }
         
 
-        private void addApparat_Click(object sender, EventArgs e)
+        private void AddApparat_Click(object sender, EventArgs e)
         {
-            //Skift side til AddMenu
+            //Change page to AddMenu
             MainView.SelectTab(AddMenu);
             ApparatMenu.Enabled = false;
             AddMenu.Enabled = true;
@@ -93,7 +94,7 @@ namespace GUI_PRJ2_WINFORMS
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            //Skift side til ApparatMenu
+            //Change page to ApparatMenu
             MainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
             AddMenu.Enabled = false;
@@ -104,18 +105,18 @@ namespace GUI_PRJ2_WINFORMS
             //Create new apparat
             Apparat apparatToAdd = new Apparat();
             //Set Navn til Teksten af apparatNameTextbox
-            apparatToAdd.Navn_ = apparatNameTextbox.Text;
+            apparatToAdd.Name_ = apparatNameTextbox.Text;
             //Set Port til porten der er valgt
-            apparatToAdd.Port_ = ++portComboBox.SelectedIndex;
-            //Tilfoej den valgte funktionalitet
-            foreach(object indexChecked in functionalityCheckBox.CheckedIndices)
+            apparatToAdd.Port_ = portComboBox.SelectedIndex + 1;
+            //Set
+            foreach (object indexChecked in functionalityCheckBox.CheckedIndices)
             {
-                apparatToAdd.Funktionalitet_ |= (Func)indexChecked;
+                apparatToAdd.Functionality_ |= (Func)indexChecked;
             }
             //Tilfoej det nye apparat
             myApparats.Add(apparatToAdd);
             //Opdater listview
-            updateListView(listView1);
+            UpdateListView(listView1);
             //Skift side tilbage til MainView
             MainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
@@ -124,6 +125,11 @@ namespace GUI_PRJ2_WINFORMS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Add necessary columns to the listview for the listview extender to work
+            listView1.Columns.Add("Name", 100);
+            listView1.Columns.Add("Port", 60);
+            //Set the selected index of the port
+            portComboBox.SelectedIndex = 0;
 
         }
     }

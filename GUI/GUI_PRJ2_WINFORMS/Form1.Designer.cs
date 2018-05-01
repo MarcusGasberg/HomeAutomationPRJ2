@@ -32,7 +32,7 @@ namespace GUI_PRJ2_WINFORMS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.addApparatButton = new System.Windows.Forms.Button();
+            this.AddApparatButton = new System.Windows.Forms.Button();
             this.MainView = new System.Windows.Forms.TabControl();
             this.ApparatMenu = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -44,7 +44,7 @@ namespace GUI_PRJ2_WINFORMS
             this.apparatNameTextbox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
             this.addMenuHeader = new System.Windows.Forms.Label();
-            this.addButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.MainView.SuspendLayout();
@@ -52,15 +52,15 @@ namespace GUI_PRJ2_WINFORMS
             this.AddMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // addApparatButton
+            // AddApparatButton
             // 
-            this.addApparatButton.Location = new System.Drawing.Point(686, 370);
-            this.addApparatButton.Name = "addApparatButton";
-            this.addApparatButton.Size = new System.Drawing.Size(75, 23);
-            this.addApparatButton.TabIndex = 4;
-            this.addApparatButton.Text = "Add new";
-            this.addApparatButton.UseVisualStyleBackColor = true;
-            this.addApparatButton.Click += new System.EventHandler(this.addApparat_Click);
+            this.AddApparatButton.Location = new System.Drawing.Point(686, 370);
+            this.AddApparatButton.Name = "AddApparatButton";
+            this.AddApparatButton.Size = new System.Drawing.Size(75, 23);
+            this.AddApparatButton.TabIndex = 4;
+            this.AddApparatButton.Text = "Add new";
+            this.AddApparatButton.UseVisualStyleBackColor = true;
+            this.AddApparatButton.Click += new System.EventHandler(this.AddApparat_Click);
             // 
             // MainView
             // 
@@ -77,7 +77,7 @@ namespace GUI_PRJ2_WINFORMS
             // ApparatMenu
             // 
             this.ApparatMenu.Controls.Add(this.listView1);
-            this.ApparatMenu.Controls.Add(this.addApparatButton);
+            this.ApparatMenu.Controls.Add(this.AddApparatButton);
             this.ApparatMenu.Location = new System.Drawing.Point(4, 22);
             this.ApparatMenu.Name = "ApparatMenu";
             this.ApparatMenu.Padding = new System.Windows.Forms.Padding(3);
@@ -93,8 +93,6 @@ namespace GUI_PRJ2_WINFORMS
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.Columns.Add("Name", 80);
-            this.listView1.Columns.Add("Port", 80);
             // 
             // AddMenu
             // 
@@ -105,7 +103,7 @@ namespace GUI_PRJ2_WINFORMS
             this.AddMenu.Controls.Add(this.apparatNameTextbox);
             this.AddMenu.Controls.Add(this.nameLabel);
             this.AddMenu.Controls.Add(this.addMenuHeader);
-            this.AddMenu.Controls.Add(this.addButton);
+            this.AddMenu.Controls.Add(this.AddButton);
             this.AddMenu.Controls.Add(this.BackButton);
             this.AddMenu.Enabled = false;
             this.AddMenu.Location = new System.Drawing.Point(4, 22);
@@ -138,6 +136,7 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // portComboBox
             // 
+            this.portComboBox.DisplayMember = "None";
             this.portComboBox.FormattingEnabled = true;
             this.portComboBox.Items.AddRange(new object[] {
             "Port 1",
@@ -183,15 +182,15 @@ namespace GUI_PRJ2_WINFORMS
             this.addMenuHeader.TabIndex = 2;
             this.addMenuHeader.Text = "Add New Apparat Here:";
             // 
-            // addButton
+            // AddButton
             // 
-            this.addButton.Location = new System.Drawing.Point(709, 393);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 1;
-            this.addButton.Text = "add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.AddButton.Location = new System.Drawing.Point(709, 393);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.TabIndex = 1;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // BackButton
             // 
@@ -222,7 +221,7 @@ namespace GUI_PRJ2_WINFORMS
         }
 
         #endregion
-        private System.Windows.Forms.Button addApparatButton;
+        private System.Windows.Forms.Button AddApparatButton;
         private System.Windows.Forms.TabPage ApparatMenu;
         private System.Windows.Forms.TabPage AddMenu;
         private System.Windows.Forms.TabControl MainView;
@@ -230,7 +229,7 @@ namespace GUI_PRJ2_WINFORMS
         private TextBox apparatNameTextbox;
         private Label nameLabel;
         private Label addMenuHeader;
-        private Button addButton;
+        private Button AddButton;
         private ComboBox portComboBox;
         private Label portLabel;
         private Label label1;
