@@ -1,0 +1,6 @@
+C:\Users\Marcus Gasberg\Documents\GitHub\Winforms_PRJ2\HomeAutomationLibrary\bin\Debug\HomeAutomationLibrary.dll
+C:\Users\Marcus Gasberg\Documents\GitHub\Winforms_PRJ2\HomeAutomationLibrary\bin\Debug\HomeAutomationLibrary.pdb
+C:\Users\Marcus Gasberg\Documents\GitHub\Winforms_PRJ2\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Marcus Gasberg\Documents\GitHub\Winforms_PRJ2\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Marcus Gasberg\Documents\GitHub\Winforms_PRJ2\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.dll
+C:\Users\Marcus Gasberg\Documents\GitHub\Winforms_PRJ2\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.pdb
