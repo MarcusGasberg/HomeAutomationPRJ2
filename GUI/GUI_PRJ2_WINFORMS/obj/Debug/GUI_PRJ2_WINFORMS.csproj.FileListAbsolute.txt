@@ -35,3 +35,15 @@ C:\Users\Marnus\source\repos\GUI_PRJ2_WINFORMS\Winforms_PRJ2\GUI_PRJ2_WINFORMS\o
 C:\Users\Marnus\source\repos\GUI_PRJ2_WINFORMS\Winforms_PRJ2\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csproj.CopyComplete
 C:\Users\Marnus\source\repos\GUI_PRJ2_WINFORMS\Winforms_PRJ2\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.exe
 C:\Users\Marnus\source\repos\GUI_PRJ2_WINFORMS\Winforms_PRJ2\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.pdb
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\GUI_PRJ2_WINFORMS.exe.config
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\GUI_PRJ2_WINFORMS.exe
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\GUI_PRJ2_WINFORMS.pdb
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\HomeAutomationLibrary.dll
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\HomeAutomationLibrary.pdb
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csprojResolveAssemblyReference.cache
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.Form1.resources
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.Properties.Resources.resources
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csproj.GenerateResource.Cache
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csproj.CoreCompileInputs.cache
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.exe
+C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.pdb

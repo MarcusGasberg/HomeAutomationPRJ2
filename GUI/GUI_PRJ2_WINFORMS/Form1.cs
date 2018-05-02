@@ -14,7 +14,8 @@ namespace GUI_PRJ2_WINFORMS
     public partial class Form1 : Form
     {
         private List<Apparat> myApparats = new List<Apparat>();
-        
+        private int apparatPort_ = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -72,7 +73,26 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
         {
-            MessageBox.Show(this, @"you clicked " + e.SubItem.Text);
+            apparatPort_ = e.Item.Index;
+            AppAction current = new AppAction(myApparats[e.Item.Index]);
+            if (current.SelectedOnOff)
+            {
+                OnOffButton.Visible = true;
+            }
+            else
+            {
+                OnOffButton.Visible = false;
+            }
+            if (current.SelectedDimmer)
+            {
+                Dimmer.Visible = true;
+                DimmerText.Visible = true;
+            }
+            else
+            {
+                Dimmer.Visible = false;
+                DimmerText.Visible = false;
+            }
         }
         /// <summary>
         /// Sets up dummy data
@@ -98,6 +118,7 @@ namespace GUI_PRJ2_WINFORMS
             MainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
             AddMenu.Enabled = false;
+            Settings.Enabled = false;
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -121,6 +142,7 @@ namespace GUI_PRJ2_WINFORMS
             MainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
             AddMenu.Enabled = false;
+            Settings.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -130,6 +152,16 @@ namespace GUI_PRJ2_WINFORMS
             listView1.Columns.Add("Port", 60);
             //Set the selected index of the port
             portComboBox.SelectedIndex = 0;
+
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnOffButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

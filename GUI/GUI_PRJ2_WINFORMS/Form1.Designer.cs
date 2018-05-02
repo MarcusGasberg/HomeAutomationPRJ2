@@ -46,10 +46,16 @@ namespace GUI_PRJ2_WINFORMS
             this.addMenuHeader = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.Settings = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.OnOffButton = new System.Windows.Forms.Button();
+            this.Dimmer = new System.Windows.Forms.TrackBar();
+            this.DimmerText = new System.Windows.Forms.Label();
             this.MainView.SuspendLayout();
             this.ApparatMenu.SuspendLayout();
             this.AddMenu.SuspendLayout();
+            this.Settings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dimmer)).BeginInit();
             this.SuspendLayout();
             // 
             // AddApparatButton
@@ -66,6 +72,7 @@ namespace GUI_PRJ2_WINFORMS
             // 
             this.MainView.Controls.Add(this.ApparatMenu);
             this.MainView.Controls.Add(this.AddMenu);
+            this.MainView.Controls.Add(this.Settings);
             this.MainView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainView.Location = new System.Drawing.Point(0, 0);
             this.MainView.Name = "MainView";
@@ -202,6 +209,46 @@ namespace GUI_PRJ2_WINFORMS
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // Settings
+            // 
+            this.Settings.Controls.Add(this.DimmerText);
+            this.Settings.Controls.Add(this.Dimmer);
+            this.Settings.Controls.Add(this.OnOffButton);
+            this.Settings.Location = new System.Drawing.Point(4, 22);
+            this.Settings.Name = "Settings";
+            this.Settings.Size = new System.Drawing.Size(792, 424);
+            this.Settings.TabIndex = 2;
+            this.Settings.Text = "Settings";
+            this.Settings.UseVisualStyleBackColor = true;
+            this.Settings.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // OnOffButton
+            // 
+            this.OnOffButton.Location = new System.Drawing.Point(584, 101);
+            this.OnOffButton.Name = "OnOffButton";
+            this.OnOffButton.Size = new System.Drawing.Size(75, 23);
+            this.OnOffButton.TabIndex = 0;
+            this.OnOffButton.Text = "Turn On";
+            this.OnOffButton.UseVisualStyleBackColor = true;
+            this.OnOffButton.Click += new System.EventHandler(this.OnOffButton_Click);
+            // 
+            // Dimmer
+            // 
+            this.Dimmer.Location = new System.Drawing.Point(569, 193);
+            this.Dimmer.Maximum = 4;
+            this.Dimmer.Name = "Dimmer";
+            this.Dimmer.Size = new System.Drawing.Size(104, 45);
+            this.Dimmer.TabIndex = 1;
+            // 
+            // DimmerText
+            // 
+            this.DimmerText.AutoSize = true;
+            this.DimmerText.Location = new System.Drawing.Point(600, 171);
+            this.DimmerText.Name = "DimmerText";
+            this.DimmerText.Size = new System.Drawing.Size(42, 13);
+            this.DimmerText.TabIndex = 2;
+            this.DimmerText.Text = "Dimmer";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +263,9 @@ namespace GUI_PRJ2_WINFORMS
             this.ApparatMenu.ResumeLayout(false);
             this.AddMenu.ResumeLayout(false);
             this.AddMenu.PerformLayout();
+            this.Settings.ResumeLayout(false);
+            this.Settings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dimmer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,6 +286,10 @@ namespace GUI_PRJ2_WINFORMS
         private CheckedListBox functionalityCheckBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ListView listView1;
+        private TabPage Settings;
+        private Button OnOffButton;
+        private TrackBar Dimmer;
+        private Label DimmerText;
     }
 }
 
