@@ -78,21 +78,29 @@ namespace GUI_PRJ2_WINFORMS
             if (current.SelectedOnOff)
             {
                 OnOffButton.Visible = true;
+                OnOffButton.Enabled = true;
             }
             else
             {
                 OnOffButton.Visible = false;
+                OnOffButton.Enabled = false;
             }
             if (current.SelectedDimmer)
             {
                 Dimmer.Visible = true;
+                Dimmer.Enabled = true;
                 DimmerText.Visible = true;
             }
             else
             {
                 Dimmer.Visible = false;
+                Dimmer.Enabled = false;
                 DimmerText.Visible = false;
             }
+            ApparatMenu.Enabled = false;
+            AddMenu.Enabled = false;
+            Settings.Enabled = true;
+            MainView.SelectTab(Settings);
         }
         /// <summary>
         /// Sets up dummy data
@@ -109,6 +117,7 @@ namespace GUI_PRJ2_WINFORMS
             //Change page to AddMenu
             MainView.SelectTab(AddMenu);
             ApparatMenu.Enabled = false;
+            Settings.Enabled = false;
             AddMenu.Enabled = true;
         }
 
@@ -131,7 +140,7 @@ namespace GUI_PRJ2_WINFORMS
             //Set functionality of the apparat
             foreach (object indexChecked in functionalityCheckBox.CheckedIndices)
             {
-                apparatToAdd.Functionality_ |= (Func)indexChecked;
+                apparatToAdd.Functionality_ |= (Func)((int)indexChecked + 1);
             }
 
             //Set Port to the port chosen
@@ -160,6 +169,9 @@ namespace GUI_PRJ2_WINFORMS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Disable other pages
+            AddMenu.Enabled = false;
+            Settings.Enabled = false;
             //Add necessary columns to the listview for the listview extender to work
             listView1.Columns.Add("Name", 100);
             listView1.Columns.Add("Port", 60);

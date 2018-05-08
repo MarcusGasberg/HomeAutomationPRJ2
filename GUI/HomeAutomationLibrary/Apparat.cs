@@ -50,7 +50,7 @@ namespace HomeAutomationLibrary
         /// <summary>
         /// The functionality of the apparat
         /// </summary>
-        public Func Functionality_ { get => functionality_; set => functionality_ = (value == Func.OnOff || value == Func.Dimmer ? value : Func.OnOff); }
+        public Func Functionality_ { get => functionality_; set => functionality_ = value; }
         #endregion
         #region Constructors
         /// <summary>
