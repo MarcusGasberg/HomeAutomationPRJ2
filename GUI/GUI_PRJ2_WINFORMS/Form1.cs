@@ -125,20 +125,33 @@ namespace GUI_PRJ2_WINFORMS
         {
             //Create new apparat
             Apparat apparatToAdd = new Apparat();
-            //Set Navn til Teksten af apparatNameTextbox
-            apparatToAdd.Name_ = apparatNameTextbox.Text;
-            //Set Port til porten der er valgt
-            apparatToAdd.Port_ = portComboBox.SelectedIndex + 1;
-            //Set
+            //Set name to the text of apparatNameTextbox
+            apparatToAdd.Name_ = (!string.IsNullOrEmpty(apparatNameTextbox.Text) ? apparatNameTextbox.Text : "Unknown");
+            
+            //Set functionality of the apparat
             foreach (object indexChecked in functionalityCheckBox.CheckedIndices)
             {
                 apparatToAdd.Functionality_ |= (Func)indexChecked;
             }
-            //Tilfoej det nye apparat
-            myApparats.Add(apparatToAdd);
-            //Opdater listview
+
+            //Set Port to the port chosen
+            apparatToAdd.Port_ = portComboBox.SelectedIndex;
+
+            //If the port chosen already exist
+            if (myApparats.Exists(x => x.Port_ == portComboBox.SelectedIndex))
+            {
+                //Replace the apparat
+                int index = myApparats.FindIndex(x => x.Port_ == portComboBox.SelectedIndex);
+                myApparats[index] = apparatToAdd;
+            }
+            else
+            {
+                //Else add new apparat
+                myApparats.Add(apparatToAdd);
+            }
+            //update listview
             UpdateListView(listView1);
-            //Skift side tilbage til MainView
+            //change page to apparat menu
             MainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
             AddMenu.Enabled = false;

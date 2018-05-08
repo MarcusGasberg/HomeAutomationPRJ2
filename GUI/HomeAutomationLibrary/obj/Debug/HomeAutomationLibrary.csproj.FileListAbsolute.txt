@@ -16,3 +16,9 @@ C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibr
 C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csproj.CoreCompileInputs.cache
 C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.dll
 C:\Users\lass6402.VID\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.pdb
+C:\Users\mrgas\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\bin\Debug\HomeAutomationLibrary.dll
+C:\Users\mrgas\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\bin\Debug\HomeAutomationLibrary.pdb
+C:\Users\mrgas\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csprojResolveAssemblyReference.cache
+C:\Users\mrgas\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csproj.CoreCompileInputs.cache
+C:\Users\mrgas\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.dll
+C:\Users\mrgas\Documents\GitHub\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.pdb
