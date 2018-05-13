@@ -8,7 +8,11 @@ namespace HomeAutomationLibrary
 {
     public class AppAction
     {
+        #region Private Attributes
         private bool selectedDimmer_;
+        private bool selectedOnOff_;
+        #endregion
+        #region Public Methods
         /// <summary>
         /// function to see if Apparat has dimmer selected 
         /// </summary>
@@ -18,7 +22,6 @@ namespace HomeAutomationLibrary
             set { selectedDimmer_ = value; }
         }
 
-        private bool selectedOnOff_;
         /// <summary>
         /// function to see if Apparat has OnOff selected 
         /// </summary>
@@ -27,7 +30,8 @@ namespace HomeAutomationLibrary
             get { return selectedOnOff_; }
             set { selectedOnOff_ = value; }
         }
-
+        #endregion
+        #region Constructor
         public AppAction(Apparat selected)
         {
             if((selected.Functionality_ & Func.OnOff) == Func.OnOff)
@@ -39,5 +43,6 @@ namespace HomeAutomationLibrary
                 selectedDimmer_ = true;
             }
         }
+        #endregion
     }
 }
