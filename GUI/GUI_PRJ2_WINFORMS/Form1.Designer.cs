@@ -34,7 +34,7 @@ namespace GUI_PRJ2_WINFORMS
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.AddApparatButton = new System.Windows.Forms.Button();
-            this.MainView = new System.Windows.Forms.TabControl();
+            this.mainView = new System.Windows.Forms.TabControl();
             this.ApparatMenu = new System.Windows.Forms.TabPage();
             this.serialCommunicationGroup = new System.Windows.Forms.GroupBox();
             this.comboBox_baudRate = new System.Windows.Forms.ComboBox();
@@ -45,8 +45,8 @@ namespace GUI_PRJ2_WINFORMS
             this.deleteButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.AddMenu = new System.Windows.Forms.TabPage();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.BackButton1 = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.backButton1 = new System.Windows.Forms.Button();
             this.apparatAttributes = new System.Windows.Forms.GroupBox();
             this.functionalityCheckBox = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,14 +55,14 @@ namespace GUI_PRJ2_WINFORMS
             this.portComboBox = new System.Windows.Forms.ComboBox();
             this.portLabel = new System.Windows.Forms.Label();
             this.Settings = new System.Windows.Forms.TabPage();
-            this.BackButton2 = new System.Windows.Forms.Button();
+            this.backButton2 = new System.Windows.Forms.Button();
             this.settingsGroup = new System.Windows.Forms.GroupBox();
-            this.DimmerText = new System.Windows.Forms.Label();
-            this.OnOffButton = new System.Windows.Forms.Button();
+            this.dimmerText = new System.Windows.Forms.Label();
+            this.onOffButton = new System.Windows.Forms.Button();
             this.dimmer = new System.Windows.Forms.TrackBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.MainView.SuspendLayout();
+            this.mainView.SuspendLayout();
             this.ApparatMenu.SuspendLayout();
             this.serialCommunicationGroup.SuspendLayout();
             this.apparatsGroup.SuspendLayout();
@@ -83,18 +83,18 @@ namespace GUI_PRJ2_WINFORMS
             this.AddApparatButton.UseVisualStyleBackColor = true;
             this.AddApparatButton.Click += new System.EventHandler(this.AddApparat_Click);
             // 
-            // MainView
+            // mainView
             // 
-            this.MainView.Controls.Add(this.ApparatMenu);
-            this.MainView.Controls.Add(this.AddMenu);
-            this.MainView.Controls.Add(this.Settings);
-            this.MainView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainView.Location = new System.Drawing.Point(0, 0);
-            this.MainView.Name = "MainView";
-            this.MainView.SelectedIndex = 0;
-            this.MainView.Size = new System.Drawing.Size(584, 361);
-            this.MainView.TabIndex = 5;
-            this.MainView.TabStop = false;
+            this.mainView.Controls.Add(this.ApparatMenu);
+            this.mainView.Controls.Add(this.AddMenu);
+            this.mainView.Controls.Add(this.Settings);
+            this.mainView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainView.Location = new System.Drawing.Point(0, 0);
+            this.mainView.Name = "mainView";
+            this.mainView.SelectedIndex = 0;
+            this.mainView.Size = new System.Drawing.Size(584, 361);
+            this.mainView.TabIndex = 5;
+            this.mainView.TabStop = false;
             // 
             // ApparatMenu
             // 
@@ -196,8 +196,8 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // AddMenu
             // 
-            this.AddMenu.Controls.Add(this.AddButton);
-            this.AddMenu.Controls.Add(this.BackButton1);
+            this.AddMenu.Controls.Add(this.addButton);
+            this.AddMenu.Controls.Add(this.backButton1);
             this.AddMenu.Controls.Add(this.apparatAttributes);
             this.AddMenu.Enabled = false;
             this.AddMenu.Location = new System.Drawing.Point(4, 22);
@@ -208,25 +208,25 @@ namespace GUI_PRJ2_WINFORMS
             this.AddMenu.Text = "AddMenu";
             this.AddMenu.UseVisualStyleBackColor = true;
             // 
-            // AddButton
+            // addButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(498, 309);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Location = new System.Drawing.Point(498, 309);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // BackButton1
+            // backButton1
             // 
-            this.BackButton1.Location = new System.Drawing.Point(498, 3);
-            this.BackButton1.Name = "BackButton1";
-            this.BackButton1.Size = new System.Drawing.Size(75, 23);
-            this.BackButton1.TabIndex = 0;
-            this.BackButton1.Text = "Back";
-            this.BackButton1.UseVisualStyleBackColor = true;
-            this.BackButton1.Click += new System.EventHandler(this.BackButton_Click);
+            this.backButton1.Location = new System.Drawing.Point(498, 3);
+            this.backButton1.Name = "backButton1";
+            this.backButton1.Size = new System.Drawing.Size(75, 23);
+            this.backButton1.TabIndex = 0;
+            this.backButton1.Text = "Back";
+            this.backButton1.UseVisualStyleBackColor = true;
+            this.backButton1.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // apparatAttributes
             // 
@@ -238,7 +238,7 @@ namespace GUI_PRJ2_WINFORMS
             this.apparatAttributes.Controls.Add(this.portLabel);
             this.apparatAttributes.Location = new System.Drawing.Point(8, 7);
             this.apparatAttributes.Name = "apparatAttributes";
-            this.apparatAttributes.Size = new System.Drawing.Size(189, 248);
+            this.apparatAttributes.Size = new System.Drawing.Size(189, 220);
             this.apparatAttributes.TabIndex = 9;
             this.apparatAttributes.TabStop = false;
             this.apparatAttributes.Text = "Apparat Attributes";
@@ -249,7 +249,7 @@ namespace GUI_PRJ2_WINFORMS
             this.functionalityCheckBox.Items.AddRange(new object[] {
             "Turn on/off",
             "Dimm Light"});
-            this.functionalityCheckBox.Location = new System.Drawing.Point(6, 129);
+            this.functionalityCheckBox.Location = new System.Drawing.Point(14, 112);
             this.functionalityCheckBox.Name = "functionalityCheckBox";
             this.functionalityCheckBox.Size = new System.Drawing.Size(120, 94);
             this.functionalityCheckBox.TabIndex = 7;
@@ -257,7 +257,7 @@ namespace GUI_PRJ2_WINFORMS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 113);
+            this.label1.Location = new System.Drawing.Point(12, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 8;
@@ -303,7 +303,7 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // Settings
             // 
-            this.Settings.Controls.Add(this.BackButton2);
+            this.Settings.Controls.Add(this.backButton2);
             this.Settings.Controls.Add(this.settingsGroup);
             this.Settings.Location = new System.Drawing.Point(4, 22);
             this.Settings.Name = "Settings";
@@ -313,20 +313,20 @@ namespace GUI_PRJ2_WINFORMS
             this.Settings.UseVisualStyleBackColor = true;
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
-            // BackButton2
+            // backButton2
             // 
-            this.BackButton2.Location = new System.Drawing.Point(498, 3);
-            this.BackButton2.Name = "BackButton2";
-            this.BackButton2.Size = new System.Drawing.Size(75, 23);
-            this.BackButton2.TabIndex = 4;
-            this.BackButton2.Text = "Back";
-            this.BackButton2.UseVisualStyleBackColor = true;
-            this.BackButton2.Click += new System.EventHandler(this.BackButton_Click);
+            this.backButton2.Location = new System.Drawing.Point(498, 3);
+            this.backButton2.Name = "backButton2";
+            this.backButton2.Size = new System.Drawing.Size(75, 23);
+            this.backButton2.TabIndex = 4;
+            this.backButton2.Text = "Back";
+            this.backButton2.UseVisualStyleBackColor = true;
+            this.backButton2.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // settingsGroup
             // 
-            this.settingsGroup.Controls.Add(this.DimmerText);
-            this.settingsGroup.Controls.Add(this.OnOffButton);
+            this.settingsGroup.Controls.Add(this.dimmerText);
+            this.settingsGroup.Controls.Add(this.onOffButton);
             this.settingsGroup.Controls.Add(this.dimmer);
             this.settingsGroup.Location = new System.Drawing.Point(8, 12);
             this.settingsGroup.Name = "settingsGroup";
@@ -335,24 +335,24 @@ namespace GUI_PRJ2_WINFORMS
             this.settingsGroup.TabStop = false;
             this.settingsGroup.Text = "Settings";
             // 
-            // DimmerText
+            // dimmerText
             // 
-            this.DimmerText.AutoSize = true;
-            this.DimmerText.Location = new System.Drawing.Point(6, 55);
-            this.DimmerText.Name = "DimmerText";
-            this.DimmerText.Size = new System.Drawing.Size(42, 13);
-            this.DimmerText.TabIndex = 2;
-            this.DimmerText.Text = "Dimmer";
+            this.dimmerText.AutoSize = true;
+            this.dimmerText.Location = new System.Drawing.Point(6, 55);
+            this.dimmerText.Name = "dimmerText";
+            this.dimmerText.Size = new System.Drawing.Size(42, 13);
+            this.dimmerText.TabIndex = 2;
+            this.dimmerText.Text = "Dimmer";
             // 
-            // OnOffButton
+            // onOffButton
             // 
-            this.OnOffButton.Location = new System.Drawing.Point(6, 19);
-            this.OnOffButton.Name = "OnOffButton";
-            this.OnOffButton.Size = new System.Drawing.Size(75, 23);
-            this.OnOffButton.TabIndex = 0;
-            this.OnOffButton.Text = "Turn On";
-            this.OnOffButton.UseVisualStyleBackColor = true;
-            this.OnOffButton.Click += new System.EventHandler(this.OnOffButton_Click);
+            this.onOffButton.Location = new System.Drawing.Point(6, 19);
+            this.onOffButton.Name = "onOffButton";
+            this.onOffButton.Size = new System.Drawing.Size(75, 23);
+            this.onOffButton.TabIndex = 0;
+            this.onOffButton.Text = "Turn On";
+            this.onOffButton.UseVisualStyleBackColor = true;
+            this.onOffButton.Click += new System.EventHandler(this.OnOffButton_Click);
             // 
             // dimmer
             // 
@@ -368,7 +368,7 @@ namespace GUI_PRJ2_WINFORMS
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
-            this.Controls.Add(this.MainView);
+            this.Controls.Add(this.mainView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(600, 400);
@@ -376,7 +376,7 @@ namespace GUI_PRJ2_WINFORMS
             this.Name = "Form1";
             this.Text = "HomeAutomation";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.MainView.ResumeLayout(false);
+            this.mainView.ResumeLayout(false);
             this.ApparatMenu.ResumeLayout(false);
             this.serialCommunicationGroup.ResumeLayout(false);
             this.serialCommunicationGroup.PerformLayout();
@@ -396,11 +396,11 @@ namespace GUI_PRJ2_WINFORMS
         private System.Windows.Forms.Button AddApparatButton;
         private System.Windows.Forms.TabPage ApparatMenu;
         private System.Windows.Forms.TabPage AddMenu;
-        private System.Windows.Forms.TabControl MainView;
-        private Button BackButton1;
+        private System.Windows.Forms.TabControl mainView;
+        private Button backButton1;
         private TextBox apparatNameTextbox;
         private Label nameLabel;
-        private Button AddButton;
+        private Button addButton;
         private ComboBox portComboBox;
         private Label portLabel;
         private Label label1;
@@ -408,9 +408,9 @@ namespace GUI_PRJ2_WINFORMS
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ListView listView1;
         private TabPage Settings;
-        private Button OnOffButton;
+        private Button onOffButton;
         private TrackBar dimmer;
-        private Label DimmerText;
+        private Label dimmerText;
         private System.IO.Ports.SerialPort serialPort1;
         private Button deleteButton;
         private GroupBox apparatsGroup;
@@ -421,7 +421,7 @@ namespace GUI_PRJ2_WINFORMS
         private ComboBox comboBox_baudRate;
         private Label baudRateLabel;
         private GroupBox settingsGroup;
-        private Button BackButton2;
+        private Button backButton2;
     }
 }
 

@@ -92,30 +92,30 @@ namespace GUI_PRJ2_WINFORMS
             currentApparatFunc = availableApparats[e.Item.Index].Functionality_;
             if (current.SelectedOnOff)
             {
-                OnOffButton.Visible = true;
-                OnOffButton.Enabled = true;
+                onOffButton.Visible = true;
+                onOffButton.Enabled = true;
             }
             else
             {
-                OnOffButton.Visible = false;
-                OnOffButton.Enabled = false;
+                onOffButton.Visible = false;
+                onOffButton.Enabled = false;
             }
             if (current.SelectedDimmer)
             {
                 dimmer.Visible = true;
                 dimmer.Enabled = true;
-                DimmerText.Visible = true;
+                dimmerText.Visible = true;
             }
             else
             {
                 dimmer.Visible = false;
                 dimmer.Enabled = false;
-                DimmerText.Visible = false;
+                dimmerText.Visible = false;
             }
             ApparatMenu.Enabled = false;
             AddMenu.Enabled = false;
             Settings.Enabled = true;
-            MainView.SelectTab(Settings);
+            mainView.SelectTab(Settings);
         }
         /// <summary>
         /// Sets up dummy data
@@ -130,7 +130,7 @@ namespace GUI_PRJ2_WINFORMS
         private void AddApparat_Click(object sender, EventArgs e)
         {
             //Change page to AddMenu
-            MainView.SelectTab(AddMenu);
+            mainView.SelectTab(AddMenu);
             ApparatMenu.Enabled = false;
             Settings.Enabled = false;
             AddMenu.Enabled = true;
@@ -139,7 +139,7 @@ namespace GUI_PRJ2_WINFORMS
         private void BackButton_Click(object sender, EventArgs e)
         {
             //Change page to ApparatMenu
-            MainView.SelectTab(ApparatMenu);
+            mainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
             AddMenu.Enabled = false;
             Settings.Enabled = false;
@@ -176,7 +176,7 @@ namespace GUI_PRJ2_WINFORMS
             //update listview
             UpdateListView(listView1);
             //change page to apparat menu
-            MainView.SelectTab(ApparatMenu);
+            mainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
             AddMenu.Enabled = false;
             Settings.Enabled = false;
