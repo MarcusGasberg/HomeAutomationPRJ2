@@ -7,22 +7,32 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Ports;
 using System.Windows.Forms;
 
 namespace GUI_PRJ2_WINFORMS
 {
     public partial class Form1 : Form
     {
-        private List<Apparat> myApparats = new List<Apparat>();
-        private int apparatPort_ = 0;
+        private List<Apparat> availableApparats = new List<Apparat>();
+        private int currentApparatPort = 0;
+        private Func currentApparatFunc = Func.OnOff;
 
         public Form1()
         {
             InitializeComponent();
+
             //Sets up dummy data
             SetupData();
+
             //Sets up list view
             SetupListView(listView1);
+
+            //Populate the Combobox with SerialPorts on the System
+            comboBox_available_serialPorts.Items.AddRange(SerialPort.GetPortNames());
+
+            //Disable the apparatlist group
+            apparatsGroup.Enabled = false;
         }
         
         /// <summary>
@@ -32,16 +42,16 @@ namespace GUI_PRJ2_WINFORMS
         private void SetupListView(ListView listViewToSetup)
         {
             listViewToSetup.FullRowSelect = true;
-            //Kald af extender methods
+            //Create extender
             ListViewExtender extender = new ListViewExtender(listViewToSetup);
             // extend 2nd column
             ListViewButtonColumn buttonAction = new ListViewButtonColumn(1);
-            //Tilfoej Action
+            //Add action for button
             buttonAction.Click += OnButtonActionClick;
             buttonAction.FixedWidth = true;
-            //Tilfoej column med dummy data
+            //Add column with dummy data
             extender.AddColumn(buttonAction);
-            //Opdater Listview
+            //Update listview
             UpdateListView(listViewToSetup);
         }
 
@@ -52,17 +62,20 @@ namespace GUI_PRJ2_WINFORMS
         private void UpdateListView(ListView listView2Update)
         {
             //Delete existing listview items
-            for (int i = 0; i < listView2Update.Items.Count; i++)
+            if (availableApparats.Count != 0)
             {
-                listView2Update.Items[i].Remove();
-                i--;
+                for (int i = 0; i < listView2Update.Items.Count; i++)
+                {
+                    listView2Update.Items[i].Remove();
+                    i--;
+                }
             }
 
             //Add new items
-            for (int i = 0; i < myApparats.Count; i++)
+            for (int i = 0; i < availableApparats.Count; i++)
             {
-                ListViewItem item = listView2Update.Items.Add(myApparats[i].Name_);
-                item.SubItems.Add(myApparats[i].Port_.ToString());
+                ListViewItem item = listView2Update.Items.Add(availableApparats[i].Name_);
+                item.SubItems.Add(availableApparats[i].Port_.ToString());
             }
 
         }
@@ -73,8 +86,10 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
         {
-            apparatPort_ = e.Item.Index;
-            AppAction current = new AppAction(myApparats[e.Item.Index]);
+            currentApparatPort = e.Item.Index;
+            AppAction current = new AppAction(availableApparats[e.Item.Index]);
+            currentApparatPort = availableApparats[e.Item.Index].Port_;
+            currentApparatFunc = availableApparats[e.Item.Index].Functionality_;
             if (current.SelectedOnOff)
             {
                 OnOffButton.Visible = true;
@@ -87,14 +102,14 @@ namespace GUI_PRJ2_WINFORMS
             }
             if (current.SelectedDimmer)
             {
-                Dimmer.Visible = true;
-                Dimmer.Enabled = true;
+                dimmer.Visible = true;
+                dimmer.Enabled = true;
                 DimmerText.Visible = true;
             }
             else
             {
-                Dimmer.Visible = false;
-                Dimmer.Enabled = false;
+                dimmer.Visible = false;
+                dimmer.Enabled = false;
                 DimmerText.Visible = false;
             }
             ApparatMenu.Enabled = false;
@@ -108,7 +123,7 @@ namespace GUI_PRJ2_WINFORMS
         private void SetupData()
         {
             //Add default object as dummy data
-            myApparats.Add(new Apparat());
+            availableApparats.Add(new Apparat());
         }
         
 
@@ -147,16 +162,16 @@ namespace GUI_PRJ2_WINFORMS
             apparatToAdd.Port_ = portComboBox.SelectedIndex;
 
             //If the port chosen already exist
-            if (myApparats.Exists(x => x.Port_ == portComboBox.SelectedIndex))
+            if (availableApparats.Exists(x => x.Port_ == portComboBox.SelectedIndex))
             {
                 //Replace the apparat
-                int index = myApparats.FindIndex(x => x.Port_ == portComboBox.SelectedIndex);
-                myApparats[index] = apparatToAdd;
+                int index = availableApparats.FindIndex(x => x.Port_ == portComboBox.SelectedIndex);
+                availableApparats[index] = apparatToAdd;
             }
             else
             {
                 //Else add new apparat
-                myApparats.Add(apparatToAdd);
+                availableApparats.Add(apparatToAdd);
             }
             //update listview
             UpdateListView(listView1);
@@ -177,7 +192,8 @@ namespace GUI_PRJ2_WINFORMS
             listView1.Columns.Add("Port", 60);
             //Set the selected index of the port
             portComboBox.SelectedIndex = 0;
-
+            //Disable baudrate selection
+            comboBox_baudRate.Enabled = false;
         }
 
         private void Settings_Click(object sender, EventArgs e)
@@ -187,7 +203,130 @@ namespace GUI_PRJ2_WINFORMS
 
         private void OnOffButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Open Serial port
+                serialPort1.Open();
+            }
+            #region Exceptions
+            catch(UnauthorizedAccessException SerialException)
+            {
+                //Exception for when the operating system denies access
+                MessageBox.Show(SerialException.ToString());
+                serialPort1.Close();
+            }
+            catch(System.IO.IOException SerialException)
+            {
+                //An attempt to set the state of the underlying port failed
+                MessageBox.Show(SerialException.ToString());
+                serialPort1.Close();
+            }
+            catch(InvalidOperationException SerialException)
+            {
+                //The specified port on the current instance of the SerialPort is already open
+                MessageBox.Show(SerialException.ToString());
+                serialPort1.Close();
+            }
+            catch
+            {
+                MessageBox.Show("ERROR in opening SerialPort - Unknown ERROR");
+                serialPort1.Close();
+            }
+            #endregion
 
+            if (serialPort1.IsOpen)
+            {
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+                string Data = (currentApparatFunc & Func.OnOff).ToString() + currentApparatPort.ToString();
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+
+                //Send data
+                serialPort1.WriteLine(Data);
+                serialPort1.Close();
+            }
+
+        }
+
+        //FIND OUT WHAT TO DO WITH BUTTON AFTER IT HAS TURNED ON
+        //FIND OUT WHAT TO DO WITH BUTTON AFTER IT HAS TURNED ON
+        //FIND OUT WHAT TO DO WITH BUTTON AFTER IT HAS TURNED ON
+
+
+
+        private void dimmer_Scroll(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //Open Serial port
+                serialPort1.Open();
+            }
+            #region Exceptions
+            catch (UnauthorizedAccessException SerialException)
+            {
+                //Exception for when the operating system denies access
+                MessageBox.Show(SerialException.ToString());
+                serialPort1.Close();
+            }
+            catch (System.IO.IOException SerialException)
+            {
+                //An attempt to set the state of the underlying port failed
+                MessageBox.Show(SerialException.ToString());
+                serialPort1.Close();
+            }
+            catch (InvalidOperationException SerialException)
+            {
+                //The specified port on the current instance of the SerialPort is already open
+                MessageBox.Show(SerialException.ToString());
+                serialPort1.Close();
+            }
+            catch
+            {
+                MessageBox.Show("ERROR in opening SerialPort - Unknown ERROR");
+                serialPort1.Close();
+            }
+            #endregion
+
+            if (serialPort1.IsOpen)
+            {
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+                string Data = (currentApparatFunc & Func.Dimmer).ToString() + currentApparatPort.ToString();
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+                //FIND OUT HOW TO CREATE THE CODE TO SEND
+
+                //Send data
+                serialPort1.WriteLine(Data);
+                serialPort1.Close();
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            //Foreach selected item in listview1: Delete
+            foreach(ListViewItem selected in listView1.SelectedItems)
+            {
+                availableApparats.RemoveAt(selected.Index);
+                selected.Remove();
+            }
+        }
+
+        private void comboBox_available_serialPorts_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //Sets the portName
+            serialPort1.PortName = comboBox_available_serialPorts.SelectedItem.ToString();
+            //Enable baudrate to be set
+            comboBox_baudRate.Enabled = true;
+        }
+
+        private void comboBox_baudRate_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //Sets the baudrate of serialPort1
+            serialPort1.BaudRate = Convert.ToInt32(comboBox_baudRate.SelectedItem.ToString());
+            //Enable apparats after baud rate is chosen
+            apparatsGroup.Enabled = true;
         }
     }
 }

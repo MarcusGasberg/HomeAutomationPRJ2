@@ -42,6 +42,7 @@ namespace HomeAutomationLibrary
             {
                 selectedDimmer_ = true;
             }
+            
         }
         #endregion
     }
