@@ -79,6 +79,17 @@ namespace GUI_PRJ2_WINFORMS
             }
 
         }
+
+        /// <summary>
+        /// Function to check if the port is on
+        /// </summary>
+        /// <param name="port">The port to check</param>
+        /// <returns></returns>
+        private bool isPortOn(int port)
+        {
+            return availableApparats.Find(item => item.Port == port).OnOff;
+        }
+
         /// <summary>
         /// Private helper method for list view button click
         /// </summary>
@@ -104,7 +115,7 @@ namespace GUI_PRJ2_WINFORMS
             {
                 dimmerScroll.Visible = true;
                 //Enable Dimmer
-                dimmerScroll.Enabled = availableApparats[currentApparatPort].OnOff;
+                dimmerScroll.Enabled = isPortOn(currentApparatPort);
                 dimmerText.Visible = true;
             }
             else
@@ -119,8 +130,9 @@ namespace GUI_PRJ2_WINFORMS
             Settings.Enabled = true;
             mainView.SelectTab(Settings);
             //Sets the text of the on of button
-            onOffButton.Text = (availableApparats[currentApparatPort].OnOff ? "Turn Off" : "Turn On");
+            onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
         }
+
         /// <summary>
         /// Sets up dummy data
         /// </summary>
@@ -130,7 +142,11 @@ namespace GUI_PRJ2_WINFORMS
             availableApparats.Add(new Apparat());
         }
         
-
+        /// <summary>
+        /// Event to go to Add Apparat page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddApparat_Click(object sender, EventArgs e)
         {
             //Change page to AddMenu
@@ -140,6 +156,11 @@ namespace GUI_PRJ2_WINFORMS
             AddMenu.Enabled = true;
         }
 
+        /// <summary>
+        /// Event to go back to apparat menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackButton_Click(object sender, EventArgs e)
         {
             //Change page to ApparatMenu
@@ -149,6 +170,11 @@ namespace GUI_PRJ2_WINFORMS
             Settings.Enabled = false;
         }
 
+        /// <summary>
+        /// Event to add the new apparat
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addButton_Click(object sender, EventArgs e)
         {
             //Create new apparat
@@ -186,6 +212,11 @@ namespace GUI_PRJ2_WINFORMS
             Settings.Enabled = false;
         }
 
+        /// <summary>
+        /// Event for when the form is loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             //Disable other pages
@@ -205,6 +236,11 @@ namespace GUI_PRJ2_WINFORMS
 
         }
 
+        /// <summary>
+        /// Event for when the OnOff button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnOffButton_Click(object sender, EventArgs e)
         {
             try
@@ -240,30 +276,27 @@ namespace GUI_PRJ2_WINFORMS
 
             if (serialPort1.IsOpen)
             {
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
-                string Data = "E";
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
-
+                //Set the data address from the port
+                string DataAddress = (currentApparatPort < 10 ? "0" + currentApparatPort.ToString() : currentApparatPort.ToString());
+                string DataFunc = (isPortOn(currentApparatPort) ? "00" : "01");
+                string Data = DataAddress + DataFunc;
                 //Send data
                 serialPort1.WriteLine(Data);
                 serialPort1.Close();
                 //Invert on/off
-                availableApparats[currentApparatPort].OnOff ^= true;
+                availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
             }
             //Change text of onOffButton
-            onOffButton.Text = (availableApparats[currentApparatPort].OnOff ?  "Turn Off" : "Turn On");
+            onOffButton.Text = (isPortOn(currentApparatPort) ?  "Turn Off" : "Turn On");
             //Enable Dimmer
-            dimmerScroll.Enabled = availableApparats[currentApparatPort].OnOff;
+            dimmerScroll.Enabled = isPortOn(currentApparatPort);
         }
-
-        //FIND OUT WHAT TO DO WITH BUTTON AFTER IT HAS TURNED ON
-        //FIND OUT WHAT TO DO WITH BUTTON AFTER IT HAS TURNED ON
-        //FIND OUT WHAT TO DO WITH BUTTON AFTER IT HAS TURNED ON
-
-
-
+        
+        /// <summary>
+        /// Event for when the dimmer is scrolled
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dimmer_Scroll(object sender, EventArgs e)
         {
 
@@ -300,11 +333,30 @@ namespace GUI_PRJ2_WINFORMS
 
             if (serialPort1.IsOpen)
             {
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
-                string Data = (currentApparatFunc & Func.Dimmer).ToString() + currentApparatPort.ToString();
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
-                //FIND OUT HOW TO CREATE THE CODE TO SEND
+                //Set the data address from the port
+                string DataAddress = (currentApparatPort < 10 ? "0" + currentApparatPort.ToString() : currentApparatPort.ToString());
+                string DataFunc = "00"; //Default to turn off
+                switch (dimmerScroll.Value)
+                {
+                    case 0:
+                        DataFunc = "02"; //20% on
+                        break;
+                    case 1:
+                        DataFunc = "03"; //40% on
+                        break;
+                    case 2:
+                        DataFunc = "04"; //60% on
+                        break;
+                    case 3:
+                        DataFunc = "05"; //80% on
+                        break;
+                    case 4:
+                        DataFunc = "01"; //100% on / TurnOn code
+                        break;
+                    default:
+                        break;
+                }
+                string Data = DataAddress + DataFunc;
 
                 //Send data
                 serialPort1.WriteLine(Data);
@@ -312,6 +364,11 @@ namespace GUI_PRJ2_WINFORMS
             }
         }
 
+        /// <summary>
+        /// Event for when the delete button is presssed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteButton_Click(object sender, EventArgs e)
         {
             //Foreach selected item in listview1: Delete
@@ -322,6 +379,11 @@ namespace GUI_PRJ2_WINFORMS
             }
         }
 
+        /// <summary>
+        /// Event for when the COM is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox_available_serialPorts_SelectionChangeCommitted(object sender, EventArgs e)
         {
             //Sets the portName
@@ -330,6 +392,11 @@ namespace GUI_PRJ2_WINFORMS
             comboBox_baudRate.Enabled = true;
         }
 
+        /// <summary>
+        /// Event for when the baud rate is selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox_baudRate_SelectionChangeCommitted(object sender, EventArgs e)
         {
             //Sets the baudrate of serialPort1

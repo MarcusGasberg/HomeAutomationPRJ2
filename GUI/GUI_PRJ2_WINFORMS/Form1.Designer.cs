@@ -363,6 +363,10 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll.TabIndex = 1;
             this.dimmerScroll.Scroll += new System.EventHandler(this.dimmer_Scroll);
             // 
+            // serialPort1
+            // 
+            this.serialPort1.PortName = "COM3";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,7 +415,6 @@ namespace GUI_PRJ2_WINFORMS
         private Button onOffButton;
         private TrackBar dimmerScroll;
         private Label dimmerText;
-        private System.IO.Ports.SerialPort serialPort1;
         private Button deleteButton;
         private GroupBox apparatsGroup;
         private GroupBox apparatAttributes;
@@ -422,6 +425,7 @@ namespace GUI_PRJ2_WINFORMS
         private Label baudRateLabel;
         private GroupBox settingsGroup;
         private Button backButton2;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 
