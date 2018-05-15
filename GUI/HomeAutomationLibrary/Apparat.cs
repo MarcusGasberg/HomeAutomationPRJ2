@@ -31,26 +31,26 @@ namespace HomeAutomationLibrary
         #region Private
         private string name_;
         private int port_;
-        private string picture_;
         private Func functionality_;
+        private bool onOff_;
         #endregion
         #region Public Properties
         /// <summary>
         /// The Name of the apparat
         /// </summary>
-        public string Name_ { get => name_; set => name_ = value; }
+        public string Name { get => name_; set => name_ = value; }
         /// <summary>
         /// The port which the apparat is connected to
         /// </summary>
-        public int Port_ { get => port_; set => port_ = (value>0 && value<4 ? value : 0); }
-        /// <summary>
-        /// The icon path for the apparat
-        /// </summary>
-        public string Picture_ { get => picture_; set => picture_ = value; }
+        public int Port { get => port_; set => port_ = (value>0 && value<4 ? value : 0); }
         /// <summary>
         /// The functionality of the apparat
         /// </summary>
-        public Func Functionality_ { get => functionality_; set => functionality_ = value; }
+        public Func Functionality { get => functionality_; set => functionality_ = value; }
+        /// <summary>
+        /// Bool to keep track of the state of the port
+        /// </summary>
+        public bool OnOff { get => onOff_; set  => onOff_ = value; }
         #endregion
         #region Constructors
         /// <summary>
@@ -58,9 +58,10 @@ namespace HomeAutomationLibrary
         /// </summary>
         public Apparat()
         {
-            Name_ = "DummyApparat";
-            Port_ = 0;
-            Functionality_ = Func.OnOff;
+            Name = "DummyApparat";
+            Port = 0;
+            Functionality = Func.OnOff;
+            OnOff = false;
         }
         /// <summary>
         /// Parametrized Constructor
@@ -70,9 +71,10 @@ namespace HomeAutomationLibrary
         /// <param name="func">Funktionalitet på apparatet</param>
         public Apparat(string name, int port, Func func)
         {
-            Name_ = name;
-            Port_ = port;
-            Functionality_ = func;
+            Name = name;
+            Port = port;
+            Functionality = func;
+            OnOff = false;
         }
         #endregion
     }

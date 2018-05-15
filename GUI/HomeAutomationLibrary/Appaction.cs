@@ -34,11 +34,11 @@ namespace HomeAutomationLibrary
         #region Constructor
         public AppAction(Apparat selected)
         {
-            if((selected.Functionality_ & Func.OnOff) == Func.OnOff)
+            if((selected.Functionality & Func.OnOff) == Func.OnOff)
             {
                 selectedOnOff_ = true;
             }
-            if ((selected.Functionality_ & Func.Dimmer) == Func.Dimmer)
+            if ((selected.Functionality & Func.Dimmer) == Func.Dimmer)
             {
                 selectedDimmer_ = true;
             }

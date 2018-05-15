@@ -59,7 +59,7 @@ namespace GUI_PRJ2_WINFORMS
             this.settingsGroup = new System.Windows.Forms.GroupBox();
             this.dimmerText = new System.Windows.Forms.Label();
             this.onOffButton = new System.Windows.Forms.Button();
-            this.dimmer = new System.Windows.Forms.TrackBar();
+            this.dimmerScroll = new System.Windows.Forms.TrackBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.mainView.SuspendLayout();
@@ -70,7 +70,7 @@ namespace GUI_PRJ2_WINFORMS
             this.apparatAttributes.SuspendLayout();
             this.Settings.SuspendLayout();
             this.settingsGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dimmer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dimmerScroll)).BeginInit();
             this.SuspendLayout();
             // 
             // AddApparatButton
@@ -327,7 +327,7 @@ namespace GUI_PRJ2_WINFORMS
             // 
             this.settingsGroup.Controls.Add(this.dimmerText);
             this.settingsGroup.Controls.Add(this.onOffButton);
-            this.settingsGroup.Controls.Add(this.dimmer);
+            this.settingsGroup.Controls.Add(this.dimmerScroll);
             this.settingsGroup.Location = new System.Drawing.Point(8, 12);
             this.settingsGroup.Name = "settingsGroup";
             this.settingsGroup.Size = new System.Drawing.Size(200, 135);
@@ -354,14 +354,14 @@ namespace GUI_PRJ2_WINFORMS
             this.onOffButton.UseVisualStyleBackColor = true;
             this.onOffButton.Click += new System.EventHandler(this.OnOffButton_Click);
             // 
-            // dimmer
+            // dimmerScroll
             // 
-            this.dimmer.Location = new System.Drawing.Point(6, 71);
-            this.dimmer.Maximum = 4;
-            this.dimmer.Name = "dimmer";
-            this.dimmer.Size = new System.Drawing.Size(104, 45);
-            this.dimmer.TabIndex = 1;
-            this.dimmer.Scroll += new System.EventHandler(this.dimmer_Scroll);
+            this.dimmerScroll.Location = new System.Drawing.Point(6, 71);
+            this.dimmerScroll.Maximum = 4;
+            this.dimmerScroll.Name = "dimmerScroll";
+            this.dimmerScroll.Size = new System.Drawing.Size(104, 45);
+            this.dimmerScroll.TabIndex = 1;
+            this.dimmerScroll.Scroll += new System.EventHandler(this.dimmer_Scroll);
             // 
             // Form1
             // 
@@ -387,7 +387,7 @@ namespace GUI_PRJ2_WINFORMS
             this.Settings.ResumeLayout(false);
             this.settingsGroup.ResumeLayout(false);
             this.settingsGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dimmer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dimmerScroll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,7 +409,7 @@ namespace GUI_PRJ2_WINFORMS
         private ListView listView1;
         private TabPage Settings;
         private Button onOffButton;
-        private TrackBar dimmer;
+        private TrackBar dimmerScroll;
         private Label dimmerText;
         private System.IO.Ports.SerialPort serialPort1;
         private Button deleteButton;

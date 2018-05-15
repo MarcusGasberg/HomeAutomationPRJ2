@@ -74,8 +74,8 @@ namespace GUI_PRJ2_WINFORMS
             //Add new items
             for (int i = 0; i < availableApparats.Count; i++)
             {
-                ListViewItem item = listView2Update.Items.Add(availableApparats[i].Name_);
-                item.SubItems.Add(availableApparats[i].Port_.ToString());
+                ListViewItem item = listView2Update.Items.Add(availableApparats[i].Name);
+                item.SubItems.Add(availableApparats[i].Port.ToString());
             }
 
         }
@@ -88,8 +88,8 @@ namespace GUI_PRJ2_WINFORMS
         {
             currentApparatPort = e.Item.Index;
             AppAction current = new AppAction(availableApparats[e.Item.Index]);
-            currentApparatPort = availableApparats[e.Item.Index].Port_;
-            currentApparatFunc = availableApparats[e.Item.Index].Functionality_;
+            currentApparatPort = availableApparats[e.Item.Index].Port;
+            currentApparatFunc = availableApparats[e.Item.Index].Functionality;
             if (current.SelectedOnOff)
             {
                 onOffButton.Visible = true;
@@ -102,20 +102,24 @@ namespace GUI_PRJ2_WINFORMS
             }
             if (current.SelectedDimmer)
             {
-                dimmer.Visible = true;
-                dimmer.Enabled = true;
+                dimmerScroll.Visible = true;
+                //Enable Dimmer
+                dimmerScroll.Enabled = availableApparats[currentApparatPort].OnOff;
                 dimmerText.Visible = true;
             }
             else
             {
-                dimmer.Visible = false;
-                dimmer.Enabled = false;
+                dimmerScroll.Visible = false;
+                dimmerScroll.Enabled = false;
                 dimmerText.Visible = false;
             }
+            //Change page
             ApparatMenu.Enabled = false;
             AddMenu.Enabled = false;
             Settings.Enabled = true;
             mainView.SelectTab(Settings);
+            //Sets the text of the on of button
+            onOffButton.Text = (availableApparats[currentApparatPort].OnOff ? "Turn Off" : "Turn On");
         }
         /// <summary>
         /// Sets up dummy data
@@ -150,22 +154,22 @@ namespace GUI_PRJ2_WINFORMS
             //Create new apparat
             Apparat apparatToAdd = new Apparat();
             //Set name to the text of apparatNameTextbox
-            apparatToAdd.Name_ = (!string.IsNullOrEmpty(apparatNameTextbox.Text) ? apparatNameTextbox.Text : "Unknown");
+            apparatToAdd.Name = (!string.IsNullOrEmpty(apparatNameTextbox.Text) ? apparatNameTextbox.Text : "Unknown");
             
             //Set functionality of the apparat
             foreach (object indexChecked in functionalityCheckBox.CheckedIndices)
             {
-                apparatToAdd.Functionality_ |= (Func)((int)indexChecked + 1);
+                apparatToAdd.Functionality |= (Func)((int)indexChecked + 1);
             }
 
             //Set Port to the port chosen
-            apparatToAdd.Port_ = portComboBox.SelectedIndex;
+            apparatToAdd.Port = portComboBox.SelectedIndex;
 
             //If the port chosen already exist
-            if (availableApparats.Exists(x => x.Port_ == portComboBox.SelectedIndex))
+            if (availableApparats.Exists(x => x.Port == portComboBox.SelectedIndex))
             {
                 //Replace the apparat
-                int index = availableApparats.FindIndex(x => x.Port_ == portComboBox.SelectedIndex);
+                int index = availableApparats.FindIndex(x => x.Port == portComboBox.SelectedIndex);
                 availableApparats[index] = apparatToAdd;
             }
             else
@@ -238,15 +242,20 @@ namespace GUI_PRJ2_WINFORMS
             {
                 //FIND OUT HOW TO CREATE THE CODE TO SEND
                 //FIND OUT HOW TO CREATE THE CODE TO SEND
-                string Data = (currentApparatFunc & Func.OnOff).ToString() + currentApparatPort.ToString();
+                string Data = "E";
                 //FIND OUT HOW TO CREATE THE CODE TO SEND
                 //FIND OUT HOW TO CREATE THE CODE TO SEND
 
                 //Send data
                 serialPort1.WriteLine(Data);
                 serialPort1.Close();
+                //Invert on/off
+                availableApparats[currentApparatPort].OnOff ^= true;
             }
-
+            //Change text of onOffButton
+            onOffButton.Text = (availableApparats[currentApparatPort].OnOff ?  "Turn Off" : "Turn On");
+            //Enable Dimmer
+            dimmerScroll.Enabled = availableApparats[currentApparatPort].OnOff;
         }
 
         //FIND OUT WHAT TO DO WITH BUTTON AFTER IT HAS TURNED ON
