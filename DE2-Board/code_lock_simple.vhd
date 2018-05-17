@@ -4,9 +4,9 @@ use ieee.std_logic_1164.all;
 entity code_lock_simple is 
 	port(clk, reset, enter: in std_logic;
 		  code: std_logic_vector(3 downto 0);
-		  lock: out std_logic;
+		  lock: out std_logic;	--Actual lock: Connected to GPIO pin.
 		  lock3: out std_logic; --Projekt addition: Red light. 
-		  lock2: out std_logic -- Projekt addition
+		  lock2: out std_logic 	-- Projekt addition: Green light
 		  );
 end code_lock_simple;
 
@@ -19,7 +19,7 @@ architecture simple_lock of code_lock_simple is
 			--State register proces
 			state_reg: process (clk, reset)
 			begin 
-				if (reset = not'1')then --omvendt
+				if (reset = not'1')then 
 					present_state <= Idle;
 				elsif rising_edge(clk)then
 					present_state <= next_state;
@@ -44,7 +44,7 @@ architecture simple_lock of code_lock_simple is
 						end if;
 						
 					when Evaluating_code_1 => 
-						if (enter = '1')then --omvendt 
+						if (enter = '1')then  
 							if (code = code1)then
 								next_state <= Getting_code_2;
 							else 
@@ -53,12 +53,12 @@ architecture simple_lock of code_lock_simple is
 						end if;
 					
 					when Getting_code_2 => 
-						if (enter = '0')then --omvendt
+						if (enter = '0')then 
 							next_state <= Evaluating_code_2;
 						end if;
 						
 					when Evaluating_code_2 => 
-						if (enter ='1')then -- omvendt
+						if (enter ='1')then 
 							if(code = code2) then 
 							next_state <= Unlocked; 
 							else 
@@ -67,12 +67,12 @@ architecture simple_lock of code_lock_simple is
 						end if;
 						
 					when Unlocked => 
-						if (enter = '0')then -- omvendt
+						if (enter = '0')then 
 							next_state <= Going_idle;
 						end if;
 					
 					when Going_idle => 
-						if (enter = '1')then --omvendt
+						if (enter = '1')then 
 							next_state <= Idle;
 						end if;
 					end case;
@@ -81,6 +81,7 @@ architecture simple_lock of code_lock_simple is
 				outputs: process (present_state, code)
 				begin 
 					case present_state is
+					
 					--Der er kun låst op når vi er i Unlocked state
 						when Unlocked => 
 							lock <= '0';
