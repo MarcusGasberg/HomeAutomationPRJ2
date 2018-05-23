@@ -76,6 +76,8 @@ namespace HomeAutomationLibrary
             Functionality = func;
             OnOff = false;
         }
+
+        
         #endregion
     }
 }

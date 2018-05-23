@@ -15,6 +15,7 @@ namespace GUI_PRJ2_WINFORMS
     public partial class Form1 : Form
     {
         private List<Apparat> availableApparats = new List<Apparat>();
+        private SerialCom serialCom;
         private int currentApparatPort = 0;
         private Func currentApparatFunc = Func.OnOff;
 
@@ -33,6 +34,11 @@ namespace GUI_PRJ2_WINFORMS
 
             //Disable the apparatlist group
             apparatsGroup.Enabled = false;
+
+            //Setup serialCom
+            serialCom = new SerialCom(serialPort1);
+
+
         }
         
         /// <summary>
@@ -243,49 +249,10 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnOffButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //Open Serial port
-                serialPort1.Open();
-            }
-            #region Exceptions
-            catch(UnauthorizedAccessException SerialException)
-            {
-                //Exception for when the operating system denies access
-                MessageBox.Show(SerialException.ToString());
-                serialPort1.Close();
-            }
-            catch(System.IO.IOException SerialException)
-            {
-                //An attempt to set the state of the underlying port failed
-                MessageBox.Show(SerialException.ToString());
-                serialPort1.Close();
-            }
-            catch(InvalidOperationException SerialException)
-            {
-                //The specified port on the current instance of the SerialPort is already open
-                MessageBox.Show(SerialException.ToString());
-                serialPort1.Close();
-            }
-            catch
-            {
-                MessageBox.Show("ERROR in opening SerialPort - Unknown ERROR");
-                serialPort1.Close();
-            }
-            #endregion
-
-            if (serialPort1.IsOpen)
-            {
-                //Set the data address from the port
-                string DataAddress = (currentApparatPort < 10 ? "0" + currentApparatPort.ToString() : currentApparatPort.ToString());
-                string DataFunc = (isPortOn(currentApparatPort) ? "00" : "01");
-                string Data = DataAddress + DataFunc;
-                //Send data
-                serialPort1.WriteLine(Data);
-                serialPort1.Close();
-                //Invert on/off
-                availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
-            }
+            //Turn the light on/off
+            serialCom.onOff(currentApparatPort, isPortOn(currentApparatPort));
+            //Invert on/off
+            availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
             //Change text of onOffButton
             onOffButton.Text = (isPortOn(currentApparatPort) ?  "Turn Off" : "Turn On");
             //Enable Dimmer
@@ -299,69 +266,8 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void dimmer_Scroll(object sender, EventArgs e)
         {
-
-            try
-            {
-                //Open Serial port
-                serialPort1.Open();
-            }
-            #region Exceptions
-            catch (UnauthorizedAccessException SerialException)
-            {
-                //Exception for when the operating system denies access
-                MessageBox.Show(SerialException.ToString());
-                serialPort1.Close();
-            }
-            catch (System.IO.IOException SerialException)
-            {
-                //An attempt to set the state of the underlying port failed
-                MessageBox.Show(SerialException.ToString());
-                serialPort1.Close();
-            }
-            catch (InvalidOperationException SerialException)
-            {
-                //The specified port on the current instance of the SerialPort is already open
-                MessageBox.Show(SerialException.ToString());
-                serialPort1.Close();
-            }
-            catch
-            {
-                MessageBox.Show("ERROR in opening SerialPort - Unknown ERROR");
-                serialPort1.Close();
-            }
-            #endregion
-
-            if (serialPort1.IsOpen)
-            {
-                //Set the data address from the port
-                string DataAddress = (currentApparatPort < 10 ? "0" + currentApparatPort.ToString() : currentApparatPort.ToString());
-                string DataFunc = "00"; //Default to turn off
-                switch (dimmerScroll.Value)
-                {
-                    case 0:
-                        DataFunc = "02"; //20% on
-                        break;
-                    case 1:
-                        DataFunc = "03"; //40% on
-                        break;
-                    case 2:
-                        DataFunc = "04"; //60% on
-                        break;
-                    case 3:
-                        DataFunc = "05"; //80% on
-                        break;
-                    case 4:
-                        DataFunc = "01"; //100% on / TurnOn code
-                        break;
-                    default:
-                        break;
-                }
-                string Data = DataAddress + DataFunc;
-
-                //Send data
-                serialPort1.WriteLine(Data);
-                serialPort1.Close();
-            }
+            //Dimm the light
+            serialCom.dimm(currentApparatPort, dimmerScroll.Value);
         }
 
         /// <summary>
