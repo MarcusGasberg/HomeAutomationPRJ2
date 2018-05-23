@@ -250,7 +250,7 @@ namespace GUI_PRJ2_WINFORMS
         private void OnOffButton_Click(object sender, EventArgs e)
         {
             //Turn the light on/off
-            serialCom.onOff(currentApparatPort, isPortOn(currentApparatPort));
+            serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
             //Invert on/off
             availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
             //Change text of onOffButton
@@ -267,7 +267,7 @@ namespace GUI_PRJ2_WINFORMS
         private void dimmer_Scroll(object sender, EventArgs e)
         {
             //Dimm the light
-            serialCom.dimm(currentApparatPort, dimmerScroll.Value);
+            serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
         }
 
         /// <summary>

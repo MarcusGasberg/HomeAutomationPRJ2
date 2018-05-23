@@ -1,30 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HomeAutomationLibrary
 {
     public class SerialCom
     {
+        #region Private Fields
+
         private SerialPort serial_;
 
+        #endregion
+        #region Public Attribute
+        /// <summary>
+        /// The Serial Port used for communication
+        /// </summary>
         public SerialPort Serial
         {
             get { return serial_; }
             set { serial_ = value; }
         }
-
-
+        #endregion
+        #region Constructor
+        /// <summary>
+        /// Constructor for the serial communicaiton
+        /// </summary>
+        /// <param name="serial"> The serial port</param>
         public SerialCom(SerialPort serial)
         {
             serial_ = serial;
         }
-
-        public void dimm(int port, int bar)
+        #endregion
+        #region Public Methods
+        /// <summary>
+        /// Method for Dimming A Light/Lowering the current
+        /// </summary>
+        /// <param name="port">The port of the apparat</param>
+        /// <param name="bar">The index of the sliding bar, 0=20%, 1=40%,...</param>
+        public void Dimm(int port, int bar)
         {
             try
             {
@@ -82,6 +95,7 @@ namespace HomeAutomationLibrary
                     default:
                         break;
                 }
+                //Create Data string to be sent
                 string Data = DataAddress + DataFunc;
 
                 //Send data
@@ -89,8 +103,12 @@ namespace HomeAutomationLibrary
                 serial_.Close();
             }
         }
-
-        public void onOff(int port, bool isOn)
+        /// <summary>
+        /// The method for turning the apparat on and off
+        /// </summary>
+        /// <param name="port">The port of the apparat</param>
+        /// <param name="isOn">The state of the apparat (On/Off)</param>
+        public void OnOff(int port, bool isOn)
         {
             //Add this to a SerialCom Class
             try
@@ -135,5 +153,7 @@ namespace HomeAutomationLibrary
                 serial_.Close();
             }
         }
+
+        #endregion
     }
 }

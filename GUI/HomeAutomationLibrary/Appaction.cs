@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace HomeAutomationLibrary
 {
     public class AppAction
@@ -32,6 +27,10 @@ namespace HomeAutomationLibrary
         }
         #endregion
         #region Constructor
+        /// <summary>
+        /// The constructor
+        /// </summary>
+        /// <param name="selected">The selected apparat</param>
         public AppAction(Apparat selected)
         {
             if((selected.Functionality & Func.OnOff) == Func.OnOff)

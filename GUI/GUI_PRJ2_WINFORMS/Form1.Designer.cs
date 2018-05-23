@@ -75,9 +75,10 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // AddApparatButton
             // 
-            this.AddApparatButton.Location = new System.Drawing.Point(495, 304);
+            this.AddApparatButton.Location = new System.Drawing.Point(742, 468);
+            this.AddApparatButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddApparatButton.Name = "AddApparatButton";
-            this.AddApparatButton.Size = new System.Drawing.Size(75, 23);
+            this.AddApparatButton.Size = new System.Drawing.Size(112, 35);
             this.AddApparatButton.TabIndex = 4;
             this.AddApparatButton.Text = "Add new";
             this.AddApparatButton.UseVisualStyleBackColor = true;
@@ -90,9 +91,10 @@ namespace GUI_PRJ2_WINFORMS
             this.mainView.Controls.Add(this.Settings);
             this.mainView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainView.Location = new System.Drawing.Point(0, 0);
+            this.mainView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainView.Name = "mainView";
             this.mainView.SelectedIndex = 0;
-            this.mainView.Size = new System.Drawing.Size(584, 361);
+            this.mainView.Size = new System.Drawing.Size(867, 529);
             this.mainView.TabIndex = 5;
             this.mainView.TabStop = false;
             // 
@@ -101,12 +103,13 @@ namespace GUI_PRJ2_WINFORMS
             this.ApparatMenu.Controls.Add(this.serialCommunicationGroup);
             this.ApparatMenu.Controls.Add(this.AddApparatButton);
             this.ApparatMenu.Controls.Add(this.apparatsGroup);
-            this.ApparatMenu.Location = new System.Drawing.Point(4, 22);
+            this.ApparatMenu.Location = new System.Drawing.Point(4, 29);
+            this.ApparatMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ApparatMenu.Name = "ApparatMenu";
-            this.ApparatMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.ApparatMenu.Size = new System.Drawing.Size(576, 335);
+            this.ApparatMenu.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ApparatMenu.Size = new System.Drawing.Size(859, 496);
             this.ApparatMenu.TabIndex = 0;
-            this.ApparatMenu.Text = "MainView";
+            this.ApparatMenu.Text = "Apparat Menu";
             // 
             // serialCommunicationGroup
             // 
@@ -114,9 +117,11 @@ namespace GUI_PRJ2_WINFORMS
             this.serialCommunicationGroup.Controls.Add(this.baudRateLabel);
             this.serialCommunicationGroup.Controls.Add(this.availableCOM);
             this.serialCommunicationGroup.Controls.Add(this.comboBox_available_serialPorts);
-            this.serialCommunicationGroup.Location = new System.Drawing.Point(261, 7);
+            this.serialCommunicationGroup.Location = new System.Drawing.Point(392, 11);
+            this.serialCommunicationGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.serialCommunicationGroup.Name = "serialCommunicationGroup";
-            this.serialCommunicationGroup.Size = new System.Drawing.Size(309, 80);
+            this.serialCommunicationGroup.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.serialCommunicationGroup.Size = new System.Drawing.Size(464, 123);
             this.serialCommunicationGroup.TabIndex = 8;
             this.serialCommunicationGroup.TabStop = false;
             this.serialCommunicationGroup.Text = "Serial Settings";
@@ -131,36 +136,40 @@ namespace GUI_PRJ2_WINFORMS
             "9600",
             "19200",
             "38400"});
-            this.comboBox_baudRate.Location = new System.Drawing.Point(137, 37);
+            this.comboBox_baudRate.Location = new System.Drawing.Point(206, 57);
+            this.comboBox_baudRate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_baudRate.Name = "comboBox_baudRate";
-            this.comboBox_baudRate.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_baudRate.Size = new System.Drawing.Size(180, 28);
             this.comboBox_baudRate.TabIndex = 3;
             this.comboBox_baudRate.SelectionChangeCommitted += new System.EventHandler(this.comboBox_baudRate_SelectionChangeCommitted);
             // 
             // baudRateLabel
             // 
             this.baudRateLabel.AutoSize = true;
-            this.baudRateLabel.Location = new System.Drawing.Point(134, 20);
+            this.baudRateLabel.Location = new System.Drawing.Point(201, 31);
+            this.baudRateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.baudRateLabel.Name = "baudRateLabel";
-            this.baudRateLabel.Size = new System.Drawing.Size(55, 13);
+            this.baudRateLabel.Size = new System.Drawing.Size(82, 20);
             this.baudRateLabel.TabIndex = 2;
             this.baudRateLabel.Text = "BaudRate";
             // 
             // availableCOM
             // 
             this.availableCOM.AutoSize = true;
-            this.availableCOM.Location = new System.Drawing.Point(6, 18);
+            this.availableCOM.Location = new System.Drawing.Point(9, 28);
+            this.availableCOM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.availableCOM.Name = "availableCOM";
-            this.availableCOM.Size = new System.Drawing.Size(84, 13);
+            this.availableCOM.Size = new System.Drawing.Size(123, 20);
             this.availableCOM.TabIndex = 1;
             this.availableCOM.Text = "Available COM\'s";
             // 
             // comboBox_available_serialPorts
             // 
             this.comboBox_available_serialPorts.FormattingEnabled = true;
-            this.comboBox_available_serialPorts.Location = new System.Drawing.Point(6, 38);
+            this.comboBox_available_serialPorts.Location = new System.Drawing.Point(9, 58);
+            this.comboBox_available_serialPorts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox_available_serialPorts.Name = "comboBox_available_serialPorts";
-            this.comboBox_available_serialPorts.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_available_serialPorts.Size = new System.Drawing.Size(180, 28);
             this.comboBox_available_serialPorts.TabIndex = 0;
             this.comboBox_available_serialPorts.SelectionChangeCommitted += new System.EventHandler(this.comboBox_available_serialPorts_SelectionChangeCommitted);
             // 
@@ -168,18 +177,21 @@ namespace GUI_PRJ2_WINFORMS
             // 
             this.apparatsGroup.Controls.Add(this.deleteButton);
             this.apparatsGroup.Controls.Add(this.listView1);
-            this.apparatsGroup.Location = new System.Drawing.Point(6, 6);
+            this.apparatsGroup.Location = new System.Drawing.Point(9, 9);
+            this.apparatsGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apparatsGroup.Name = "apparatsGroup";
-            this.apparatsGroup.Size = new System.Drawing.Size(248, 225);
+            this.apparatsGroup.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.apparatsGroup.Size = new System.Drawing.Size(372, 346);
             this.apparatsGroup.TabIndex = 7;
             this.apparatsGroup.TabStop = false;
             this.apparatsGroup.Text = "Available Apparats";
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(6, 193);
+            this.deleteButton.Location = new System.Drawing.Point(9, 297);
+            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(112, 35);
             this.deleteButton.TabIndex = 6;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -187,9 +199,10 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(6, 19);
+            this.listView1.Location = new System.Drawing.Point(9, 29);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(231, 168);
+            this.listView1.Size = new System.Drawing.Size(344, 256);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -200,19 +213,21 @@ namespace GUI_PRJ2_WINFORMS
             this.AddMenu.Controls.Add(this.backButton1);
             this.AddMenu.Controls.Add(this.apparatAttributes);
             this.AddMenu.Enabled = false;
-            this.AddMenu.Location = new System.Drawing.Point(4, 22);
+            this.AddMenu.Location = new System.Drawing.Point(4, 29);
+            this.AddMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AddMenu.Name = "AddMenu";
-            this.AddMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.AddMenu.Size = new System.Drawing.Size(576, 335);
+            this.AddMenu.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AddMenu.Size = new System.Drawing.Size(859, 496);
             this.AddMenu.TabIndex = 1;
-            this.AddMenu.Text = "AddMenu";
+            this.AddMenu.Text = "Add Menu";
             this.AddMenu.UseVisualStyleBackColor = true;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(498, 309);
+            this.addButton.Location = new System.Drawing.Point(747, 461);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(112, 35);
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
@@ -220,9 +235,10 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // backButton1
             // 
-            this.backButton1.Location = new System.Drawing.Point(498, 3);
+            this.backButton1.Location = new System.Drawing.Point(747, 5);
+            this.backButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backButton1.Name = "backButton1";
-            this.backButton1.Size = new System.Drawing.Size(75, 23);
+            this.backButton1.Size = new System.Drawing.Size(112, 35);
             this.backButton1.TabIndex = 0;
             this.backButton1.Text = "Back";
             this.backButton1.UseVisualStyleBackColor = true;
@@ -236,9 +252,11 @@ namespace GUI_PRJ2_WINFORMS
             this.apparatAttributes.Controls.Add(this.nameLabel);
             this.apparatAttributes.Controls.Add(this.portComboBox);
             this.apparatAttributes.Controls.Add(this.portLabel);
-            this.apparatAttributes.Location = new System.Drawing.Point(8, 7);
+            this.apparatAttributes.Location = new System.Drawing.Point(12, 11);
+            this.apparatAttributes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apparatAttributes.Name = "apparatAttributes";
-            this.apparatAttributes.Size = new System.Drawing.Size(189, 220);
+            this.apparatAttributes.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.apparatAttributes.Size = new System.Drawing.Size(284, 338);
             this.apparatAttributes.TabIndex = 9;
             this.apparatAttributes.TabStop = false;
             this.apparatAttributes.Text = "Apparat Attributes";
@@ -249,33 +267,37 @@ namespace GUI_PRJ2_WINFORMS
             this.functionalityCheckBox.Items.AddRange(new object[] {
             "Turn on/off",
             "Dimm Light"});
-            this.functionalityCheckBox.Location = new System.Drawing.Point(14, 112);
+            this.functionalityCheckBox.Location = new System.Drawing.Point(21, 172);
+            this.functionalityCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.functionalityCheckBox.Name = "functionalityCheckBox";
-            this.functionalityCheckBox.Size = new System.Drawing.Size(120, 94);
+            this.functionalityCheckBox.Size = new System.Drawing.Size(178, 130);
             this.functionalityCheckBox.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 96);
+            this.label1.Location = new System.Drawing.Point(18, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Functionality:";
             // 
             // apparatNameTextbox
             // 
-            this.apparatNameTextbox.Location = new System.Drawing.Point(14, 33);
+            this.apparatNameTextbox.Location = new System.Drawing.Point(21, 51);
+            this.apparatNameTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.apparatNameTextbox.Name = "apparatNameTextbox";
-            this.apparatNameTextbox.Size = new System.Drawing.Size(100, 20);
+            this.apparatNameTextbox.Size = new System.Drawing.Size(148, 26);
             this.apparatNameTextbox.TabIndex = 4;
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(11, 17);
+            this.nameLabel.Location = new System.Drawing.Point(16, 26);
+            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(38, 13);
+            this.nameLabel.Size = new System.Drawing.Size(55, 20);
             this.nameLabel.TabIndex = 3;
             this.nameLabel.Text = "Name:";
             // 
@@ -287,17 +309,19 @@ namespace GUI_PRJ2_WINFORMS
             "Port 0",
             "Port 1",
             "Port 2"});
-            this.portComboBox.Location = new System.Drawing.Point(14, 72);
+            this.portComboBox.Location = new System.Drawing.Point(21, 111);
+            this.portComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.portComboBox.Name = "portComboBox";
-            this.portComboBox.Size = new System.Drawing.Size(121, 21);
+            this.portComboBox.Size = new System.Drawing.Size(180, 28);
             this.portComboBox.TabIndex = 6;
             // 
             // portLabel
             // 
             this.portLabel.AutoSize = true;
-            this.portLabel.Location = new System.Drawing.Point(11, 56);
+            this.portLabel.Location = new System.Drawing.Point(16, 86);
+            this.portLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.portLabel.Name = "portLabel";
-            this.portLabel.Size = new System.Drawing.Size(29, 13);
+            this.portLabel.Size = new System.Drawing.Size(42, 20);
             this.portLabel.TabIndex = 5;
             this.portLabel.Text = "Port:";
             // 
@@ -305,19 +329,21 @@ namespace GUI_PRJ2_WINFORMS
             // 
             this.Settings.Controls.Add(this.backButton2);
             this.Settings.Controls.Add(this.settingsGroup);
-            this.Settings.Location = new System.Drawing.Point(4, 22);
+            this.Settings.Location = new System.Drawing.Point(4, 29);
+            this.Settings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(576, 335);
+            this.Settings.Size = new System.Drawing.Size(859, 496);
             this.Settings.TabIndex = 2;
-            this.Settings.Text = "Settings";
+            this.Settings.Text = "Settings Menu";
             this.Settings.UseVisualStyleBackColor = true;
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
             // backButton2
             // 
-            this.backButton2.Location = new System.Drawing.Point(498, 3);
+            this.backButton2.Location = new System.Drawing.Point(747, 5);
+            this.backButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.backButton2.Name = "backButton2";
-            this.backButton2.Size = new System.Drawing.Size(75, 23);
+            this.backButton2.Size = new System.Drawing.Size(112, 35);
             this.backButton2.TabIndex = 4;
             this.backButton2.Text = "Back";
             this.backButton2.UseVisualStyleBackColor = true;
@@ -328,9 +354,11 @@ namespace GUI_PRJ2_WINFORMS
             this.settingsGroup.Controls.Add(this.dimmerText);
             this.settingsGroup.Controls.Add(this.onOffButton);
             this.settingsGroup.Controls.Add(this.dimmerScroll);
-            this.settingsGroup.Location = new System.Drawing.Point(8, 12);
+            this.settingsGroup.Location = new System.Drawing.Point(12, 18);
+            this.settingsGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.settingsGroup.Name = "settingsGroup";
-            this.settingsGroup.Size = new System.Drawing.Size(200, 135);
+            this.settingsGroup.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.settingsGroup.Size = new System.Drawing.Size(300, 208);
             this.settingsGroup.TabIndex = 3;
             this.settingsGroup.TabStop = false;
             this.settingsGroup.Text = "Settings";
@@ -338,17 +366,19 @@ namespace GUI_PRJ2_WINFORMS
             // dimmerText
             // 
             this.dimmerText.AutoSize = true;
-            this.dimmerText.Location = new System.Drawing.Point(6, 55);
+            this.dimmerText.Location = new System.Drawing.Point(9, 85);
+            this.dimmerText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dimmerText.Name = "dimmerText";
-            this.dimmerText.Size = new System.Drawing.Size(42, 13);
+            this.dimmerText.Size = new System.Drawing.Size(64, 20);
             this.dimmerText.TabIndex = 2;
             this.dimmerText.Text = "Dimmer";
             // 
             // onOffButton
             // 
-            this.onOffButton.Location = new System.Drawing.Point(6, 19);
+            this.onOffButton.Location = new System.Drawing.Point(9, 29);
+            this.onOffButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.onOffButton.Name = "onOffButton";
-            this.onOffButton.Size = new System.Drawing.Size(75, 23);
+            this.onOffButton.Size = new System.Drawing.Size(112, 35);
             this.onOffButton.TabIndex = 0;
             this.onOffButton.Text = "Turn On";
             this.onOffButton.UseVisualStyleBackColor = true;
@@ -356,10 +386,11 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // dimmerScroll
             // 
-            this.dimmerScroll.Location = new System.Drawing.Point(6, 71);
+            this.dimmerScroll.Location = new System.Drawing.Point(9, 109);
+            this.dimmerScroll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dimmerScroll.Maximum = 4;
             this.dimmerScroll.Name = "dimmerScroll";
-            this.dimmerScroll.Size = new System.Drawing.Size(104, 45);
+            this.dimmerScroll.Size = new System.Drawing.Size(156, 69);
             this.dimmerScroll.TabIndex = 1;
             this.dimmerScroll.Scroll += new System.EventHandler(this.dimmer_Scroll);
             // 
@@ -369,14 +400,15 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(867, 529);
             this.Controls.Add(this.mainView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(600, 400);
-            this.MinimumSize = new System.Drawing.Size(600, 400);
+            this.MaximumSize = new System.Drawing.Size(889, 585);
+            this.MinimumSize = new System.Drawing.Size(889, 585);
             this.Name = "Form1";
             this.Text = "HomeAutomation";
             this.Load += new System.EventHandler(this.Form1_Load);
