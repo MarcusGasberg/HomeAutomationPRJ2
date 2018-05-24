@@ -291,6 +291,8 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void dimmer_Scroll(object sender, EventArgs e)
         {
+            if (dimmBarScrolling)
+                return;
             //Dimm the light
             serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
         }
