@@ -28,7 +28,7 @@ namespace HomeAutomationLibrary
         #endregion
         #region Constructor
         /// <summary>
-        /// The constructor
+        /// The constructor which takes the selected apparat and check the functionality
         /// </summary>
         /// <param name="selected">The selected apparat</param>
         public AppAction(Apparat selected)

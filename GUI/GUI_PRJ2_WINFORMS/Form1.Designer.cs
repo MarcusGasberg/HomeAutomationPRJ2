@@ -263,7 +263,6 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // functionalityCheckBox
             // 
-            this.functionalityCheckBox.FormattingEnabled = true;
             this.functionalityCheckBox.Items.AddRange(new object[] {
             "Turn on/off",
             "Dimm Light"});
