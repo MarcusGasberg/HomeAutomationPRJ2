@@ -385,13 +385,15 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // dimmerScroll
             // 
-            this.dimmerScroll.Location = new System.Drawing.Point(9, 109);
+            this.dimmerScroll.Location = new System.Drawing.Point(13, 110);
             this.dimmerScroll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dimmerScroll.Maximum = 4;
             this.dimmerScroll.Name = "dimmerScroll";
             this.dimmerScroll.Size = new System.Drawing.Size(156, 69);
             this.dimmerScroll.TabIndex = 1;
-            this.dimmerScroll.ValueChanged += new System.EventHandler(this.dimmer_Scroll);
+            this.dimmerScroll.Scroll += new System.EventHandler(this.dimmer_Scroll);
+            this.dimmerScroll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dimmerScroll_MouseDown);
+            this.dimmerScroll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dimmerScroll_MouseUp);
             // 
             // serialPort1
             // 

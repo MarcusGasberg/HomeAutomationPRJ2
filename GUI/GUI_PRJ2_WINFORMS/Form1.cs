@@ -18,6 +18,7 @@ namespace GUI_PRJ2_WINFORMS
         private SerialCom serialCom;
         private int currentApparatPort = 0;
         private Func currentApparatFunc = Func.OnOff;
+        private bool dimmBarScrolling = false;
 
         public Form1()
         {
@@ -333,6 +334,18 @@ namespace GUI_PRJ2_WINFORMS
             serialPort1.BaudRate = Convert.ToInt32(comboBox_baudRate.SelectedItem.ToString());
             //Enable apparats after baud rate is chosen
             apparatsGroup.Enabled = true;
+        }
+
+        private void dimmerScroll_MouseDown(object sender, MouseEventArgs e)
+        {
+            dimmBarScrolling = true;
+        }
+
+        private void dimmerScroll_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!dimmBarScrolling)
+                return;
+            dimmBarScrolling = false;
         }
     }
 }
