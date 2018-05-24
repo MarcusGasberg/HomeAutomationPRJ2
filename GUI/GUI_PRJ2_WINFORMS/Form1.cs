@@ -251,28 +251,36 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnOffButton_Click(object sender, EventArgs e)
         {
-            //Check if dimmer is enabled
-            if ((currentApparatFunc & Func.Dimmer) == Func.Dimmer)
-            {
-                //Dimm instead of setting max
-                serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
-                //If port is On turn it Off
-                if (isPortOn(currentApparatPort))
-                    serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
-                //Invert on/off
-                availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
-                //Enable/Disaple Dimmer
-                dimmerScroll.Enabled = isPortOn(currentApparatPort);
-            }
-            else
-            {
-                //Turn the light on/off
-                serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
-                //Invert on/off
-                availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
-                //Change text of onOffButton
-                onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
-            }
+            ////Check if dimmer is enabled
+            //if((currentApparatFunc & Func.Dimmer) == Func.Dimmer)
+            //{
+            //    //Dimm instead of setting max
+            //    serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+            //    //If port is On turn it Off
+            //    if(isPortOn(currentApparatPort))
+            //        serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
+            //    //Invert on/off
+            //    availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
+            //    //Enable/Disaple Dimmer
+            //    dimmerScroll.Enabled = isPortOn(currentApparatPort);
+            //}
+            //else
+            //{
+            //    //Turn the light on/off
+            //    serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
+            //    //Invert on/off
+            //    availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
+            //    //Change text of onOffButton
+            //    onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
+            //}
+            //Turn the light on/off
+            serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
+            //Invert on/off
+            availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
+            //Change text of onOffButton
+            onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
+            //Enable/Disaple Dimmer
+            dimmerScroll.Enabled = isPortOn(currentApparatPort);
         }
 
         /// <summary>
