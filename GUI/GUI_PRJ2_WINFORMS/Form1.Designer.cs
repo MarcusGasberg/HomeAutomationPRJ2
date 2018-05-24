@@ -391,7 +391,7 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll.Name = "dimmerScroll";
             this.dimmerScroll.Size = new System.Drawing.Size(156, 69);
             this.dimmerScroll.TabIndex = 1;
-            this.dimmerScroll.Scroll += new System.EventHandler(this.dimmer_Scroll);
+            this.dimmerScroll.ValueChanged += new System.EventHandler(this.dimmer_Scroll);
             // 
             // serialPort1
             // 
