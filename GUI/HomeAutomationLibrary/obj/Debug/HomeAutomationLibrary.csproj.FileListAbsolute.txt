@@ -28,3 +28,9 @@ C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj
 C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csproj.CoreCompileInputs.cache
 C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.dll
 C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.pdb
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\bin\Debug\HomeAutomationLibrary.dll
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\bin\Debug\HomeAutomationLibrary.pdb
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csprojResolveAssemblyReference.cache
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.csproj.CoreCompileInputs.cache
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.dll
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\HomeAutomationLibrary\obj\Debug\HomeAutomationLibrary.pdb

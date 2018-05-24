@@ -73,3 +73,15 @@ C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Deb
 C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csproj.CopyComplete
 C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.exe
 C:\Users\Marcus Gasberg\Desktop\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.pdb
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\GUI_PRJ2_WINFORMS.exe.config
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\GUI_PRJ2_WINFORMS.exe
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\GUI_PRJ2_WINFORMS.pdb
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\HomeAutomationLibrary.dll
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\bin\Debug\HomeAutomationLibrary.pdb
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csprojResolveAssemblyReference.cache
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.Form1.resources
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.Properties.Resources.resources
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csproj.GenerateResource.Cache
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.csproj.CoreCompileInputs.cache
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.exe
+C:\Users\valde\Google Drev\GIT\HomeAutomationPRJ2\GUI\GUI_PRJ2_WINFORMS\obj\Debug\GUI_PRJ2_WINFORMS.pdb
