@@ -391,6 +391,7 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll.Name = "dimmerScroll";
             this.dimmerScroll.Size = new System.Drawing.Size(156, 69);
             this.dimmerScroll.TabIndex = 1;
+            this.dimmerScroll.Value = 4;
             this.dimmerScroll.Scroll += new System.EventHandler(this.dimmer_Scroll);
             this.dimmerScroll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dimmerScroll_MouseDown);
             this.dimmerScroll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dimmerScroll_MouseUp);
