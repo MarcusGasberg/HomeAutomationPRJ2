@@ -32,9 +32,6 @@ namespace GUI_PRJ2_WINFORMS
             //Populate the Combobox with SerialPorts on the System
             comboBox_available_serialPorts.Items.AddRange(SerialPort.GetPortNames());
 
-            //Disable the apparatlist group
-            apparatsGroup.Enabled = false;
-
             //Setup serialCom
             serialCom = new SerialCom(serialPort1);
         }
@@ -101,6 +98,18 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
         {
+            //Check if com is selected
+            if (comboBox_available_serialPorts.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select COM-port.");
+                return;
+            }
+            //Check if baud is selected
+            else if(comboBox_baudRate.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select Baudrate.");
+                return;
+            }
             AppAction current = new AppAction(availableApparats[e.Item.Index]);
             if (current.SelectedOnOff)
             {
@@ -146,6 +155,8 @@ namespace GUI_PRJ2_WINFORMS
         {
             //Add default object as dummy data
             availableApparats.Add(new Apparat());
+            //Add Scrollable dummy apparat
+            availableApparats.Add(new Apparat("ScrollableDummy", 1, Func.Dimmer | Func.OnOff));
         }
         
         /// <summary>
@@ -233,14 +244,13 @@ namespace GUI_PRJ2_WINFORMS
             listView1.Columns.Add("Port", 60);
             //Set the selected index of the port
             portComboBox.SelectedIndex = 0;
-            //Disable baudrate selection
-            comboBox_baudRate.Enabled = false;
             //Check checkbox OnOff 
             functionalityCheckBox.SetItemChecked(0, true);
             //Hide tab header
             mainView.Appearance = TabAppearance.FlatButtons;
             mainView.ItemSize = new Size(0, 1);
             mainView.SizeMode = TabSizeMode.Fixed;
+            
         }
 
         /// <summary>
@@ -312,8 +322,6 @@ namespace GUI_PRJ2_WINFORMS
         {
             //Sets the portName
             serialPort1.PortName = comboBox_available_serialPorts.SelectedItem.ToString();
-            //Enable baudrate to be set
-            comboBox_baudRate.Enabled = true;
         }
 
         /// <summary>
@@ -325,8 +333,6 @@ namespace GUI_PRJ2_WINFORMS
         {
             //Sets the baudrate of serialPort1
             serialPort1.BaudRate = Convert.ToInt32(comboBox_baudRate.SelectedItem.ToString());
-            //Enable apparats after baud rate is chosen
-            apparatsGroup.Enabled = true;
         }
 
         private void dimmerScroll_MouseUp(object sender, MouseEventArgs e)
