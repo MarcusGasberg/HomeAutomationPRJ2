@@ -39,7 +39,7 @@ namespace GUI_PRJ2_WINFORMS
             //Setup serialCom
             serialCom = new SerialCom(serialPort1);
 
-
+            
         }
         
         /// <summary>
@@ -104,10 +104,7 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
         {
-            currentApparatPort = e.Item.Index;
             AppAction current = new AppAction(availableApparats[e.Item.Index]);
-            currentApparatPort = availableApparats[e.Item.Index].Port;
-            currentApparatFunc = availableApparats[e.Item.Index].Functionality;
             if (current.SelectedOnOff)
             {
                 onOffButton.Visible = true;
@@ -121,14 +118,11 @@ namespace GUI_PRJ2_WINFORMS
             if (current.SelectedDimmer)
             {
                 dimmerScroll.Visible = true;
-                //Enable Dimmer
-                dimmerScroll.Enabled = isPortOn(currentApparatPort);
                 dimmerText.Visible = true;
             }
             else
             {
                 dimmerScroll.Visible = false;
-                dimmerScroll.Enabled = false;
                 dimmerText.Visible = false;
             }
             //Change page
@@ -137,7 +131,7 @@ namespace GUI_PRJ2_WINFORMS
             Settings.Enabled = true;
             mainView.SelectTab(Settings);
             //Sets the text of the on of button
-            onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
+            onOffButton.Text = (isPortOn(availableApparats[e.Item.Index].Port) ? "Turn Off" : "Turn On");
         }
 
         /// <summary>
@@ -230,7 +224,7 @@ namespace GUI_PRJ2_WINFORMS
             AddMenu.Enabled = false;
             Settings.Enabled = false;
             //Add necessary columns to the listview for the listview extender to work
-            listView1.Columns.Add("Name", 100);
+            listView1.Columns.Add("Name", 140);
             listView1.Columns.Add("Port", 60);
             //Set the selected index of the port
             portComboBox.SelectedIndex = 0;
@@ -238,11 +232,10 @@ namespace GUI_PRJ2_WINFORMS
             comboBox_baudRate.Enabled = false;
             //Check checkbox OnOff 
             functionalityCheckBox.SetItemChecked(0, true);
-        }
-
-        private void Settings_Click(object sender, EventArgs e)
-        {
-
+            //Hide tab header
+            mainView.Appearance = TabAppearance.FlatButtons;
+            mainView.ItemSize = new Size(0, 1);
+            mainView.SizeMode = TabSizeMode.Fixed;
         }
 
         /// <summary>
