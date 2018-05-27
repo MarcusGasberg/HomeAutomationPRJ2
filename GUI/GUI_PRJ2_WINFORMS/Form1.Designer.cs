@@ -55,6 +55,7 @@ namespace GUI_PRJ2_WINFORMS
             this.portComboBox = new System.Windows.Forms.ComboBox();
             this.portLabel = new System.Windows.Forms.Label();
             this.Settings = new System.Windows.Forms.TabPage();
+            this.currentApparatLabel = new System.Windows.Forms.Label();
             this.backButton2 = new System.Windows.Forms.Button();
             this.settingsGroup = new System.Windows.Forms.GroupBox();
             this.dimmerText = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll = new System.Windows.Forms.TrackBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.mainView.SuspendLayout();
             this.ApparatMenu.SuspendLayout();
             this.serialCommunicationGroup.SuspendLayout();
@@ -329,6 +331,8 @@ namespace GUI_PRJ2_WINFORMS
             // 
             // Settings
             // 
+            this.Settings.Controls.Add(this.label2);
+            this.Settings.Controls.Add(this.currentApparatLabel);
             this.Settings.Controls.Add(this.backButton2);
             this.Settings.Controls.Add(this.settingsGroup);
             this.Settings.Location = new System.Drawing.Point(4, 29);
@@ -338,6 +342,16 @@ namespace GUI_PRJ2_WINFORMS
             this.Settings.TabIndex = 2;
             this.Settings.Text = "Settings Menu";
             this.Settings.UseVisualStyleBackColor = true;
+            // 
+            // currentApparatLabel
+            // 
+            this.currentApparatLabel.AutoSize = true;
+            this.currentApparatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentApparatLabel.Location = new System.Drawing.Point(202, 15);
+            this.currentApparatLabel.Name = "currentApparatLabel";
+            this.currentApparatLabel.Size = new System.Drawing.Size(141, 25);
+            this.currentApparatLabel.TabIndex = 5;
+            this.currentApparatLabel.Text = "currentApparat";
             // 
             // backButton2
             // 
@@ -356,11 +370,11 @@ namespace GUI_PRJ2_WINFORMS
             this.settingsGroup.Controls.Add(this.onOffButton);
             this.settingsGroup.Controls.Add(this.dimmerScroll);
             this.settingsGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settingsGroup.Location = new System.Drawing.Point(12, 18);
+            this.settingsGroup.Location = new System.Drawing.Point(9, 66);
             this.settingsGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.settingsGroup.Name = "settingsGroup";
             this.settingsGroup.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.settingsGroup.Size = new System.Drawing.Size(300, 208);
+            this.settingsGroup.Size = new System.Drawing.Size(320, 208);
             this.settingsGroup.TabIndex = 3;
             this.settingsGroup.TabStop = false;
             this.settingsGroup.Text = "Settings";
@@ -403,6 +417,16 @@ namespace GUI_PRJ2_WINFORMS
             // 
             this.serialPort1.PortName = "COM3";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(173, 25);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Current Apparat:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -426,6 +450,7 @@ namespace GUI_PRJ2_WINFORMS
             this.apparatAttributes.ResumeLayout(false);
             this.apparatAttributes.PerformLayout();
             this.Settings.ResumeLayout(false);
+            this.Settings.PerformLayout();
             this.settingsGroup.ResumeLayout(false);
             this.settingsGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmerScroll)).EndInit();
@@ -463,6 +488,8 @@ namespace GUI_PRJ2_WINFORMS
         private GroupBox settingsGroup;
         private Button backButton2;
         private System.IO.Ports.SerialPort serialPort1;
+        private Label currentApparatLabel;
+        private Label label2;
     }
 }
 

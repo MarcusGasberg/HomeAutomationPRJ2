@@ -130,6 +130,8 @@ namespace GUI_PRJ2_WINFORMS
             currentApparatPort = availableApparats[e.Item.Index].Port;
             //Set the current apparat functionality
             currentApparatFunc = availableApparats[e.Item.Index].Functionality;
+            //Set the label for current apparat
+            currentApparatLabel.Text = availableApparats[e.Item.Index].Name;
             //Change page
             ApparatMenu.Enabled = false;
             AddMenu.Enabled = false;
