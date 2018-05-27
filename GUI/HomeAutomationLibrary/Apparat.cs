@@ -27,6 +27,7 @@ namespace HomeAutomationLibrary
         #region Private
         private string name_;
         private int port_;
+        private int dimmerValue_;
         private Func functionality_;
         private bool onOff_;
         #endregion
@@ -39,6 +40,10 @@ namespace HomeAutomationLibrary
         /// The port which the apparat is connected to
         /// </summary>
         public int Port { get => port_; set => port_ = (value>0 && value<4 ? value : 0); }
+        /// <summary>
+        /// The value of the dimmer
+        /// </summary>
+        public int DimmerValue { get => dimmerValue_; set => dimmerValue_ = (value >= 0 && value <= 4 ? value : 0); }
         /// <summary>
         /// The functionality of the apparat
         /// </summary>
@@ -56,19 +61,22 @@ namespace HomeAutomationLibrary
         {
             Name = "DummyApparat";
             Port = 0;
+            DimmerValue = 0;
             Functionality = Func.OnOff;
             OnOff = false;
         }
         /// <summary>
         /// Parametrized Constructor
         /// </summary>
-        /// <param name="name">Navn på apparatet</param>
-        /// <param name="port">Port på apparatet</param>
-        /// <param name="func">Funktionalitet på apparatet</param>
+        /// <param name="name">Name of the apparat</param>
+        /// <param name="port">Port of the apparat</param>
+        /// <param name="dimmerVal">The value of the dimmer</param>
+        /// <param name="func">The functionality of the apparat</param>
         public Apparat(string name, int port, Func func)
         {
             Name = name;
             Port = port;
+            DimmerValue = 0;
             Functionality = func;
             OnOff = false;
         }

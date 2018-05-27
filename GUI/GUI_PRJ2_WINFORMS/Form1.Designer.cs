@@ -272,7 +272,7 @@ namespace GUI_PRJ2_WINFORMS
             this.functionalityCheckBox.Location = new System.Drawing.Point(246, 66);
             this.functionalityCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.functionalityCheckBox.Name = "functionalityCheckBox";
-            this.functionalityCheckBox.Size = new System.Drawing.Size(178, 130);
+            this.functionalityCheckBox.Size = new System.Drawing.Size(178, 129);
             this.functionalityCheckBox.TabIndex = 7;
             // 
             // label1
@@ -397,8 +397,6 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll.SmallChange = 0;
             this.dimmerScroll.TabIndex = 1;
             this.dimmerScroll.Value = 4;
-            this.dimmerScroll.Scroll += new System.EventHandler(this.dimmer_Scroll);
-            this.dimmerScroll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dimmerScroll_MouseDown);
             this.dimmerScroll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dimmerScroll_MouseUp);
             // 
             // serialPort1

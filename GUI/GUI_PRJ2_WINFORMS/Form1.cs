@@ -18,7 +18,6 @@ namespace GUI_PRJ2_WINFORMS
         private SerialCom serialCom;
         private int currentApparatPort = 0;
         private Func currentApparatFunc = Func.OnOff;
-        private bool dimmBarScrolling = false;
 
         public Form1()
         {
@@ -38,8 +37,6 @@ namespace GUI_PRJ2_WINFORMS
 
             //Setup serialCom
             serialCom = new SerialCom(serialPort1);
-
-            
         }
         
         /// <summary>
@@ -109,6 +106,8 @@ namespace GUI_PRJ2_WINFORMS
             {
                 onOffButton.Visible = true;
                 onOffButton.Enabled = true;
+                //Sets the text of the on of button
+                onOffButton.Text = (isPortOn(availableApparats[e.Item.Index].Port) ? "Turn Off" : "Turn On");
             }
             else
             {
@@ -119,19 +118,23 @@ namespace GUI_PRJ2_WINFORMS
             {
                 dimmerScroll.Visible = true;
                 dimmerText.Visible = true;
+                //Sets the dimmerscroll value
+                dimmerScroll.Value = current.SelectedDimmerValue;
             }
             else
             {
                 dimmerScroll.Visible = false;
                 dimmerText.Visible = false;
             }
+            //Set the current apparat port
+            currentApparatPort = availableApparats[e.Item.Index].Port;
+            //Set the current apparat functionality
+            currentApparatFunc = availableApparats[e.Item.Index].Functionality;
             //Change page
             ApparatMenu.Enabled = false;
             AddMenu.Enabled = false;
             Settings.Enabled = true;
             mainView.SelectTab(Settings);
-            //Sets the text of the on of button
-            onOffButton.Text = (isPortOn(availableApparats[e.Item.Index].Port) ? "Turn Off" : "Turn On");
         }
 
         /// <summary>
@@ -277,8 +280,8 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void dimmer_Scroll(object sender, EventArgs e)
         {
-            if (dimmBarScrolling)
-                return;
+            //Set the value of the dimmer
+            availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
             //Dimm the light
             serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
         }
@@ -324,16 +327,12 @@ namespace GUI_PRJ2_WINFORMS
             apparatsGroup.Enabled = true;
         }
 
-        private void dimmerScroll_MouseDown(object sender, MouseEventArgs e)
-        {
-            dimmBarScrolling = true;
-        }
-
         private void dimmerScroll_MouseUp(object sender, MouseEventArgs e)
         {
-            if (!dimmBarScrolling)
-                return;
-            dimmBarScrolling = false;
+            //Set the value of the dimmer
+            availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
+            //Dimm the light
+            serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
         }
     }
 }
