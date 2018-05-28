@@ -423,7 +423,7 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll.LargeChange = 0;
             this.dimmerScroll.Location = new System.Drawing.Point(13, 110);
             this.dimmerScroll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dimmerScroll.Maximum = 5;
+            this.dimmerScroll.Maximum = 4;
             this.dimmerScroll.Name = "dimmerScroll";
             this.dimmerScroll.Size = new System.Drawing.Size(160, 69);
             this.dimmerScroll.SmallChange = 0;

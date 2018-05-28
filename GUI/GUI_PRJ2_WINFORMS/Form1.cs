@@ -270,12 +270,35 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnOffButton_Click(object sender, EventArgs e)
         {
+            //Check if dimmer is enabled
+            if ((currentApparatFunc & Func.Dimmer) == Func.Dimmer)
+            {
+                //If port is On turn it Off
+                if (isPortOn(currentApparatPort))
+                {
+                    TextBox_System_Log1.Text = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
+                    //Invert on/off
+                    availableApparats.Find(item => item.Port == currentApparatPort).OnOff = false;
+                }
+                //else dimm instead of setting max
+                else
+                {
+                    TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+                    //Invert on/off
+                    availableApparats.Find(item => item.Port == currentApparatPort).OnOff = true;
+                }
+                //Change text of onOffButton
+                onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
+            }
+            else
+            {
                 //Turn the light on/off
                 TextBox_System_Log1.Text = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
                 //Invert on/off
                 availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
                 //Change text of onOffButton
                 onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
+            }
         }
 
         /// <summary>
@@ -338,23 +361,12 @@ namespace GUI_PRJ2_WINFORMS
 
         private void dimmerScroll_MouseUp(object sender, MouseEventArgs e)
         {
-            //Set the value of the dimmer
-            availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
-            //Dimm the light
-            TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
-            if (dimmerScroll.Value>0)
+            if(isPortOn(currentApparatPort))
             {
-                //Invert on/off
-                availableApparats.Find(item => item.Port == currentApparatPort).OnOff = true;
-                //Change text of onOffButton
-                onOffButton.Text =  "Turn Off";
-            }
-            else
-            {//Invert on/off
-                availableApparats.Find(item => item.Port == currentApparatPort).OnOff = false;
-                //Change text of onOffButton
-                onOffButton.Text = "Turn On";
-
+                //Set the value of the dimmer
+                availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
+                //Dimm the light
+                TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
             }
         }
     }

@@ -78,21 +78,18 @@ namespace HomeAutomationLibrary
                 switch (bar)
                 {
                     case 0:
-                        DataFunc = "00"; //Turn off;
-                        break;
-                    case 1:
                         DataFunc = "02"; //20% on
                         break;
-                    case 2:
+                    case 1:
                         DataFunc = "03"; //40% on
                         break;
-                    case 3:
+                    case 2:
                         DataFunc = "04"; //60% on
                         break;
-                    case 4:
+                    case 3:
                         DataFunc = "05"; //80% on
                         break;
-                    case 5:
+                    case 4:
                         DataFunc = "01"; //100% on / TurnOn code
                         break;
                     default:
