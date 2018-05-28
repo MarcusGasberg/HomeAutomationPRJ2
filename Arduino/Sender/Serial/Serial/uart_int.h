@@ -14,4 +14,10 @@ void SendChar(char Tegn);
 void SendString(char* Streng);
 void SendInteger(int Tal);
 void disableUART();
+int getReadIndex();
+void incReadIndex();
+void setReadIndex(int);
+void setMessage(int);
+int getMessage();
+void fillArray(char*);
 /****************************************/

@@ -6,20 +6,16 @@
 */
 
 #define F_CPU 160000000
-#include <util/delay.h>
 #include <avr/io.h>
 #include "Controller.h"
 #include "Encoder.h"
 #include "Timers.h"
-#include <avr/interrupt.h>
 #include "uart_int.h"
 #include "ZCD.h"
 volatile int index;
 volatile int mode;
 volatile int cycle;
 volatile int send;
-volatile int messageReceived;
-volatile int readIndex;
 volatile int exit1;
 volatile int wait;
 void reset(){
@@ -29,6 +25,13 @@ void reset(){
 	setMessage(0);
 	setReadIndex(0);
 	setSend(0);
+	setCounterTimer(0);
+}
+void setup(){
+	//stopTimer0();
+	sei();
+	initINT1();
+	setStatus(checkStatus());
 }
 void setWait(int w){
 	wait= w;
@@ -71,8 +74,8 @@ void setIndex(int i){
 	index = i;
 }
 void startTransmission(int* x10add,int * x10com){
-	setSend(0);
-	setExit(0);
+	initINT0();
+	
 	setCounterTimer(0);
 	// initiering af x.10 sender sekvens
 	DDRB |= 0b00100000; // PB5 sættes som udgang
@@ -164,18 +167,5 @@ int sendx10(int * x10address, int* x10command){
 	}
 	return 1;
 }
-void setMessage(int m){
-	messageReceived = m;
-}
-int getMessage(){
-	return messageReceived;
-}
-void incReadIndex(){
-	readIndex++;
-}
-int getReadIndex(){
-	return readIndex;
-}
-void setReadIndex(int r){
-	readIndex = r;
-}
+
+

@@ -35,3 +35,12 @@ void initTimer2(){
 	TCCR2B |= 0b00000110;
 	TCNT2 = 193;
 }
+void stopTimer1(){
+	TCCR1A = 0;
+	TCCR1B = 0;
+}
+void stopTimer2(){
+	TCCR2A = 0;
+	TCCR2B = 0;
+	TIMSK2 = 0;
+}

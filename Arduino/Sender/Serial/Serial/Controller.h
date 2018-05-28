@@ -11,6 +11,7 @@
 #include <string.h>
 //Addresse kode : 4 bit
 //Kommando kode : 4 bit
+void setup();
 void incIndex();
 int getIndex();
 void setIndex(int);
@@ -23,11 +24,6 @@ void endTransmission();
 int sendx10(int*,int*);
 void setSend(int);
 int getSend();
-void setMessage(int);
-int getMessage();
-void incReadIndex();
-int getReadIndex();
-void setReadIndex(int);
 void setCycle(int);
 int getCycle();
 void incCycle();

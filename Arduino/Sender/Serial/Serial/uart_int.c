@@ -10,10 +10,13 @@
 #include <avr/io.h>
 #include <stdlib.h>
 #include "uart_int.h"
+#include "Controller.h"
 // Constants
 #define XTAL 16000000
 #define F_CPU 16000000
 #include <util/delay.h>
+volatile int messageReceived;
+volatile int readIndex;
 
 
 /*************************************************************************
@@ -135,4 +138,28 @@ char array[7];
   SendString(array);
 }
 
+void fillArray(char * a){
+	a[getReadIndex()] = UDR0;
+	incReadIndex();
+	if(getReadIndex() >= 4){
+		setReadIndex(0);
+		disableUART();
+		setMessage(1);
+	}
+}
+void incReadIndex(){
+	readIndex++;
+}
+int getReadIndex(){
+	return readIndex;
+}
+void setReadIndex(int r){
+	readIndex = r;
+}
+void setMessage(int m){
+	messageReceived = m;
+}
+int getMessage(){
+	return messageReceived;
+}
 /************************************************************************/

@@ -13,6 +13,7 @@ void initTimer0();
 void stopTimer0();
 void sendPWM();
 void initTimer2();
+void stopTimer2();
 
 #endif /* TIMER0_H_ */
 

@@ -7,8 +7,8 @@
 */
 
 
-#define ADDRESS_LENGTH 8
-#define COMMAND_LENGTH 8
+#define ADDRESS_LENGTH 4
+#define COMMAND_LENGTH 4
 
 void encodeCommand(const char *, int*, int);
 void encodeBIN(const char *, int*, int);

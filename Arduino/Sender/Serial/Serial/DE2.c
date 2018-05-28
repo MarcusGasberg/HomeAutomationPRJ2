@@ -21,3 +21,6 @@ void initINT1(){
 char getStatus(){
 	return status;
 }
+void setStatus(char s){
+	status = s;
+}
