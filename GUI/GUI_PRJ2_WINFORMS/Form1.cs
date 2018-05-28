@@ -361,10 +361,10 @@ namespace GUI_PRJ2_WINFORMS
 
         private void dimmerScroll_MouseUp(object sender, MouseEventArgs e)
         {
-            if(isPortOn(currentApparatPort))
+            //Set the value of the dimmer
+            availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
+            if (isPortOn(currentApparatPort))
             {
-                //Set the value of the dimmer
-                availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
                 //Dimm the light
                 TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
             }
