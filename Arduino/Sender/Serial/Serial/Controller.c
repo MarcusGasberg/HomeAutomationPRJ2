@@ -25,10 +25,8 @@ void reset(){
 	setMessage(0);
 	setReadIndex(0);
 	setSend(0);
-	setCounterTimer(0);
 }
 void setup(){
-	//stopTimer0();
 	sei();
 	initINT1();
 	setStatus(checkStatus());
@@ -74,35 +72,30 @@ void setIndex(int i){
 	index = i;
 }
 void startTransmission(int* x10add,int * x10com){
+	setWait(1);
 	initINT0();
-	
 	setCounterTimer(0);
 	// initiering af x.10 sender sekvens
 	DDRB |= 0b00100000; // PB5 sættes som udgang
 	setMode(1);
 	while(getExit() == 0){
-		if(getCycle() == 0){
+		if(getCycle() < 3){
 			if(getSend() == 1){
 			while(sendx10(x10add,x10com) == 0){}
 			setSend(0);
 		}
 	}
-	else if(getCycle() <= 2){
-		if(getSend() == 1){
-		while(sendx10(x10add,x10com) == 0){}
-		setSend(0);
-	}
-}
-else if(getCycle() >= 3){
-	endTransmission();
-	setExit(1);
-}
+		else if(getCycle() >= 3){
+			endTransmission();
+			setExit(1);
+		}
 	}
 }
 
 void endTransmission(){
 	disableINT0();// disable INT0
 	stopTimer0();
+	//stopTimer3();
 }	
 
 int sendx10(int * x10address, int* x10command){

@@ -12,6 +12,7 @@
 #include "Encoder.h"
 #include "Timers.h"
 #include "DE2.h"
+#include "ZCD.h"
 
 #define F_CPU 16000000
 #include <util/delay.h>
@@ -25,12 +26,12 @@ volatile int x10command[COMMAND_LENGTH*2];
 int main(){
 	setup();
 while(1){
-	while(getStatus() == 'L'){
+	//while(getStatus() == 'L'){
 		/*data[0] = 0;
 		data[1] = 0;
 		data[2] = 0;
 		data[3] = 0;*/
-	}
+	//}
 	InitUART(9600,8,'N',1);
 	while(getMessage()== 0){}
 	toEncode(data,address,ADDRESS_LENGTH,command,COMMAND_LENGTH,x10address,x10command);
@@ -40,7 +41,13 @@ while(1){
 }
 
 ISR(INT0_vect){
-	initTimer3(1);
+	if(getWait() == 1){
+		//setSend(0);
+		setWait(0);
+	}
+	else {
+		initTimer3(1);
+	}
 }
 ISR (USART0_RX_vect){
 	fillArray(data);
@@ -59,13 +66,8 @@ ISR(TIMER2_OVF_vect){
 ISR(INT1_vect){
 	setStatus(checkStatus());
 }
+
 ISR(TIMER3_OVF_vect){
-	if(getWait() == 1){
-		setSend(0);
-		setWait(0);
-		stopTimer3();
-	}
-	else{
 	setSend(1);
 	if(getCounterTimer() == 0){
 		setCounterTimer(1);
@@ -75,5 +77,4 @@ ISR(TIMER3_OVF_vect){
 		setCounterTimer(0);
 		stopTimer3();
 	}
-	}	
 }

@@ -124,7 +124,7 @@ void encodeBIN(const char * convert, int * dest, int length) {
 	}
 }
 void x10encode(int * adr, int * com,int * x10add,int * x10com) {	
-	for (int i = 1; i < (ADDRESS_LENGTH/2)+1; i++) {
+	for (int i = 1; i < (ADDRESS_LENGTH)+1; i++) {
 		if (adr[i-1] == 1) {
 			x10add[(i * 2) - 2] = 1;
 			x10add[(i * 2) - 1] = 0;
@@ -134,7 +134,7 @@ void x10encode(int * adr, int * com,int * x10add,int * x10com) {
 			x10add[(i * 2) - 1] = 1;
 			}
 		}		
-	for (int i = 1; i < (COMMAND_LENGTH/2)+1; i++) {
+	for (int i = 1; i < (COMMAND_LENGTH)+1; i++) {
 		if (com[((i)-1)] == 1) {							// Konvertering af kommandoer til komplimentære bits
 		x10com[(i * 2) - 2] = 1;
 		x10com[(i * 2) - 1] = 0;
