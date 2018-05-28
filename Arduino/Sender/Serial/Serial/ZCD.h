@@ -19,5 +19,5 @@ void stopTimer3();
 void setCounterTimer(int);
 int getCounterTimer();
 
-volatile int counterTimer;
+
 #endif /* ZCD_H_ */
