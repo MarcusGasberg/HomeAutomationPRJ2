@@ -37,7 +37,7 @@ namespace HomeAutomationLibrary
         /// </summary>
         /// <param name="port">The port of the apparat</param>
         /// <param name="bar">The index of the sliding bar, 0=20%, 1=40%,...</param>
-        public void Dimm(int port, int bar)
+        public string Dimm(int port, int bar)
         {
             try
             {
@@ -78,18 +78,21 @@ namespace HomeAutomationLibrary
                 switch (bar)
                 {
                     case 0:
-                        DataFunc = "02"; //20% on
+                        DataFunc = "00"; //Turn off;
                         break;
                     case 1:
-                        DataFunc = "03"; //40% on
+                        DataFunc = "02"; //20% on
                         break;
                     case 2:
-                        DataFunc = "04"; //60% on
+                        DataFunc = "03"; //40% on
                         break;
                     case 3:
-                        DataFunc = "05"; //80% on
+                        DataFunc = "04"; //60% on
                         break;
                     case 4:
+                        DataFunc = "05"; //80% on
+                        break;
+                    case 5:
                         DataFunc = "01"; //100% on / TurnOn code
                         break;
                     default:
@@ -101,14 +104,16 @@ namespace HomeAutomationLibrary
                 //Send data
                 serial_.WriteLine(Data);
                 serial_.Close();
+                return Data;
             }
+            return null;
         }
         /// <summary>
         /// The method for turning the apparat on and off
         /// </summary>
         /// <param name="port">The port of the apparat</param>
         /// <param name="isOn">The state of the apparat (On/Off)</param>
-        public void OnOff(int port, bool isOn)
+        public string OnOff(int port, bool isOn)
         {
             
             //Add this to a SerialCom Class
@@ -152,7 +157,9 @@ namespace HomeAutomationLibrary
                 //Send data
                 serial_.WriteLine(Data);
                 serial_.Close();
+                return Data;
             }
+            return null;
         }
 
         #endregion

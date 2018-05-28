@@ -34,6 +34,16 @@ namespace GUI_PRJ2_WINFORMS
 
             //Setup serialCom
             serialCom = new SerialCom(serialPort1);
+
+            // Displaying System Information 
+
+            string SystemInformation;//Used for Storing System Information 
+
+            SystemInformation = " Machine Name = " + System.Environment.MachineName;                                         // Get the Machine Name 
+            SystemInformation = SystemInformation + Environment.NewLine + " OS Version = " + System.Environment.OSVersion;    // Get the OS version
+            SystemInformation = SystemInformation + Environment.NewLine + " Processor Cores = " + Environment.ProcessorCount; // Get the Number of Processors on the System
+
+            TextBox_System_Log.Text = SystemInformation; //Display into the Log Text Box
         }
         
         /// <summary>
@@ -260,29 +270,12 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void OnOffButton_Click(object sender, EventArgs e)
         {
-            //Check if dimmer is enabled
-            if ((currentApparatFunc & Func.Dimmer) == Func.Dimmer)
-            {
-                //If port is On turn it Off
-                if (isPortOn(currentApparatPort))
-                    serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
-                //else dimm instead of setting max
-                else
-                    serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
-                //Invert on/off
-                availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
-                //Change text of onOffButton
-                onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
-            }
-            else
-            {
                 //Turn the light on/off
-                serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
+                TextBox_System_Log1.Text = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
                 //Invert on/off
                 availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
                 //Change text of onOffButton
                 onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
-            }
         }
 
         /// <summary>
@@ -295,7 +288,7 @@ namespace GUI_PRJ2_WINFORMS
             //Set the value of the dimmer
             availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
             //Dimm the light
-            serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+            TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
         }
 
         /// <summary>
@@ -320,6 +313,10 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void comboBox_available_serialPorts_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            // Store the Selected COM port
+            string selectedCom = comboBox_available_serialPorts.SelectedItem.ToString() + " Selected"; 
+            // Display the Selected COM port in the Log Text Box
+            TextBox_System_Log.Text = selectedCom;
             //Sets the portName
             serialPort1.PortName = comboBox_available_serialPorts.SelectedItem.ToString();
         }
@@ -331,6 +328,10 @@ namespace GUI_PRJ2_WINFORMS
         /// <param name="e"></param>
         private void comboBox_baudRate_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            // Store the Selected Baud rate
+            string selectedBaudrate = "Baudrate of " + comboBox_baudRate.SelectedItem.ToString() + " Selected"; 
+            // Display the Selected COM port in the Log Text Box
+            TextBox_System_Log.Text = selectedBaudrate;  
             //Sets the baudrate of serialPort1
             serialPort1.BaudRate = Convert.ToInt32(comboBox_baudRate.SelectedItem.ToString());
         }
@@ -340,7 +341,21 @@ namespace GUI_PRJ2_WINFORMS
             //Set the value of the dimmer
             availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
             //Dimm the light
-            serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+            TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+            if (dimmerScroll.Value>0)
+            {
+                //Invert on/off
+                availableApparats.Find(item => item.Port == currentApparatPort).OnOff = true;
+                //Change text of onOffButton
+                onOffButton.Text =  "Turn Off";
+            }
+            else
+            {//Invert on/off
+                availableApparats.Find(item => item.Port == currentApparatPort).OnOff = false;
+                //Change text of onOffButton
+                onOffButton.Text = "Turn On";
+
+            }
         }
     }
 }
