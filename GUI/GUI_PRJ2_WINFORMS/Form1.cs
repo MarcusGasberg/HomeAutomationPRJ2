@@ -59,7 +59,7 @@ namespace GUI_PRJ2_WINFORMS
             // extend 2nd column
             ListViewButtonColumn buttonAction = new ListViewButtonColumn(1);
             //Add action for button
-            buttonAction.Click += OnButtonActionClick;
+            buttonAction.Click += Apparat_Click;
             buttonAction.FixedWidth = true;
             //Add column with dummy data
             extender.AddColumn(buttonAction);
@@ -107,7 +107,7 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
+        private void Apparat_Click(object sender, ListViewColumnMouseEventArgs e)
         {
             //Check if com is selected
             if (comboBox_available_serialPorts.SelectedIndex == -1)
@@ -234,7 +234,7 @@ namespace GUI_PRJ2_WINFORMS
             //update listview
             UpdateListView(listView1);
             //Write to log
-            log = log + apparatToAdd.Name + " added to list on port " + apparatToAdd.Port.ToString() + Environment.NewLine;
+            log = log + apparatToAdd.Name + " on port " + apparatToAdd.Port.ToString() + " added to list" + Environment.NewLine;
             TextBox_System_Log.Text = log;
             //change page to apparat menu
             mainView.SelectTab(ApparatMenu);
