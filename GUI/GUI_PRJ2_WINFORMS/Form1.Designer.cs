@@ -36,6 +36,8 @@ namespace GUI_PRJ2_WINFORMS
             this.AddApparatButton = new System.Windows.Forms.Button();
             this.mainView = new System.Windows.Forms.TabControl();
             this.ApparatMenu = new System.Windows.Forms.TabPage();
+            this.logGroup1 = new System.Windows.Forms.GroupBox();
+            this.TextBox_System_Log = new System.Windows.Forms.TextBox();
             this.serialCommunicationGroup = new System.Windows.Forms.GroupBox();
             this.comboBox_baudRate = new System.Windows.Forms.ComboBox();
             this.baudRateLabel = new System.Windows.Forms.Label();
@@ -55,6 +57,8 @@ namespace GUI_PRJ2_WINFORMS
             this.portComboBox = new System.Windows.Forms.ComboBox();
             this.portLabel = new System.Windows.Forms.Label();
             this.Settings = new System.Windows.Forms.TabPage();
+            this.logGroup2 = new System.Windows.Forms.GroupBox();
+            this.TextBox_System_Log1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.currentApparatLabel = new System.Windows.Forms.Label();
             this.backButton2 = new System.Windows.Forms.Button();
@@ -64,21 +68,17 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll = new System.Windows.Forms.TrackBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.logGroup1 = new System.Windows.Forms.GroupBox();
-            this.TextBox_System_Log = new System.Windows.Forms.TextBox();
-            this.logGroup2 = new System.Windows.Forms.GroupBox();
-            this.TextBox_System_Log1 = new System.Windows.Forms.TextBox();
             this.mainView.SuspendLayout();
             this.ApparatMenu.SuspendLayout();
+            this.logGroup1.SuspendLayout();
             this.serialCommunicationGroup.SuspendLayout();
             this.apparatsGroup.SuspendLayout();
             this.AddMenu.SuspendLayout();
             this.apparatAttributes.SuspendLayout();
             this.Settings.SuspendLayout();
+            this.logGroup2.SuspendLayout();
             this.settingsGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmerScroll)).BeginInit();
-            this.logGroup1.SuspendLayout();
-            this.logGroup2.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddApparatButton
@@ -119,6 +119,26 @@ namespace GUI_PRJ2_WINFORMS
             this.ApparatMenu.Size = new System.Drawing.Size(859, 496);
             this.ApparatMenu.TabIndex = 0;
             this.ApparatMenu.Text = "Apparat Menu";
+            // 
+            // logGroup1
+            // 
+            this.logGroup1.Controls.Add(this.TextBox_System_Log);
+            this.logGroup1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logGroup1.Location = new System.Drawing.Point(484, 220);
+            this.logGroup1.Name = "logGroup1";
+            this.logGroup1.Size = new System.Drawing.Size(367, 240);
+            this.logGroup1.TabIndex = 9;
+            this.logGroup1.TabStop = false;
+            this.logGroup1.Text = "Log";
+            // 
+            // TextBox_System_Log
+            // 
+            this.TextBox_System_Log.Location = new System.Drawing.Point(7, 30);
+            this.TextBox_System_Log.Multiline = true;
+            this.TextBox_System_Log.Name = "TextBox_System_Log";
+            this.TextBox_System_Log.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_System_Log.Size = new System.Drawing.Size(354, 204);
+            this.TextBox_System_Log.TabIndex = 0;
             // 
             // serialCommunicationGroup
             // 
@@ -351,6 +371,26 @@ namespace GUI_PRJ2_WINFORMS
             this.Settings.Text = "Settings Menu";
             this.Settings.UseVisualStyleBackColor = true;
             // 
+            // logGroup2
+            // 
+            this.logGroup2.Controls.Add(this.TextBox_System_Log1);
+            this.logGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logGroup2.Location = new System.Drawing.Point(484, 248);
+            this.logGroup2.Name = "logGroup2";
+            this.logGroup2.Size = new System.Drawing.Size(367, 240);
+            this.logGroup2.TabIndex = 10;
+            this.logGroup2.TabStop = false;
+            this.logGroup2.Text = "Log";
+            // 
+            // TextBox_System_Log1
+            // 
+            this.TextBox_System_Log1.Location = new System.Drawing.Point(7, 30);
+            this.TextBox_System_Log1.Multiline = true;
+            this.TextBox_System_Log1.Name = "TextBox_System_Log1";
+            this.TextBox_System_Log1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox_System_Log1.Size = new System.Drawing.Size(354, 204);
+            this.TextBox_System_Log1.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -434,46 +474,6 @@ namespace GUI_PRJ2_WINFORMS
             // 
             this.serialPort1.PortName = "COM3";
             // 
-            // logGroup1
-            // 
-            this.logGroup1.Controls.Add(this.TextBox_System_Log);
-            this.logGroup1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logGroup1.Location = new System.Drawing.Point(484, 220);
-            this.logGroup1.Name = "logGroup1";
-            this.logGroup1.Size = new System.Drawing.Size(367, 240);
-            this.logGroup1.TabIndex = 9;
-            this.logGroup1.TabStop = false;
-            this.logGroup1.Text = "Log";
-            // 
-            // TextBox_System_Log
-            // 
-            this.TextBox_System_Log.Location = new System.Drawing.Point(7, 30);
-            this.TextBox_System_Log.Multiline = true;
-            this.TextBox_System_Log.Name = "TextBox_System_Log";
-            this.TextBox_System_Log.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_System_Log.Size = new System.Drawing.Size(354, 204);
-            this.TextBox_System_Log.TabIndex = 0;
-            // 
-            // logGroup2
-            // 
-            this.logGroup2.Controls.Add(this.TextBox_System_Log1);
-            this.logGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logGroup2.Location = new System.Drawing.Point(484, 248);
-            this.logGroup2.Name = "logGroup2";
-            this.logGroup2.Size = new System.Drawing.Size(367, 240);
-            this.logGroup2.TabIndex = 10;
-            this.logGroup2.TabStop = false;
-            this.logGroup2.Text = "Log";
-            // 
-            // TextBox_System_Log1
-            // 
-            this.TextBox_System_Log1.Location = new System.Drawing.Point(7, 30);
-            this.TextBox_System_Log1.Multiline = true;
-            this.TextBox_System_Log1.Name = "TextBox_System_Log1";
-            this.TextBox_System_Log1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox_System_Log1.Size = new System.Drawing.Size(354, 204);
-            this.TextBox_System_Log1.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -490,6 +490,8 @@ namespace GUI_PRJ2_WINFORMS
             this.Load += new System.EventHandler(this.Form1_Load);
             this.mainView.ResumeLayout(false);
             this.ApparatMenu.ResumeLayout(false);
+            this.logGroup1.ResumeLayout(false);
+            this.logGroup1.PerformLayout();
             this.serialCommunicationGroup.ResumeLayout(false);
             this.serialCommunicationGroup.PerformLayout();
             this.apparatsGroup.ResumeLayout(false);
@@ -498,13 +500,11 @@ namespace GUI_PRJ2_WINFORMS
             this.apparatAttributes.PerformLayout();
             this.Settings.ResumeLayout(false);
             this.Settings.PerformLayout();
+            this.logGroup2.ResumeLayout(false);
+            this.logGroup2.PerformLayout();
             this.settingsGroup.ResumeLayout(false);
             this.settingsGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dimmerScroll)).EndInit();
-            this.logGroup1.ResumeLayout(false);
-            this.logGroup1.PerformLayout();
-            this.logGroup2.ResumeLayout(false);
-            this.logGroup2.PerformLayout();
             this.ResumeLayout(false);
 
         }
