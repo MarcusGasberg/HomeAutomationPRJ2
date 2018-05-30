@@ -29,9 +29,9 @@ while(1){
 	InitUART(9600,8,'N',1);
 	while(getMessage()== 0){}
 	disableINT1();
-	if(getStatus() == 'L'){
+	/*if(getStatus() == 'L'){
 		deleteData(data,(ADDRESS_LENGTH/2)+(COMMAND_LENGTH/2));
-	}
+	}*/
 	toEncode(data,address,ADDRESS_LENGTH,command,COMMAND_LENGTH,x10address,x10command);
 	startTransmission(x10address,x10command);
 	reset();
