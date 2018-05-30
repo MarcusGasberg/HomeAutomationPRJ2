@@ -162,4 +162,9 @@ void setMessage(int m){
 int getMessage(){
 	return messageReceived;
 }
+void deleteData(char * d,int length){
+	for(int i = 0; i < length; i++){
+		d[i] = 0;
+	}
+}
 /************************************************************************/

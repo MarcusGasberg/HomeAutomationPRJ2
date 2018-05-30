@@ -26,14 +26,12 @@ volatile int x10command[COMMAND_LENGTH*2];
 int main(){
 	setup();
 while(1){
-	//while(getStatus() == 'L'){
-		/*data[0] = 0;
-		data[1] = 0;
-		data[2] = 0;
-		data[3] = 0;*/
-	//}
 	InitUART(9600,8,'N',1);
 	while(getMessage()== 0){}
+	disableINT1();
+	if(getStatus() == 'L'){
+		deleteData(data,(ADDRESS_LENGTH/2)+(COMMAND_LENGTH/2));
+	}
 	toEncode(data,address,ADDRESS_LENGTH,command,COMMAND_LENGTH,x10address,x10command);
 	startTransmission(x10address,x10command);
 	reset();

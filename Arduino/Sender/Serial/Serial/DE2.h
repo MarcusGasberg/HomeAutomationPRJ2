@@ -15,6 +15,7 @@ char checkStatus();
 void initINT1();
 char getStatus();
 void setStatus(char);
+void disableINT1();
 volatile unsigned char status;
 
 #endif /* DE2_H_ */

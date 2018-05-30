@@ -25,11 +25,11 @@ void reset(){
 	setMessage(0);
 	setReadIndex(0);
 	setSend(0);
+	initINT1();
 }
 void setup(){
 	sei();
 	initINT1();
-	setStatus(checkStatus());
 }
 void setWait(int w){
 	wait= w;
@@ -72,7 +72,7 @@ void setIndex(int i){
 	index = i;
 }
 void startTransmission(int* x10add,int * x10com){
-	//setWait(1);
+	setWait(1);
 	initINT0();
 	setCounterTimer(0);
 	// initiering af x.10 sender sekvens
