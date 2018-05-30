@@ -21,4 +21,6 @@ void setMessage(int);
 int getMessage();
 void fillArray(char*);
 void deleteData(char *,int length);
+void setDontSend(int);
+int getDontSend();
 /****************************************/

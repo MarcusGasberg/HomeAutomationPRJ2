@@ -22,23 +22,22 @@ void stopTimer0(){
 
 //Timer 1 functions
 void sendPWM(){
-	/*TCCR1A |= 0b10000010; // initiering af PWM ved timer 1
+	TCCR1A |= 0b10000010; // initiering af PWM ved timer 1
 	TCCR1B |= 0b00011001;
 	OCR1A = 132/2;
-	ICR1 = 132;*/
-	PORTB |= 0b00100000;
+	ICR1 = 132;
 	initTimer2();
 }
+void stopTimer1(){
+	TCCR1A = 0;
+	TCCR1B = 0;
+}
 
+//Timer 2 functions
 void initTimer2(){
 	TIMSK2 |= 1;
 	TCCR2B |= 0b00000110;
 	TCNT2 = 193;
-}
-void stopTimer1(){
-	//TCCR1A = 0;
-	//TCCR1B = 0;
-	PORTB &= 0b11011111;
 }
 void stopTimer2(){
 	TCCR2A = 0;

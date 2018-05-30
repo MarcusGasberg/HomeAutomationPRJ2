@@ -3,39 +3,39 @@ Serial.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000050  00800200  00000e04  00000e98  2**0
+  0 .data         00000050  00800200  00000e42  00000ed6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000e04  00000000  00000000  00000094  2**1
+  1 .text         00000e42  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000047  00800250  00800250  00000ee8  2**0
+  2 .bss          00000049  00800250  00800250  00000f26  2**0
                   ALLOC
-  3 .stab         0000096c  00000000  00000000  00000ee8  2**2
+  3 .stab         0000096c  00000000  00000000  00000f28  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      0000014d  00000000  00000000  00001854  2**0
+  4 .stabstr      0000014d  00000000  00000000  00001894  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 000001a0  00000000  00000000  000019a8  2**3
+  5 .debug_aranges 000001a0  00000000  00000000  000019e8  2**3
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000013c4  00000000  00000000  00001b48  2**0
+  6 .debug_info   00001422  00000000  00000000  00001b88  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000006b4  00000000  00000000  00002f0c  2**0
+  7 .debug_abbrev 000006b4  00000000  00000000  00002faa  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000af5  00000000  00000000  000035c0  2**0
+  8 .debug_line   00000b04  00000000  00000000  0000365e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000724  00000000  00000000  000040b8  2**2
+  9 .debug_frame  00000744  00000000  00000000  00004164  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000004d9  00000000  00000000  000047dc  2**0
+ 10 .debug_str    000004fa  00000000  00000000  000048a8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000011f8  00000000  00000000  00004cb5  2**0
+ 11 .debug_loc    00001210  00000000  00000000  00004da2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000018  00000000  00000000  00005ead  2**0
+ 12 .debug_ranges 00000018  00000000  00000000  00005fb2  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 72 00 	jmp	0xe4	; 0xe4 <__ctors_end>
-   4:	0c 94 12 04 	jmp	0x824	; 0x824 <__vector_1>
-   8:	0c 94 c4 04 	jmp	0x988	; 0x988 <__vector_2>
+   4:	0c 94 23 04 	jmp	0x846	; 0x846 <__vector_1>
+   8:	0c 94 d5 04 	jmp	0x9aa	; 0x9aa <__vector_2>
    c:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   10:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   14:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
@@ -48,7 +48,7 @@ Disassembly of section .text:
   30:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   34:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   38:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
-  3c:	0c 94 9a 04 	jmp	0x934	; 0x934 <__vector_15>
+  3c:	0c 94 ab 04 	jmp	0x956	; 0x956 <__vector_15>
   40:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   44:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   48:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
@@ -56,9 +56,9 @@ Disassembly of section .text:
   50:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   54:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   58:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
-  5c:	0c 94 70 04 	jmp	0x8e0	; 0x8e0 <__vector_23>
+  5c:	0c 94 81 04 	jmp	0x902	; 0x902 <__vector_23>
   60:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
-  64:	0c 94 46 04 	jmp	0x88c	; 0x88c <__vector_25>
+  64:	0c 94 57 04 	jmp	0x8ae	; 0x8ae <__vector_25>
   68:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   6c:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   70:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
@@ -68,7 +68,7 @@ Disassembly of section .text:
   80:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   84:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   88:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
-  8c:	0c 94 ee 04 	jmp	0x9dc	; 0x9dc <__vector_35>
+  8c:	0c 94 ff 04 	jmp	0x9fe	; 0x9fe <__vector_35>
   90:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   94:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
   98:	0c 94 94 00 	jmp	0x128	; 0x128 <__bad_interrupt>
@@ -105,7 +105,7 @@ Disassembly of section .text:
   f4:	12 e0       	ldi	r17, 0x02	; 2
   f6:	a0 e0       	ldi	r26, 0x00	; 0
   f8:	b2 e0       	ldi	r27, 0x02	; 2
-  fa:	e4 e0       	ldi	r30, 0x04	; 4
+  fa:	e2 e4       	ldi	r30, 0x42	; 66
   fc:	fe e0       	ldi	r31, 0x0E	; 14
   fe:	00 e0       	ldi	r16, 0x00	; 0
  100:	0b bf       	out	0x3b, r16	; 59
@@ -127,11 +127,11 @@ Disassembly of section .text:
  118:	1d 92       	st	X+, r1
 
 0000011a <.do_clear_bss_start>:
- 11a:	a7 39       	cpi	r26, 0x97	; 151
+ 11a:	a9 39       	cpi	r26, 0x99	; 153
  11c:	b1 07       	cpc	r27, r17
  11e:	e1 f7       	brne	.-8      	; 0x118 <.do_clear_bss_loop>
- 120:	0e 94 d5 03 	call	0x7aa	; 0x7aa <main>
- 124:	0c 94 00 07 	jmp	0xe00	; 0xe00 <_exit>
+ 120:	0e 94 dd 03 	call	0x7ba	; 0x7ba <main>
+ 124:	0c 94 1f 07 	jmp	0xe3e	; 0xe3e <_exit>
 
 00000128 <__bad_interrupt>:
  128:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -347,9 +347,9 @@ void toggleLED(unsigned char led_nr)
  1d4:	08 95       	ret
 
 000001d6 <setup>:
-	setReadIndex(0);
 	setSend(0);
 	initINT1();
+	setDontSend(0);
 }
 void setup(){
 	sei();
@@ -499,1997 +499,2049 @@ void reset(){
 	setMessage(0);
  28a:	80 e0       	ldi	r24, 0x00	; 0
  28c:	90 e0       	ldi	r25, 0x00	; 0
- 28e:	0e 94 26 06 	call	0xc4c	; 0xc4c <setMessage>
+ 28e:	0e 94 37 06 	call	0xc6e	; 0xc6e <setMessage>
 	setReadIndex(0);
  292:	80 e0       	ldi	r24, 0x00	; 0
  294:	90 e0       	ldi	r25, 0x00	; 0
- 296:	0e 94 21 06 	call	0xc42	; 0xc42 <setReadIndex>
+ 296:	0e 94 32 06 	call	0xc64	; 0xc64 <setReadIndex>
 	setSend(0);
  29a:	80 e0       	ldi	r24, 0x00	; 0
  29c:	90 e0       	ldi	r25, 0x00	; 0
  29e:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
 	initINT1();
  2a2:	0e 94 a2 00 	call	0x144	; 0x144 <initINT1>
+	setDontSend(0);
+ 2a6:	80 e0       	ldi	r24, 0x00	; 0
+ 2a8:	90 e0       	ldi	r25, 0x00	; 0
+ 2aa:	0e 94 5f 06 	call	0xcbe	; 0xcbe <setDontSend>
 }
- 2a6:	08 95       	ret
+ 2ae:	08 95       	ret
 
-000002a8 <endTransmission>:
-		}
+000002b0 <endTransmission>:
 	}
+}
 }
 
 void endTransmission(){
 	disableINT0();// disable INT0
- 2a8:	0e 94 63 06 	call	0xcc6	; 0xcc6 <disableINT0>
+ 2b0:	0e 94 82 06 	call	0xd04	; 0xd04 <disableINT0>
 	stopTimer0();
- 2ac:	0e 94 3b 05 	call	0xa76	; 0xa76 <stopTimer0>
+ 2b4:	0e 94 4c 05 	call	0xa98	; 0xa98 <stopTimer0>
 	//stopTimer3();
 }	
- 2b0:	08 95       	ret
+ 2b8:	08 95       	ret
 
-000002b2 <sendx10>:
+000002ba <sendx10>:
 
 int sendx10(int * x10address, int* x10command){
- 2b2:	0f 93       	push	r16
- 2b4:	1f 93       	push	r17
- 2b6:	cf 93       	push	r28
- 2b8:	df 93       	push	r29
- 2ba:	ec 01       	movw	r28, r24
- 2bc:	8b 01       	movw	r16, r22
+ 2ba:	0f 93       	push	r16
+ 2bc:	1f 93       	push	r17
+ 2be:	cf 93       	push	r28
+ 2c0:	df 93       	push	r29
+ 2c2:	ec 01       	movw	r28, r24
+ 2c4:	8b 01       	movw	r16, r22
 	if(getMode() == 1) // sender startkode
- 2be:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
- 2c2:	81 30       	cpi	r24, 0x01	; 1
- 2c4:	91 05       	cpc	r25, r1
- 2c6:	c1 f5       	brne	.+112    	; 0x338 <sendx10+0x86>
+ 2c6:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
+ 2ca:	81 30       	cpi	r24, 0x01	; 1
+ 2cc:	91 05       	cpc	r25, r1
+ 2ce:	c1 f5       	brne	.+112    	; 0x340 <sendx10+0x86>
 	{
 		switch(index){
- 2c8:	80 91 5b 02 	lds	r24, 0x025B
- 2cc:	90 91 5c 02 	lds	r25, 0x025C
- 2d0:	81 30       	cpi	r24, 0x01	; 1
- 2d2:	91 05       	cpc	r25, r1
- 2d4:	c1 f0       	breq	.+48     	; 0x306 <sendx10+0x54>
- 2d6:	82 30       	cpi	r24, 0x02	; 2
- 2d8:	91 05       	cpc	r25, r1
- 2da:	1c f4       	brge	.+6      	; 0x2e2 <sendx10+0x30>
- 2dc:	00 97       	sbiw	r24, 0x00	; 0
- 2de:	49 f0       	breq	.+18     	; 0x2f2 <sendx10+0x40>
- 2e0:	94 c0       	rjmp	.+296    	; 0x40a <sendx10+0x158>
- 2e2:	82 30       	cpi	r24, 0x02	; 2
- 2e4:	91 05       	cpc	r25, r1
- 2e6:	c9 f0       	breq	.+50     	; 0x31a <sendx10+0x68>
- 2e8:	83 30       	cpi	r24, 0x03	; 3
- 2ea:	91 05       	cpc	r25, r1
- 2ec:	09 f0       	breq	.+2      	; 0x2f0 <sendx10+0x3e>
- 2ee:	8d c0       	rjmp	.+282    	; 0x40a <sendx10+0x158>
- 2f0:	1e c0       	rjmp	.+60     	; 0x32e <sendx10+0x7c>
+ 2d0:	80 91 5b 02 	lds	r24, 0x025B
+ 2d4:	90 91 5c 02 	lds	r25, 0x025C
+ 2d8:	81 30       	cpi	r24, 0x01	; 1
+ 2da:	91 05       	cpc	r25, r1
+ 2dc:	c1 f0       	breq	.+48     	; 0x30e <sendx10+0x54>
+ 2de:	82 30       	cpi	r24, 0x02	; 2
+ 2e0:	91 05       	cpc	r25, r1
+ 2e2:	1c f4       	brge	.+6      	; 0x2ea <sendx10+0x30>
+ 2e4:	00 97       	sbiw	r24, 0x00	; 0
+ 2e6:	49 f0       	breq	.+18     	; 0x2fa <sendx10+0x40>
+ 2e8:	94 c0       	rjmp	.+296    	; 0x412 <sendx10+0x158>
+ 2ea:	82 30       	cpi	r24, 0x02	; 2
+ 2ec:	91 05       	cpc	r25, r1
+ 2ee:	c9 f0       	breq	.+50     	; 0x322 <sendx10+0x68>
+ 2f0:	83 30       	cpi	r24, 0x03	; 3
+ 2f2:	91 05       	cpc	r25, r1
+ 2f4:	09 f0       	breq	.+2      	; 0x2f8 <sendx10+0x3e>
+ 2f6:	8d c0       	rjmp	.+282    	; 0x412 <sendx10+0x158>
+ 2f8:	1e c0       	rjmp	.+60     	; 0x336 <sendx10+0x7c>
 			case 0:
 			sendPWM(); // der sendes et 1 tal
- 2f2:	0e 94 4e 05 	call	0xa9c	; 0xa9c <sendPWM>
+ 2fa:	0e 94 5f 05 	call	0xabe	; 0xabe <sendPWM>
 			setIndex(index +1);
- 2f6:	80 91 5b 02 	lds	r24, 0x025B
- 2fa:	90 91 5c 02 	lds	r25, 0x025C
- 2fe:	01 96       	adiw	r24, 0x01	; 1
- 300:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
+ 2fe:	80 91 5b 02 	lds	r24, 0x025B
+ 302:	90 91 5c 02 	lds	r25, 0x025C
+ 306:	01 96       	adiw	r24, 0x01	; 1
+ 308:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
 			break;
- 304:	82 c0       	rjmp	.+260    	; 0x40a <sendx10+0x158>
+ 30c:	82 c0       	rjmp	.+260    	; 0x412 <sendx10+0x158>
 			case 1:
 			sendPWM();
- 306:	0e 94 4e 05 	call	0xa9c	; 0xa9c <sendPWM>
+ 30e:	0e 94 5f 05 	call	0xabe	; 0xabe <sendPWM>
 			setIndex(index +1);
- 30a:	80 91 5b 02 	lds	r24, 0x025B
- 30e:	90 91 5c 02 	lds	r25, 0x025C
- 312:	01 96       	adiw	r24, 0x01	; 1
- 314:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
+ 312:	80 91 5b 02 	lds	r24, 0x025B
+ 316:	90 91 5c 02 	lds	r25, 0x025C
+ 31a:	01 96       	adiw	r24, 0x01	; 1
+ 31c:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
 			break;
- 318:	78 c0       	rjmp	.+240    	; 0x40a <sendx10+0x158>
+ 320:	78 c0       	rjmp	.+240    	; 0x412 <sendx10+0x158>
 			case 2:
 			sendPWM();
- 31a:	0e 94 4e 05 	call	0xa9c	; 0xa9c <sendPWM>
+ 322:	0e 94 5f 05 	call	0xabe	; 0xabe <sendPWM>
 			setIndex(index +1);
- 31e:	80 91 5b 02 	lds	r24, 0x025B
- 322:	90 91 5c 02 	lds	r25, 0x025C
- 326:	01 96       	adiw	r24, 0x01	; 1
- 328:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
+ 326:	80 91 5b 02 	lds	r24, 0x025B
+ 32a:	90 91 5c 02 	lds	r25, 0x025C
+ 32e:	01 96       	adiw	r24, 0x01	; 1
+ 330:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
 			break;
- 32c:	6e c0       	rjmp	.+220    	; 0x40a <sendx10+0x158>
+ 334:	6e c0       	rjmp	.+220    	; 0x412 <sendx10+0x158>
 			case 3:
 			setMode(2);
- 32e:	82 e0       	ldi	r24, 0x02	; 2
- 330:	90 e0       	ldi	r25, 0x00	; 0
- 332:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
+ 336:	82 e0       	ldi	r24, 0x02	; 2
+ 338:	90 e0       	ldi	r25, 0x00	; 0
+ 33a:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
 			break;
- 336:	69 c0       	rjmp	.+210    	; 0x40a <sendx10+0x158>
+ 33e:	69 c0       	rjmp	.+210    	; 0x412 <sendx10+0x158>
 		}
 	}
 	else if(getMode() == 2 || getMode() == 3){
- 338:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
- 33c:	82 30       	cpi	r24, 0x02	; 2
- 33e:	91 05       	cpc	r25, r1
- 340:	31 f0       	breq	.+12     	; 0x34e <sendx10+0x9c>
- 342:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
- 346:	83 30       	cpi	r24, 0x03	; 3
- 348:	91 05       	cpc	r25, r1
- 34a:	09 f0       	breq	.+2      	; 0x34e <sendx10+0x9c>
- 34c:	5e c0       	rjmp	.+188    	; 0x40a <sendx10+0x158>
+ 340:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
+ 344:	82 30       	cpi	r24, 0x02	; 2
+ 346:	91 05       	cpc	r25, r1
+ 348:	31 f0       	breq	.+12     	; 0x356 <sendx10+0x9c>
+ 34a:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
+ 34e:	83 30       	cpi	r24, 0x03	; 3
+ 350:	91 05       	cpc	r25, r1
+ 352:	09 f0       	breq	.+2      	; 0x356 <sendx10+0x9c>
+ 354:	5e c0       	rjmp	.+188    	; 0x412 <sendx10+0x158>
 			disableINT0();
- 34e:	0e 94 63 06 	call	0xcc6	; 0xcc6 <disableINT0>
+ 356:	0e 94 82 06 	call	0xd04	; 0xd04 <disableINT0>
 			initTimer0();
- 352:	0e 94 30 05 	call	0xa60	; 0xa60 <initTimer0>
+ 35a:	0e 94 41 05 	call	0xa82	; 0xa82 <initTimer0>
 		if(getMode() == 2) // sender addresse kode
- 356:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
- 35a:	82 30       	cpi	r24, 0x02	; 2
- 35c:	91 05       	cpc	r25, r1
- 35e:	41 f5       	brne	.+80     	; 0x3b0 <sendx10+0xfe>
+ 35e:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
+ 362:	82 30       	cpi	r24, 0x02	; 2
+ 364:	91 05       	cpc	r25, r1
+ 366:	41 f5       	brne	.+80     	; 0x3b8 <sendx10+0xfe>
 		{
 			if(x10address[index] == 1){
- 360:	80 91 5b 02 	lds	r24, 0x025B
- 364:	90 91 5c 02 	lds	r25, 0x025C
- 368:	88 0f       	add	r24, r24
- 36a:	99 1f       	adc	r25, r25
- 36c:	c8 0f       	add	r28, r24
- 36e:	d9 1f       	adc	r29, r25
- 370:	88 81       	ld	r24, Y
- 372:	99 81       	ldd	r25, Y+1	; 0x01
- 374:	81 30       	cpi	r24, 0x01	; 1
- 376:	91 05       	cpc	r25, r1
- 378:	51 f4       	brne	.+20     	; 0x38e <sendx10+0xdc>
+ 368:	80 91 5b 02 	lds	r24, 0x025B
+ 36c:	90 91 5c 02 	lds	r25, 0x025C
+ 370:	88 0f       	add	r24, r24
+ 372:	99 1f       	adc	r25, r25
+ 374:	c8 0f       	add	r28, r24
+ 376:	d9 1f       	adc	r29, r25
+ 378:	88 81       	ld	r24, Y
+ 37a:	99 81       	ldd	r25, Y+1	; 0x01
+ 37c:	81 30       	cpi	r24, 0x01	; 1
+ 37e:	91 05       	cpc	r25, r1
+ 380:	51 f4       	brne	.+20     	; 0x396 <sendx10+0xdc>
 				sendPWM();
- 37a:	0e 94 4e 05 	call	0xa9c	; 0xa9c <sendPWM>
+ 382:	0e 94 5f 05 	call	0xabe	; 0xabe <sendPWM>
 				setIndex(index +1);
- 37e:	80 91 5b 02 	lds	r24, 0x025B
- 382:	90 91 5c 02 	lds	r25, 0x025C
- 386:	01 96       	adiw	r24, 0x01	; 1
- 388:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
- 38c:	07 c0       	rjmp	.+14     	; 0x39c <sendx10+0xea>
+ 386:	80 91 5b 02 	lds	r24, 0x025B
+ 38a:	90 91 5c 02 	lds	r25, 0x025C
+ 38e:	01 96       	adiw	r24, 0x01	; 1
+ 390:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
+ 394:	07 c0       	rjmp	.+14     	; 0x3a4 <sendx10+0xea>
 			}
 			else {
 				setIndex(index +1);
- 38e:	80 91 5b 02 	lds	r24, 0x025B
- 392:	90 91 5c 02 	lds	r25, 0x025C
- 396:	01 96       	adiw	r24, 0x01	; 1
- 398:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
+ 396:	80 91 5b 02 	lds	r24, 0x025B
+ 39a:	90 91 5c 02 	lds	r25, 0x025C
+ 39e:	01 96       	adiw	r24, 0x01	; 1
+ 3a0:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
 			}
 			if(getIndex() == 8){
- 39c:	0e 94 26 01 	call	0x24c	; 0x24c <getIndex>
- 3a0:	88 30       	cpi	r24, 0x08	; 8
- 3a2:	91 05       	cpc	r25, r1
- 3a4:	91 f5       	brne	.+100    	; 0x40a <sendx10+0x158>
+ 3a4:	0e 94 26 01 	call	0x24c	; 0x24c <getIndex>
+ 3a8:	88 30       	cpi	r24, 0x08	; 8
+ 3aa:	91 05       	cpc	r25, r1
+ 3ac:	91 f5       	brne	.+100    	; 0x412 <sendx10+0x158>
 				setMode(3);
- 3a6:	83 e0       	ldi	r24, 0x03	; 3
- 3a8:	90 e0       	ldi	r25, 0x00	; 0
- 3aa:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
- 3ae:	2d c0       	rjmp	.+90     	; 0x40a <sendx10+0x158>
+ 3ae:	83 e0       	ldi	r24, 0x03	; 3
+ 3b0:	90 e0       	ldi	r25, 0x00	; 0
+ 3b2:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
+ 3b6:	2d c0       	rjmp	.+90     	; 0x412 <sendx10+0x158>
 			}
 
 		}
 		else if(getMode() == 3){
- 3b0:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
- 3b4:	83 30       	cpi	r24, 0x03	; 3
- 3b6:	91 05       	cpc	r25, r1
- 3b8:	41 f5       	brne	.+80     	; 0x40a <sendx10+0x158>
+ 3b8:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
+ 3bc:	83 30       	cpi	r24, 0x03	; 3
+ 3be:	91 05       	cpc	r25, r1
+ 3c0:	41 f5       	brne	.+80     	; 0x412 <sendx10+0x158>
 			if(x10command[index] == 1){
- 3ba:	80 91 5b 02 	lds	r24, 0x025B
- 3be:	90 91 5c 02 	lds	r25, 0x025C
- 3c2:	88 0f       	add	r24, r24
- 3c4:	99 1f       	adc	r25, r25
- 3c6:	08 0f       	add	r16, r24
- 3c8:	19 1f       	adc	r17, r25
- 3ca:	f8 01       	movw	r30, r16
- 3cc:	80 81       	ld	r24, Z
- 3ce:	91 81       	ldd	r25, Z+1	; 0x01
- 3d0:	81 30       	cpi	r24, 0x01	; 1
- 3d2:	91 05       	cpc	r25, r1
- 3d4:	51 f4       	brne	.+20     	; 0x3ea <sendx10+0x138>
+ 3c2:	80 91 5b 02 	lds	r24, 0x025B
+ 3c6:	90 91 5c 02 	lds	r25, 0x025C
+ 3ca:	88 0f       	add	r24, r24
+ 3cc:	99 1f       	adc	r25, r25
+ 3ce:	08 0f       	add	r16, r24
+ 3d0:	19 1f       	adc	r17, r25
+ 3d2:	f8 01       	movw	r30, r16
+ 3d4:	80 81       	ld	r24, Z
+ 3d6:	91 81       	ldd	r25, Z+1	; 0x01
+ 3d8:	81 30       	cpi	r24, 0x01	; 1
+ 3da:	91 05       	cpc	r25, r1
+ 3dc:	51 f4       	brne	.+20     	; 0x3f2 <sendx10+0x138>
 				sendPWM();
- 3d6:	0e 94 4e 05 	call	0xa9c	; 0xa9c <sendPWM>
+ 3de:	0e 94 5f 05 	call	0xabe	; 0xabe <sendPWM>
 				setIndex(index +1);
- 3da:	80 91 5b 02 	lds	r24, 0x025B
- 3de:	90 91 5c 02 	lds	r25, 0x025C
- 3e2:	01 96       	adiw	r24, 0x01	; 1
- 3e4:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
- 3e8:	07 c0       	rjmp	.+14     	; 0x3f8 <sendx10+0x146>
+ 3e2:	80 91 5b 02 	lds	r24, 0x025B
+ 3e6:	90 91 5c 02 	lds	r25, 0x025C
+ 3ea:	01 96       	adiw	r24, 0x01	; 1
+ 3ec:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
+ 3f0:	07 c0       	rjmp	.+14     	; 0x400 <sendx10+0x146>
 			}
 			else{
 				setIndex(index +1);
- 3ea:	80 91 5b 02 	lds	r24, 0x025B
- 3ee:	90 91 5c 02 	lds	r25, 0x025C
- 3f2:	01 96       	adiw	r24, 0x01	; 1
- 3f4:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
+ 3f2:	80 91 5b 02 	lds	r24, 0x025B
+ 3f6:	90 91 5c 02 	lds	r25, 0x025C
+ 3fa:	01 96       	adiw	r24, 0x01	; 1
+ 3fc:	0e 94 2b 01 	call	0x256	; 0x256 <setIndex>
 			}
 			if(getIndex() == 8){
- 3f8:	0e 94 26 01 	call	0x24c	; 0x24c <getIndex>
- 3fc:	88 30       	cpi	r24, 0x08	; 8
- 3fe:	91 05       	cpc	r25, r1
- 400:	21 f4       	brne	.+8      	; 0x40a <sendx10+0x158>
+ 400:	0e 94 26 01 	call	0x24c	; 0x24c <getIndex>
+ 404:	88 30       	cpi	r24, 0x08	; 8
+ 406:	91 05       	cpc	r25, r1
+ 408:	21 f4       	brne	.+8      	; 0x412 <sendx10+0x158>
 				setMode(0);
- 402:	80 e0       	ldi	r24, 0x00	; 0
- 404:	90 e0       	ldi	r25, 0x00	; 0
- 406:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
+ 40a:	80 e0       	ldi	r24, 0x00	; 0
+ 40c:	90 e0       	ldi	r25, 0x00	; 0
+ 40e:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
 			}
 		}
 		
 		}
 	if(getMode() == 0){
- 40a:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
- 40e:	00 97       	sbiw	r24, 0x00	; 0
- 410:	91 f4       	brne	.+36     	; 0x436 <sendx10+0x184>
+ 412:	0e 94 f9 00 	call	0x1f2	; 0x1f2 <getMode>
+ 416:	00 97       	sbiw	r24, 0x00	; 0
+ 418:	91 f4       	brne	.+36     	; 0x43e <sendx10+0x184>
 		setSend(0);
- 412:	80 e0       	ldi	r24, 0x00	; 0
- 414:	90 e0       	ldi	r25, 0x00	; 0
- 416:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
+ 41a:	80 e0       	ldi	r24, 0x00	; 0
+ 41c:	90 e0       	ldi	r25, 0x00	; 0
+ 41e:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
 		stopTimer0();
- 41a:	0e 94 3b 05 	call	0xa76	; 0xa76 <stopTimer0>
+ 422:	0e 94 4c 05 	call	0xa98	; 0xa98 <stopTimer0>
 		incCycle();
- 41e:	0e 94 1c 01 	call	0x238	; 0x238 <incCycle>
+ 426:	0e 94 1c 01 	call	0x238	; 0x238 <incCycle>
 		setWait(1);
- 422:	81 e0       	ldi	r24, 0x01	; 1
- 424:	90 e0       	ldi	r25, 0x00	; 0
- 426:	0e 94 ef 00 	call	0x1de	; 0x1de <setWait>
-		setMode(1);
  42a:	81 e0       	ldi	r24, 0x01	; 1
  42c:	90 e0       	ldi	r25, 0x00	; 0
- 42e:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
+ 42e:	0e 94 ef 00 	call	0x1de	; 0x1de <setWait>
+		setMode(1);
+ 432:	81 e0       	ldi	r24, 0x01	; 1
+ 434:	90 e0       	ldi	r25, 0x00	; 0
+ 436:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
 		initINT0();
- 432:	0e 94 5b 06 	call	0xcb6	; 0xcb6 <initINT0>
+ 43a:	0e 94 7a 06 	call	0xcf4	; 0xcf4 <initINT0>
 	}
 	return 1;
 }
- 436:	81 e0       	ldi	r24, 0x01	; 1
- 438:	90 e0       	ldi	r25, 0x00	; 0
- 43a:	df 91       	pop	r29
- 43c:	cf 91       	pop	r28
- 43e:	1f 91       	pop	r17
- 440:	0f 91       	pop	r16
- 442:	08 95       	ret
+ 43e:	81 e0       	ldi	r24, 0x01	; 1
+ 440:	90 e0       	ldi	r25, 0x00	; 0
+ 442:	df 91       	pop	r29
+ 444:	cf 91       	pop	r28
+ 446:	1f 91       	pop	r17
+ 448:	0f 91       	pop	r16
+ 44a:	08 95       	ret
 
-00000444 <startTransmission>:
+0000044c <startTransmission>:
 	return index;
 }
 void setIndex(int i){
 	index = i;
 }
 void startTransmission(int* x10add,int * x10com){
- 444:	0f 93       	push	r16
- 446:	1f 93       	push	r17
- 448:	cf 93       	push	r28
- 44a:	df 93       	push	r29
- 44c:	ec 01       	movw	r28, r24
- 44e:	8b 01       	movw	r16, r22
-	setWait(1);
- 450:	81 e0       	ldi	r24, 0x01	; 1
- 452:	90 e0       	ldi	r25, 0x00	; 0
- 454:	0e 94 ef 00 	call	0x1de	; 0x1de <setWait>
-	initINT0();
- 458:	0e 94 5b 06 	call	0xcb6	; 0xcb6 <initINT0>
-	setCounterTimer(0);
- 45c:	80 e0       	ldi	r24, 0x00	; 0
- 45e:	90 e0       	ldi	r25, 0x00	; 0
- 460:	0e 94 8f 06 	call	0xd1e	; 0xd1e <setCounterTimer>
-	// initiering af x.10 sender sekvens
-	DDRB |= 0b00100000; // PB5 sættes som udgang
- 464:	25 9a       	sbi	0x04, 5	; 4
-	setMode(1);
- 466:	81 e0       	ldi	r24, 0x01	; 1
- 468:	90 e0       	ldi	r25, 0x00	; 0
- 46a:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
-	while(getExit() == 0){
- 46e:	20 c0       	rjmp	.+64     	; 0x4b0 <startTransmission+0x6c>
-		if(getCycle() < 3){
- 470:	0e 94 17 01 	call	0x22e	; 0x22e <getCycle>
- 474:	83 30       	cpi	r24, 0x03	; 3
- 476:	91 05       	cpc	r25, r1
- 478:	84 f4       	brge	.+32     	; 0x49a <startTransmission+0x56>
-			if(getSend() == 1){
- 47a:	0e 94 03 01 	call	0x206	; 0x206 <getSend>
- 47e:	81 30       	cpi	r24, 0x01	; 1
- 480:	91 05       	cpc	r25, r1
- 482:	b1 f4       	brne	.+44     	; 0x4b0 <startTransmission+0x6c>
-			while(sendx10(x10add,x10com) == 0){}
- 484:	ce 01       	movw	r24, r28
- 486:	b8 01       	movw	r22, r16
- 488:	0e 94 59 01 	call	0x2b2	; 0x2b2 <sendx10>
- 48c:	00 97       	sbiw	r24, 0x00	; 0
- 48e:	d1 f3       	breq	.-12     	; 0x484 <startTransmission+0x40>
-			setSend(0);
- 490:	80 e0       	ldi	r24, 0x00	; 0
- 492:	90 e0       	ldi	r25, 0x00	; 0
- 494:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
- 498:	0b c0       	rjmp	.+22     	; 0x4b0 <startTransmission+0x6c>
+ 44c:	0f 93       	push	r16
+ 44e:	1f 93       	push	r17
+ 450:	cf 93       	push	r28
+ 452:	df 93       	push	r29
+ 454:	8c 01       	movw	r16, r24
+ 456:	eb 01       	movw	r28, r22
+	if(getDontSend() == 0){
+ 458:	0e 94 75 06 	call	0xcea	; 0xcea <getDontSend>
+ 45c:	00 97       	sbiw	r24, 0x00	; 0
+ 45e:	a1 f5       	brne	.+104    	; 0x4c8 <startTransmission+0x7c>
+		setWait(1);
+ 460:	81 e0       	ldi	r24, 0x01	; 1
+ 462:	90 e0       	ldi	r25, 0x00	; 0
+ 464:	0e 94 ef 00 	call	0x1de	; 0x1de <setWait>
+		initINT0();
+ 468:	0e 94 7a 06 	call	0xcf4	; 0xcf4 <initINT0>
+		setCounterTimer(0);
+ 46c:	80 e0       	ldi	r24, 0x00	; 0
+ 46e:	90 e0       	ldi	r25, 0x00	; 0
+ 470:	0e 94 ae 06 	call	0xd5c	; 0xd5c <setCounterTimer>
+		// initiering af x.10 sender sekvens
+		DDRB |= 0b00100000; // PB5 sættes som udgang
+ 474:	25 9a       	sbi	0x04, 5	; 4
+		setMode(1);
+ 476:	81 e0       	ldi	r24, 0x01	; 1
+ 478:	90 e0       	ldi	r25, 0x00	; 0
+ 47a:	0e 94 30 01 	call	0x260	; 0x260 <setMode>
+		while(getExit() == 0){
+ 47e:	20 c0       	rjmp	.+64     	; 0x4c0 <startTransmission+0x74>
+			if(getCycle() < 3){
+ 480:	0e 94 17 01 	call	0x22e	; 0x22e <getCycle>
+ 484:	83 30       	cpi	r24, 0x03	; 3
+ 486:	91 05       	cpc	r25, r1
+ 488:	84 f4       	brge	.+32     	; 0x4aa <startTransmission+0x5e>
+				if(getSend() == 1){
+ 48a:	0e 94 03 01 	call	0x206	; 0x206 <getSend>
+ 48e:	81 30       	cpi	r24, 0x01	; 1
+ 490:	91 05       	cpc	r25, r1
+ 492:	b1 f4       	brne	.+44     	; 0x4c0 <startTransmission+0x74>
+				while(sendx10(x10add,x10com) == 0){}
+ 494:	c8 01       	movw	r24, r16
+ 496:	be 01       	movw	r22, r28
+ 498:	0e 94 5d 01 	call	0x2ba	; 0x2ba <sendx10>
+ 49c:	00 97       	sbiw	r24, 0x00	; 0
+ 49e:	d1 f3       	breq	.-12     	; 0x494 <startTransmission+0x48>
+				setSend(0);
+ 4a0:	80 e0       	ldi	r24, 0x00	; 0
+ 4a2:	90 e0       	ldi	r25, 0x00	; 0
+ 4a4:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
+ 4a8:	0b c0       	rjmp	.+22     	; 0x4c0 <startTransmission+0x74>
+			}
 		}
-	}
 		else if(getCycle() >= 3){
- 49a:	0e 94 17 01 	call	0x22e	; 0x22e <getCycle>
- 49e:	83 30       	cpi	r24, 0x03	; 3
- 4a0:	91 05       	cpc	r25, r1
- 4a2:	34 f0       	brlt	.+12     	; 0x4b0 <startTransmission+0x6c>
+ 4aa:	0e 94 17 01 	call	0x22e	; 0x22e <getCycle>
+ 4ae:	83 30       	cpi	r24, 0x03	; 3
+ 4b0:	91 05       	cpc	r25, r1
+ 4b2:	34 f0       	brlt	.+12     	; 0x4c0 <startTransmission+0x74>
 			endTransmission();
- 4a4:	0e 94 54 01 	call	0x2a8	; 0x2a8 <endTransmission>
+ 4b4:	0e 94 58 01 	call	0x2b0	; 0x2b0 <endTransmission>
 			setExit(1);
- 4a8:	81 e0       	ldi	r24, 0x01	; 1
- 4aa:	90 e0       	ldi	r25, 0x00	; 0
- 4ac:	0e 94 08 01 	call	0x210	; 0x210 <setExit>
-	initINT0();
-	setCounterTimer(0);
-	// initiering af x.10 sender sekvens
-	DDRB |= 0b00100000; // PB5 sættes som udgang
-	setMode(1);
-	while(getExit() == 0){
- 4b0:	0e 94 0d 01 	call	0x21a	; 0x21a <getExit>
- 4b4:	00 97       	sbiw	r24, 0x00	; 0
- 4b6:	e1 f2       	breq	.-72     	; 0x470 <startTransmission+0x2c>
-		else if(getCycle() >= 3){
+ 4b8:	81 e0       	ldi	r24, 0x01	; 1
+ 4ba:	90 e0       	ldi	r25, 0x00	; 0
+ 4bc:	0e 94 08 01 	call	0x210	; 0x210 <setExit>
+		initINT0();
+		setCounterTimer(0);
+		// initiering af x.10 sender sekvens
+		DDRB |= 0b00100000; // PB5 sættes som udgang
+		setMode(1);
+		while(getExit() == 0){
+ 4c0:	0e 94 0d 01 	call	0x21a	; 0x21a <getExit>
+ 4c4:	00 97       	sbiw	r24, 0x00	; 0
+ 4c6:	e1 f2       	breq	.-72     	; 0x480 <startTransmission+0x34>
 			endTransmission();
 			setExit(1);
 		}
 	}
 }
- 4b8:	df 91       	pop	r29
- 4ba:	cf 91       	pop	r28
- 4bc:	1f 91       	pop	r17
- 4be:	0f 91       	pop	r16
- 4c0:	08 95       	ret
+}
+ 4c8:	df 91       	pop	r29
+ 4ca:	cf 91       	pop	r28
+ 4cc:	1f 91       	pop	r17
+ 4ce:	0f 91       	pop	r16
+ 4d0:	08 95       	ret
 
-000004c2 <encodeBIN>:
+000004d2 <encodeBIN>:
 		encodeBIN("1111", destination, length);
 	}
 }
 
 void encodeBIN(const char * convert, int * dest, int length) {
 	for (int i = 0; i< length; i++) {
- 4c2:	14 16       	cp	r1, r20
- 4c4:	15 06       	cpc	r1, r21
- 4c6:	ac f4       	brge	.+42     	; 0x4f2 <encodeBIN+0x30>
- 4c8:	a8 2f       	mov	r26, r24
- 4ca:	b9 2f       	mov	r27, r25
- 4cc:	e6 2f       	mov	r30, r22
- 4ce:	f7 2f       	mov	r31, r23
- 4d0:	80 e0       	ldi	r24, 0x00	; 0
- 4d2:	90 e0       	ldi	r25, 0x00	; 0
+ 4d2:	14 16       	cp	r1, r20
+ 4d4:	15 06       	cpc	r1, r21
+ 4d6:	ac f4       	brge	.+42     	; 0x502 <encodeBIN+0x30>
+ 4d8:	a8 2f       	mov	r26, r24
+ 4da:	b9 2f       	mov	r27, r25
+ 4dc:	e6 2f       	mov	r30, r22
+ 4de:	f7 2f       	mov	r31, r23
+ 4e0:	80 e0       	ldi	r24, 0x00	; 0
+ 4e2:	90 e0       	ldi	r25, 0x00	; 0
 		if (convert[i] == '1')
 		dest[i] = 1;
- 4d4:	21 e0       	ldi	r18, 0x01	; 1
- 4d6:	30 e0       	ldi	r19, 0x00	; 0
+ 4e4:	21 e0       	ldi	r18, 0x01	; 1
+ 4e6:	30 e0       	ldi	r19, 0x00	; 0
 	}
 }
 
 void encodeBIN(const char * convert, int * dest, int length) {
 	for (int i = 0; i< length; i++) {
 		if (convert[i] == '1')
- 4d8:	6d 91       	ld	r22, X+
- 4da:	61 33       	cpi	r22, 0x31	; 49
- 4dc:	19 f4       	brne	.+6      	; 0x4e4 <encodeBIN+0x22>
+ 4e8:	6d 91       	ld	r22, X+
+ 4ea:	61 33       	cpi	r22, 0x31	; 49
+ 4ec:	19 f4       	brne	.+6      	; 0x4f4 <encodeBIN+0x22>
 		dest[i] = 1;
- 4de:	31 83       	std	Z+1, r19	; 0x01
- 4e0:	20 83       	st	Z, r18
- 4e2:	02 c0       	rjmp	.+4      	; 0x4e8 <encodeBIN+0x26>
+ 4ee:	31 83       	std	Z+1, r19	; 0x01
+ 4f0:	20 83       	st	Z, r18
+ 4f2:	02 c0       	rjmp	.+4      	; 0x4f8 <encodeBIN+0x26>
 		else
 		dest[i] = 0;
- 4e4:	11 82       	std	Z+1, r1	; 0x01
- 4e6:	10 82       	st	Z, r1
+ 4f4:	11 82       	std	Z+1, r1	; 0x01
+ 4f6:	10 82       	st	Z, r1
 		encodeBIN("1111", destination, length);
 	}
 }
 
 void encodeBIN(const char * convert, int * dest, int length) {
 	for (int i = 0; i< length; i++) {
- 4e8:	01 96       	adiw	r24, 0x01	; 1
- 4ea:	32 96       	adiw	r30, 0x02	; 2
- 4ec:	84 17       	cp	r24, r20
- 4ee:	95 07       	cpc	r25, r21
- 4f0:	99 f7       	brne	.-26     	; 0x4d8 <encodeBIN+0x16>
- 4f2:	08 95       	ret
+ 4f8:	01 96       	adiw	r24, 0x01	; 1
+ 4fa:	32 96       	adiw	r30, 0x02	; 2
+ 4fc:	84 17       	cp	r24, r20
+ 4fe:	95 07       	cpc	r25, r21
+ 500:	99 f7       	brne	.-26     	; 0x4e8 <encodeBIN+0x16>
+ 502:	08 95       	ret
 
-000004f4 <encodeCommand>:
+00000504 <encodeCommand>:
 	else if (source[0] == '1' && source[1] == '5') {
 		encodeBIN("1111", destination, length);
 	}
 }
 
 void encodeCommand(const char * source, int * destination, int length) {
- 4f4:	fc 01       	movw	r30, r24
+ 504:	fc 01       	movw	r30, r24
 	if (source[2] == '0' && source[3] == '0') {
- 4f6:	82 81       	ldd	r24, Z+2	; 0x02
- 4f8:	80 33       	cpi	r24, 0x30	; 48
- 4fa:	09 f0       	breq	.+2      	; 0x4fe <encodeCommand+0xa>
- 4fc:	47 c0       	rjmp	.+142    	; 0x58c <encodeCommand+0x98>
- 4fe:	83 81       	ldd	r24, Z+3	; 0x03
- 500:	80 33       	cpi	r24, 0x30	; 48
- 502:	29 f4       	brne	.+10     	; 0x50e <encodeCommand+0x1a>
+ 506:	82 81       	ldd	r24, Z+2	; 0x02
+ 508:	80 33       	cpi	r24, 0x30	; 48
+ 50a:	09 f0       	breq	.+2      	; 0x50e <encodeCommand+0xa>
+ 50c:	47 c0       	rjmp	.+142    	; 0x59c <encodeCommand+0x98>
+ 50e:	83 81       	ldd	r24, Z+3	; 0x03
+ 510:	80 33       	cpi	r24, 0x30	; 48
+ 512:	29 f4       	brne	.+10     	; 0x51e <encodeCommand+0x1a>
 		encodeBIN("0000", destination, length);
- 504:	80 e0       	ldi	r24, 0x00	; 0
- 506:	92 e0       	ldi	r25, 0x02	; 2
- 508:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 50c:	08 95       	ret
+ 514:	80 e0       	ldi	r24, 0x00	; 0
+ 516:	92 e0       	ldi	r25, 0x02	; 2
+ 518:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 51c:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '1') {
- 50e:	81 33       	cpi	r24, 0x31	; 49
- 510:	29 f4       	brne	.+10     	; 0x51c <encodeCommand+0x28>
+ 51e:	81 33       	cpi	r24, 0x31	; 49
+ 520:	29 f4       	brne	.+10     	; 0x52c <encodeCommand+0x28>
 		encodeBIN("0001", destination, length);
- 512:	85 e0       	ldi	r24, 0x05	; 5
- 514:	92 e0       	ldi	r25, 0x02	; 2
- 516:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 51a:	08 95       	ret
+ 522:	85 e0       	ldi	r24, 0x05	; 5
+ 524:	92 e0       	ldi	r25, 0x02	; 2
+ 526:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 52a:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '2') {
- 51c:	82 33       	cpi	r24, 0x32	; 50
- 51e:	29 f4       	brne	.+10     	; 0x52a <encodeCommand+0x36>
+ 52c:	82 33       	cpi	r24, 0x32	; 50
+ 52e:	29 f4       	brne	.+10     	; 0x53a <encodeCommand+0x36>
 		encodeBIN("0010", destination, length);
- 520:	8a e0       	ldi	r24, 0x0A	; 10
- 522:	92 e0       	ldi	r25, 0x02	; 2
- 524:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 528:	08 95       	ret
+ 530:	8a e0       	ldi	r24, 0x0A	; 10
+ 532:	92 e0       	ldi	r25, 0x02	; 2
+ 534:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 538:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '3') {
- 52a:	83 33       	cpi	r24, 0x33	; 51
- 52c:	29 f4       	brne	.+10     	; 0x538 <encodeCommand+0x44>
+ 53a:	83 33       	cpi	r24, 0x33	; 51
+ 53c:	29 f4       	brne	.+10     	; 0x548 <encodeCommand+0x44>
 		encodeBIN("0011", destination, length);
- 52e:	8f e0       	ldi	r24, 0x0F	; 15
- 530:	92 e0       	ldi	r25, 0x02	; 2
- 532:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 536:	08 95       	ret
+ 53e:	8f e0       	ldi	r24, 0x0F	; 15
+ 540:	92 e0       	ldi	r25, 0x02	; 2
+ 542:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 546:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '4') {
- 538:	84 33       	cpi	r24, 0x34	; 52
- 53a:	29 f4       	brne	.+10     	; 0x546 <encodeCommand+0x52>
+ 548:	84 33       	cpi	r24, 0x34	; 52
+ 54a:	29 f4       	brne	.+10     	; 0x556 <encodeCommand+0x52>
 		encodeBIN("0100", destination, length);
- 53c:	84 e1       	ldi	r24, 0x14	; 20
- 53e:	92 e0       	ldi	r25, 0x02	; 2
- 540:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 544:	08 95       	ret
+ 54c:	84 e1       	ldi	r24, 0x14	; 20
+ 54e:	92 e0       	ldi	r25, 0x02	; 2
+ 550:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 554:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '5') {
- 546:	85 33       	cpi	r24, 0x35	; 53
- 548:	29 f4       	brne	.+10     	; 0x554 <encodeCommand+0x60>
+ 556:	85 33       	cpi	r24, 0x35	; 53
+ 558:	29 f4       	brne	.+10     	; 0x564 <encodeCommand+0x60>
 		encodeBIN("0101", destination, length);
- 54a:	89 e1       	ldi	r24, 0x19	; 25
- 54c:	92 e0       	ldi	r25, 0x02	; 2
- 54e:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 552:	08 95       	ret
+ 55a:	89 e1       	ldi	r24, 0x19	; 25
+ 55c:	92 e0       	ldi	r25, 0x02	; 2
+ 55e:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 562:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '6') {
- 554:	86 33       	cpi	r24, 0x36	; 54
- 556:	29 f4       	brne	.+10     	; 0x562 <encodeCommand+0x6e>
+ 564:	86 33       	cpi	r24, 0x36	; 54
+ 566:	29 f4       	brne	.+10     	; 0x572 <encodeCommand+0x6e>
 		encodeBIN("0110", destination, length);
- 558:	8e e1       	ldi	r24, 0x1E	; 30
- 55a:	92 e0       	ldi	r25, 0x02	; 2
- 55c:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 560:	08 95       	ret
+ 568:	8e e1       	ldi	r24, 0x1E	; 30
+ 56a:	92 e0       	ldi	r25, 0x02	; 2
+ 56c:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 570:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '7') {
- 562:	87 33       	cpi	r24, 0x37	; 55
- 564:	29 f4       	brne	.+10     	; 0x570 <encodeCommand+0x7c>
+ 572:	87 33       	cpi	r24, 0x37	; 55
+ 574:	29 f4       	brne	.+10     	; 0x580 <encodeCommand+0x7c>
 		encodeBIN("0111", destination, length);
- 566:	83 e2       	ldi	r24, 0x23	; 35
- 568:	92 e0       	ldi	r25, 0x02	; 2
- 56a:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 56e:	08 95       	ret
+ 576:	83 e2       	ldi	r24, 0x23	; 35
+ 578:	92 e0       	ldi	r25, 0x02	; 2
+ 57a:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 57e:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '8') {
- 570:	88 33       	cpi	r24, 0x38	; 56
- 572:	29 f4       	brne	.+10     	; 0x57e <encodeCommand+0x8a>
+ 580:	88 33       	cpi	r24, 0x38	; 56
+ 582:	29 f4       	brne	.+10     	; 0x58e <encodeCommand+0x8a>
 		encodeBIN("1000", destination, length);
- 574:	88 e2       	ldi	r24, 0x28	; 40
- 576:	92 e0       	ldi	r25, 0x02	; 2
- 578:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 57c:	08 95       	ret
+ 584:	88 e2       	ldi	r24, 0x28	; 40
+ 586:	92 e0       	ldi	r25, 0x02	; 2
+ 588:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 58c:	08 95       	ret
 	}
 	else if (source[2] == '0' && source[3] == '9') {
- 57e:	89 33       	cpi	r24, 0x39	; 57
- 580:	89 f5       	brne	.+98     	; 0x5e4 <encodeCommand+0xf0>
+ 58e:	89 33       	cpi	r24, 0x39	; 57
+ 590:	89 f5       	brne	.+98     	; 0x5f4 <encodeCommand+0xf0>
 		encodeBIN("1001", destination, length);
- 582:	8d e2       	ldi	r24, 0x2D	; 45
- 584:	92 e0       	ldi	r25, 0x02	; 2
- 586:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 58a:	08 95       	ret
+ 592:	8d e2       	ldi	r24, 0x2D	; 45
+ 594:	92 e0       	ldi	r25, 0x02	; 2
+ 596:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 59a:	08 95       	ret
 	}
 	else if (source[2] == '1' && source[3] == '0') {
- 58c:	81 33       	cpi	r24, 0x31	; 49
- 58e:	51 f5       	brne	.+84     	; 0x5e4 <encodeCommand+0xf0>
- 590:	83 81       	ldd	r24, Z+3	; 0x03
- 592:	80 33       	cpi	r24, 0x30	; 48
- 594:	29 f4       	brne	.+10     	; 0x5a0 <encodeCommand+0xac>
+ 59c:	81 33       	cpi	r24, 0x31	; 49
+ 59e:	51 f5       	brne	.+84     	; 0x5f4 <encodeCommand+0xf0>
+ 5a0:	83 81       	ldd	r24, Z+3	; 0x03
+ 5a2:	80 33       	cpi	r24, 0x30	; 48
+ 5a4:	29 f4       	brne	.+10     	; 0x5b0 <encodeCommand+0xac>
 		encodeBIN("1010", destination, length);
- 596:	82 e3       	ldi	r24, 0x32	; 50
- 598:	92 e0       	ldi	r25, 0x02	; 2
- 59a:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 59e:	08 95       	ret
+ 5a6:	82 e3       	ldi	r24, 0x32	; 50
+ 5a8:	92 e0       	ldi	r25, 0x02	; 2
+ 5aa:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 5ae:	08 95       	ret
 	}
 	else if (source[2] == '1' && source[3] == '1') {
- 5a0:	81 33       	cpi	r24, 0x31	; 49
- 5a2:	29 f4       	brne	.+10     	; 0x5ae <encodeCommand+0xba>
+ 5b0:	81 33       	cpi	r24, 0x31	; 49
+ 5b2:	29 f4       	brne	.+10     	; 0x5be <encodeCommand+0xba>
 		encodeBIN("1011", destination, length);
- 5a4:	87 e3       	ldi	r24, 0x37	; 55
- 5a6:	92 e0       	ldi	r25, 0x02	; 2
- 5a8:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 5ac:	08 95       	ret
+ 5b4:	87 e3       	ldi	r24, 0x37	; 55
+ 5b6:	92 e0       	ldi	r25, 0x02	; 2
+ 5b8:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 5bc:	08 95       	ret
 	}
 	else if (source[2] == '1' && source[3] == '2') {
- 5ae:	82 33       	cpi	r24, 0x32	; 50
- 5b0:	29 f4       	brne	.+10     	; 0x5bc <encodeCommand+0xc8>
+ 5be:	82 33       	cpi	r24, 0x32	; 50
+ 5c0:	29 f4       	brne	.+10     	; 0x5cc <encodeCommand+0xc8>
 		encodeBIN("1100", destination, length);
- 5b2:	8c e3       	ldi	r24, 0x3C	; 60
- 5b4:	92 e0       	ldi	r25, 0x02	; 2
- 5b6:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 5ba:	08 95       	ret
+ 5c2:	8c e3       	ldi	r24, 0x3C	; 60
+ 5c4:	92 e0       	ldi	r25, 0x02	; 2
+ 5c6:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 5ca:	08 95       	ret
 	}
 	else if (source[2] == '1' && source[3] == '3') {
- 5bc:	83 33       	cpi	r24, 0x33	; 51
- 5be:	29 f4       	brne	.+10     	; 0x5ca <encodeCommand+0xd6>
+ 5cc:	83 33       	cpi	r24, 0x33	; 51
+ 5ce:	29 f4       	brne	.+10     	; 0x5da <encodeCommand+0xd6>
 		encodeBIN("1101", destination, length);
- 5c0:	81 e4       	ldi	r24, 0x41	; 65
- 5c2:	92 e0       	ldi	r25, 0x02	; 2
- 5c4:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 5c8:	08 95       	ret
+ 5d0:	81 e4       	ldi	r24, 0x41	; 65
+ 5d2:	92 e0       	ldi	r25, 0x02	; 2
+ 5d4:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 5d8:	08 95       	ret
 	}
 	else if (source[2] == '1' && source[3] == '4') {
- 5ca:	84 33       	cpi	r24, 0x34	; 52
- 5cc:	29 f4       	brne	.+10     	; 0x5d8 <encodeCommand+0xe4>
+ 5da:	84 33       	cpi	r24, 0x34	; 52
+ 5dc:	29 f4       	brne	.+10     	; 0x5e8 <encodeCommand+0xe4>
 		encodeBIN("1110", destination, length);
- 5ce:	86 e4       	ldi	r24, 0x46	; 70
- 5d0:	92 e0       	ldi	r25, 0x02	; 2
- 5d2:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 5d6:	08 95       	ret
+ 5de:	86 e4       	ldi	r24, 0x46	; 70
+ 5e0:	92 e0       	ldi	r25, 0x02	; 2
+ 5e2:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 5e6:	08 95       	ret
 	}
 	else if (source[2] == '1' && source[3] == '5') {
- 5d8:	85 33       	cpi	r24, 0x35	; 53
- 5da:	21 f4       	brne	.+8      	; 0x5e4 <encodeCommand+0xf0>
+ 5e8:	85 33       	cpi	r24, 0x35	; 53
+ 5ea:	21 f4       	brne	.+8      	; 0x5f4 <encodeCommand+0xf0>
 		encodeBIN("1111", destination, length);
- 5dc:	8b e4       	ldi	r24, 0x4B	; 75
- 5de:	92 e0       	ldi	r25, 0x02	; 2
- 5e0:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 5e4:	08 95       	ret
+ 5ec:	8b e4       	ldi	r24, 0x4B	; 75
+ 5ee:	92 e0       	ldi	r25, 0x02	; 2
+ 5f0:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 5f4:	08 95       	ret
 
-000005e6 <encodeAddress>:
+000005f6 <encodeAddress>:
 	encodeCommand(source, command_dest, command_length);
 	x10encode(address_dest, command_dest,x10add,x10com);
 }
 
 
 void encodeAddress(const char * source, int * destination, int length) {
- 5e6:	fc 01       	movw	r30, r24
+ 5f6:	fc 01       	movw	r30, r24
 	if (source[0] == '0' && source[1] == '0') {
- 5e8:	80 81       	ld	r24, Z
- 5ea:	80 33       	cpi	r24, 0x30	; 48
- 5ec:	09 f0       	breq	.+2      	; 0x5f0 <encodeAddress+0xa>
- 5ee:	47 c0       	rjmp	.+142    	; 0x67e <encodeAddress+0x98>
- 5f0:	81 81       	ldd	r24, Z+1	; 0x01
- 5f2:	80 33       	cpi	r24, 0x30	; 48
- 5f4:	29 f4       	brne	.+10     	; 0x600 <encodeAddress+0x1a>
+ 5f8:	80 81       	ld	r24, Z
+ 5fa:	80 33       	cpi	r24, 0x30	; 48
+ 5fc:	09 f0       	breq	.+2      	; 0x600 <encodeAddress+0xa>
+ 5fe:	47 c0       	rjmp	.+142    	; 0x68e <encodeAddress+0x98>
+ 600:	81 81       	ldd	r24, Z+1	; 0x01
+ 602:	80 33       	cpi	r24, 0x30	; 48
+ 604:	29 f4       	brne	.+10     	; 0x610 <encodeAddress+0x1a>
 		encodeBIN("0000", destination, length);
- 5f6:	80 e0       	ldi	r24, 0x00	; 0
- 5f8:	92 e0       	ldi	r25, 0x02	; 2
- 5fa:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 5fe:	08 95       	ret
+ 606:	80 e0       	ldi	r24, 0x00	; 0
+ 608:	92 e0       	ldi	r25, 0x02	; 2
+ 60a:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 60e:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '1') {
- 600:	81 33       	cpi	r24, 0x31	; 49
- 602:	29 f4       	brne	.+10     	; 0x60e <encodeAddress+0x28>
+ 610:	81 33       	cpi	r24, 0x31	; 49
+ 612:	29 f4       	brne	.+10     	; 0x61e <encodeAddress+0x28>
 		encodeBIN("0001", destination, length);
- 604:	85 e0       	ldi	r24, 0x05	; 5
- 606:	92 e0       	ldi	r25, 0x02	; 2
- 608:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 60c:	08 95       	ret
+ 614:	85 e0       	ldi	r24, 0x05	; 5
+ 616:	92 e0       	ldi	r25, 0x02	; 2
+ 618:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 61c:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '2') {
- 60e:	82 33       	cpi	r24, 0x32	; 50
- 610:	29 f4       	brne	.+10     	; 0x61c <encodeAddress+0x36>
+ 61e:	82 33       	cpi	r24, 0x32	; 50
+ 620:	29 f4       	brne	.+10     	; 0x62c <encodeAddress+0x36>
 		encodeBIN("0010", destination, length);
- 612:	8a e0       	ldi	r24, 0x0A	; 10
- 614:	92 e0       	ldi	r25, 0x02	; 2
- 616:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 61a:	08 95       	ret
+ 622:	8a e0       	ldi	r24, 0x0A	; 10
+ 624:	92 e0       	ldi	r25, 0x02	; 2
+ 626:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 62a:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '3') {
- 61c:	83 33       	cpi	r24, 0x33	; 51
- 61e:	29 f4       	brne	.+10     	; 0x62a <encodeAddress+0x44>
+ 62c:	83 33       	cpi	r24, 0x33	; 51
+ 62e:	29 f4       	brne	.+10     	; 0x63a <encodeAddress+0x44>
 		encodeBIN("0011", destination, length);
- 620:	8f e0       	ldi	r24, 0x0F	; 15
- 622:	92 e0       	ldi	r25, 0x02	; 2
- 624:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 628:	08 95       	ret
+ 630:	8f e0       	ldi	r24, 0x0F	; 15
+ 632:	92 e0       	ldi	r25, 0x02	; 2
+ 634:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 638:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '4') {
- 62a:	84 33       	cpi	r24, 0x34	; 52
- 62c:	29 f4       	brne	.+10     	; 0x638 <encodeAddress+0x52>
+ 63a:	84 33       	cpi	r24, 0x34	; 52
+ 63c:	29 f4       	brne	.+10     	; 0x648 <encodeAddress+0x52>
 		encodeBIN("0100", destination, length);
- 62e:	84 e1       	ldi	r24, 0x14	; 20
- 630:	92 e0       	ldi	r25, 0x02	; 2
- 632:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 636:	08 95       	ret
+ 63e:	84 e1       	ldi	r24, 0x14	; 20
+ 640:	92 e0       	ldi	r25, 0x02	; 2
+ 642:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 646:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '5') {
- 638:	85 33       	cpi	r24, 0x35	; 53
- 63a:	29 f4       	brne	.+10     	; 0x646 <encodeAddress+0x60>
+ 648:	85 33       	cpi	r24, 0x35	; 53
+ 64a:	29 f4       	brne	.+10     	; 0x656 <encodeAddress+0x60>
 		encodeBIN("0101", destination, length);
- 63c:	89 e1       	ldi	r24, 0x19	; 25
- 63e:	92 e0       	ldi	r25, 0x02	; 2
- 640:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 644:	08 95       	ret
+ 64c:	89 e1       	ldi	r24, 0x19	; 25
+ 64e:	92 e0       	ldi	r25, 0x02	; 2
+ 650:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 654:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '6') {
- 646:	86 33       	cpi	r24, 0x36	; 54
- 648:	29 f4       	brne	.+10     	; 0x654 <encodeAddress+0x6e>
+ 656:	86 33       	cpi	r24, 0x36	; 54
+ 658:	29 f4       	brne	.+10     	; 0x664 <encodeAddress+0x6e>
 		encodeBIN("0110", destination, length);
- 64a:	8e e1       	ldi	r24, 0x1E	; 30
- 64c:	92 e0       	ldi	r25, 0x02	; 2
- 64e:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 652:	08 95       	ret
+ 65a:	8e e1       	ldi	r24, 0x1E	; 30
+ 65c:	92 e0       	ldi	r25, 0x02	; 2
+ 65e:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 662:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '7') {
- 654:	87 33       	cpi	r24, 0x37	; 55
- 656:	29 f4       	brne	.+10     	; 0x662 <encodeAddress+0x7c>
+ 664:	87 33       	cpi	r24, 0x37	; 55
+ 666:	29 f4       	brne	.+10     	; 0x672 <encodeAddress+0x7c>
 		encodeBIN("0111", destination, length);
- 658:	83 e2       	ldi	r24, 0x23	; 35
- 65a:	92 e0       	ldi	r25, 0x02	; 2
- 65c:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 660:	08 95       	ret
+ 668:	83 e2       	ldi	r24, 0x23	; 35
+ 66a:	92 e0       	ldi	r25, 0x02	; 2
+ 66c:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 670:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '8') {
- 662:	88 33       	cpi	r24, 0x38	; 56
- 664:	29 f4       	brne	.+10     	; 0x670 <encodeAddress+0x8a>
+ 672:	88 33       	cpi	r24, 0x38	; 56
+ 674:	29 f4       	brne	.+10     	; 0x680 <encodeAddress+0x8a>
 		encodeBIN("1000", destination, length);
- 666:	88 e2       	ldi	r24, 0x28	; 40
- 668:	92 e0       	ldi	r25, 0x02	; 2
- 66a:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 66e:	08 95       	ret
+ 676:	88 e2       	ldi	r24, 0x28	; 40
+ 678:	92 e0       	ldi	r25, 0x02	; 2
+ 67a:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 67e:	08 95       	ret
 	}
 	else if (source[0] == '0' && source[1] == '9') {
- 670:	89 33       	cpi	r24, 0x39	; 57
- 672:	89 f5       	brne	.+98     	; 0x6d6 <encodeAddress+0xf0>
+ 680:	89 33       	cpi	r24, 0x39	; 57
+ 682:	89 f5       	brne	.+98     	; 0x6e6 <encodeAddress+0xf0>
 		encodeBIN("1001", destination, length);
- 674:	8d e2       	ldi	r24, 0x2D	; 45
- 676:	92 e0       	ldi	r25, 0x02	; 2
- 678:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 67c:	08 95       	ret
+ 684:	8d e2       	ldi	r24, 0x2D	; 45
+ 686:	92 e0       	ldi	r25, 0x02	; 2
+ 688:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 68c:	08 95       	ret
 	}
 	else if (source[0] == '1' && source[1] == '0') {
- 67e:	81 33       	cpi	r24, 0x31	; 49
- 680:	51 f5       	brne	.+84     	; 0x6d6 <encodeAddress+0xf0>
- 682:	81 81       	ldd	r24, Z+1	; 0x01
- 684:	80 33       	cpi	r24, 0x30	; 48
- 686:	29 f4       	brne	.+10     	; 0x692 <encodeAddress+0xac>
+ 68e:	81 33       	cpi	r24, 0x31	; 49
+ 690:	51 f5       	brne	.+84     	; 0x6e6 <encodeAddress+0xf0>
+ 692:	81 81       	ldd	r24, Z+1	; 0x01
+ 694:	80 33       	cpi	r24, 0x30	; 48
+ 696:	29 f4       	brne	.+10     	; 0x6a2 <encodeAddress+0xac>
 		encodeBIN("1010", destination, length);
- 688:	82 e3       	ldi	r24, 0x32	; 50
- 68a:	92 e0       	ldi	r25, 0x02	; 2
- 68c:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 690:	08 95       	ret
+ 698:	82 e3       	ldi	r24, 0x32	; 50
+ 69a:	92 e0       	ldi	r25, 0x02	; 2
+ 69c:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 6a0:	08 95       	ret
 	}
 	else if (source[0] == '1' && source[1] == '1') {
- 692:	81 33       	cpi	r24, 0x31	; 49
- 694:	29 f4       	brne	.+10     	; 0x6a0 <encodeAddress+0xba>
+ 6a2:	81 33       	cpi	r24, 0x31	; 49
+ 6a4:	29 f4       	brne	.+10     	; 0x6b0 <encodeAddress+0xba>
 		encodeBIN("1011", destination, length);
- 696:	87 e3       	ldi	r24, 0x37	; 55
- 698:	92 e0       	ldi	r25, 0x02	; 2
- 69a:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 69e:	08 95       	ret
+ 6a6:	87 e3       	ldi	r24, 0x37	; 55
+ 6a8:	92 e0       	ldi	r25, 0x02	; 2
+ 6aa:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 6ae:	08 95       	ret
 	}
 	else if (source[0] == '1' && source[1] == '2') {
- 6a0:	82 33       	cpi	r24, 0x32	; 50
- 6a2:	29 f4       	brne	.+10     	; 0x6ae <encodeAddress+0xc8>
+ 6b0:	82 33       	cpi	r24, 0x32	; 50
+ 6b2:	29 f4       	brne	.+10     	; 0x6be <encodeAddress+0xc8>
 		encodeBIN("1100", destination, length);
- 6a4:	8c e3       	ldi	r24, 0x3C	; 60
- 6a6:	92 e0       	ldi	r25, 0x02	; 2
- 6a8:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 6ac:	08 95       	ret
+ 6b4:	8c e3       	ldi	r24, 0x3C	; 60
+ 6b6:	92 e0       	ldi	r25, 0x02	; 2
+ 6b8:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 6bc:	08 95       	ret
 	}
 	else if (source[0] == '1' && source[1] == '3') {
- 6ae:	83 33       	cpi	r24, 0x33	; 51
- 6b0:	29 f4       	brne	.+10     	; 0x6bc <encodeAddress+0xd6>
+ 6be:	83 33       	cpi	r24, 0x33	; 51
+ 6c0:	29 f4       	brne	.+10     	; 0x6cc <encodeAddress+0xd6>
 		encodeBIN("1101", destination, length);
- 6b2:	81 e4       	ldi	r24, 0x41	; 65
- 6b4:	92 e0       	ldi	r25, 0x02	; 2
- 6b6:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 6ba:	08 95       	ret
+ 6c2:	81 e4       	ldi	r24, 0x41	; 65
+ 6c4:	92 e0       	ldi	r25, 0x02	; 2
+ 6c6:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 6ca:	08 95       	ret
 	}
 	else if (source[0] == '1' && source[1] == '4') {
- 6bc:	84 33       	cpi	r24, 0x34	; 52
- 6be:	29 f4       	brne	.+10     	; 0x6ca <encodeAddress+0xe4>
+ 6cc:	84 33       	cpi	r24, 0x34	; 52
+ 6ce:	29 f4       	brne	.+10     	; 0x6da <encodeAddress+0xe4>
 		encodeBIN("1110", destination, length);
- 6c0:	86 e4       	ldi	r24, 0x46	; 70
- 6c2:	92 e0       	ldi	r25, 0x02	; 2
- 6c4:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 6c8:	08 95       	ret
+ 6d0:	86 e4       	ldi	r24, 0x46	; 70
+ 6d2:	92 e0       	ldi	r25, 0x02	; 2
+ 6d4:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 6d8:	08 95       	ret
 	}
 	else if (source[0] == '1' && source[1] == '5') {
- 6ca:	85 33       	cpi	r24, 0x35	; 53
- 6cc:	21 f4       	brne	.+8      	; 0x6d6 <encodeAddress+0xf0>
+ 6da:	85 33       	cpi	r24, 0x35	; 53
+ 6dc:	21 f4       	brne	.+8      	; 0x6e6 <encodeAddress+0xf0>
 		encodeBIN("1111", destination, length);
- 6ce:	8b e4       	ldi	r24, 0x4B	; 75
- 6d0:	92 e0       	ldi	r25, 0x02	; 2
- 6d2:	0e 94 61 02 	call	0x4c2	; 0x4c2 <encodeBIN>
- 6d6:	08 95       	ret
+ 6de:	8b e4       	ldi	r24, 0x4B	; 75
+ 6e0:	92 e0       	ldi	r25, 0x02	; 2
+ 6e2:	0e 94 69 02 	call	0x4d2	; 0x4d2 <encodeBIN>
+ 6e6:	08 95       	ret
 
-000006d8 <x10encode>:
+000006e8 <x10encode>:
 		dest[i] = 1;
 		else
 		dest[i] = 0;
 	}
 }
 void x10encode(int * adr, int * com,int * x10add,int * x10com) {	
- 6d8:	cf 93       	push	r28
- 6da:	df 93       	push	r29
- 6dc:	c6 2f       	mov	r28, r22
- 6de:	d2 2f       	mov	r29, r18
- 6e0:	63 2f       	mov	r22, r19
+ 6e8:	cf 93       	push	r28
+ 6ea:	df 93       	push	r29
+ 6ec:	c6 2f       	mov	r28, r22
+ 6ee:	d2 2f       	mov	r29, r18
+ 6f0:	63 2f       	mov	r22, r19
 	for (int i = 1; i < (ADDRESS_LENGTH)+1; i++) {
- 6e2:	a8 2f       	mov	r26, r24
- 6e4:	b9 2f       	mov	r27, r25
- 6e6:	e4 2f       	mov	r30, r20
- 6e8:	f5 2f       	mov	r31, r21
- 6ea:	21 e0       	ldi	r18, 0x01	; 1
- 6ec:	30 e0       	ldi	r19, 0x00	; 0
+ 6f2:	a8 2f       	mov	r26, r24
+ 6f4:	b9 2f       	mov	r27, r25
+ 6f6:	e4 2f       	mov	r30, r20
+ 6f8:	f5 2f       	mov	r31, r21
+ 6fa:	21 e0       	ldi	r18, 0x01	; 1
+ 6fc:	30 e0       	ldi	r19, 0x00	; 0
 			x10add[(i * 2) - 2] = 1;
 			x10add[(i * 2) - 1] = 0;
 		}
 		else {
 			x10add[(i * 2) - 2] = 0;
 			x10add[(i * 2) - 1] = 1;
- 6ee:	41 e0       	ldi	r20, 0x01	; 1
- 6f0:	50 e0       	ldi	r21, 0x00	; 0
+ 6fe:	41 e0       	ldi	r20, 0x01	; 1
+ 700:	50 e0       	ldi	r21, 0x00	; 0
 		dest[i] = 0;
 	}
 }
 void x10encode(int * adr, int * com,int * x10add,int * x10com) {	
 	for (int i = 1; i < (ADDRESS_LENGTH)+1; i++) {
 		if (adr[i-1] == 1) {
- 6f2:	8d 91       	ld	r24, X+
- 6f4:	9d 91       	ld	r25, X+
- 6f6:	81 30       	cpi	r24, 0x01	; 1
- 6f8:	91 05       	cpc	r25, r1
- 6fa:	29 f4       	brne	.+10     	; 0x706 <x10encode+0x2e>
+ 702:	8d 91       	ld	r24, X+
+ 704:	9d 91       	ld	r25, X+
+ 706:	81 30       	cpi	r24, 0x01	; 1
+ 708:	91 05       	cpc	r25, r1
+ 70a:	29 f4       	brne	.+10     	; 0x716 <x10encode+0x2e>
 			x10add[(i * 2) - 2] = 1;
- 6fc:	51 83       	std	Z+1, r21	; 0x01
- 6fe:	40 83       	st	Z, r20
+ 70c:	51 83       	std	Z+1, r21	; 0x01
+ 70e:	40 83       	st	Z, r20
 			x10add[(i * 2) - 1] = 0;
- 700:	13 82       	std	Z+3, r1	; 0x03
- 702:	12 82       	std	Z+2, r1	; 0x02
- 704:	04 c0       	rjmp	.+8      	; 0x70e <x10encode+0x36>
+ 710:	13 82       	std	Z+3, r1	; 0x03
+ 712:	12 82       	std	Z+2, r1	; 0x02
+ 714:	04 c0       	rjmp	.+8      	; 0x71e <x10encode+0x36>
 		}
 		else {
 			x10add[(i * 2) - 2] = 0;
- 706:	11 82       	std	Z+1, r1	; 0x01
- 708:	10 82       	st	Z, r1
+ 716:	11 82       	std	Z+1, r1	; 0x01
+ 718:	10 82       	st	Z, r1
 			x10add[(i * 2) - 1] = 1;
- 70a:	53 83       	std	Z+3, r21	; 0x03
- 70c:	42 83       	std	Z+2, r20	; 0x02
+ 71a:	53 83       	std	Z+3, r21	; 0x03
+ 71c:	42 83       	std	Z+2, r20	; 0x02
 		else
 		dest[i] = 0;
 	}
 }
 void x10encode(int * adr, int * com,int * x10add,int * x10com) {	
 	for (int i = 1; i < (ADDRESS_LENGTH)+1; i++) {
- 70e:	2f 5f       	subi	r18, 0xFF	; 255
- 710:	3f 4f       	sbci	r19, 0xFF	; 255
- 712:	34 96       	adiw	r30, 0x04	; 4
- 714:	25 30       	cpi	r18, 0x05	; 5
- 716:	31 05       	cpc	r19, r1
- 718:	61 f7       	brne	.-40     	; 0x6f2 <x10encode+0x1a>
- 71a:	ac 2f       	mov	r26, r28
- 71c:	b7 2f       	mov	r27, r23
- 71e:	ed 2f       	mov	r30, r29
- 720:	f6 2f       	mov	r31, r22
- 722:	21 e0       	ldi	r18, 0x01	; 1
- 724:	30 e0       	ldi	r19, 0x00	; 0
+ 71e:	2f 5f       	subi	r18, 0xFF	; 255
+ 720:	3f 4f       	sbci	r19, 0xFF	; 255
+ 722:	34 96       	adiw	r30, 0x04	; 4
+ 724:	25 30       	cpi	r18, 0x05	; 5
+ 726:	31 05       	cpc	r19, r1
+ 728:	61 f7       	brne	.-40     	; 0x702 <x10encode+0x1a>
+ 72a:	ac 2f       	mov	r26, r28
+ 72c:	b7 2f       	mov	r27, r23
+ 72e:	ed 2f       	mov	r30, r29
+ 730:	f6 2f       	mov	r31, r22
+ 732:	21 e0       	ldi	r18, 0x01	; 1
+ 734:	30 e0       	ldi	r19, 0x00	; 0
 		x10com[(i * 2) - 2] = 1;
 		x10com[(i * 2) - 1] = 0;
 	}
 	else {
 		x10com[(i * 2) - 2] = 0;
 		x10com[(i * 2) - 1] = 1;
- 726:	41 e0       	ldi	r20, 0x01	; 1
- 728:	50 e0       	ldi	r21, 0x00	; 0
+ 736:	41 e0       	ldi	r20, 0x01	; 1
+ 738:	50 e0       	ldi	r21, 0x00	; 0
 			x10add[(i * 2) - 2] = 0;
 			x10add[(i * 2) - 1] = 1;
 			}
 		}		
 	for (int i = 1; i < (COMMAND_LENGTH)+1; i++) {
 		if (com[((i)-1)] == 1) {							// Konvertering af kommandoer til komplimentære bits
- 72a:	8d 91       	ld	r24, X+
- 72c:	9d 91       	ld	r25, X+
- 72e:	81 30       	cpi	r24, 0x01	; 1
- 730:	91 05       	cpc	r25, r1
- 732:	29 f4       	brne	.+10     	; 0x73e <x10encode+0x66>
+ 73a:	8d 91       	ld	r24, X+
+ 73c:	9d 91       	ld	r25, X+
+ 73e:	81 30       	cpi	r24, 0x01	; 1
+ 740:	91 05       	cpc	r25, r1
+ 742:	29 f4       	brne	.+10     	; 0x74e <x10encode+0x66>
 		x10com[(i * 2) - 2] = 1;
- 734:	51 83       	std	Z+1, r21	; 0x01
- 736:	40 83       	st	Z, r20
+ 744:	51 83       	std	Z+1, r21	; 0x01
+ 746:	40 83       	st	Z, r20
 		x10com[(i * 2) - 1] = 0;
- 738:	13 82       	std	Z+3, r1	; 0x03
- 73a:	12 82       	std	Z+2, r1	; 0x02
- 73c:	04 c0       	rjmp	.+8      	; 0x746 <x10encode+0x6e>
+ 748:	13 82       	std	Z+3, r1	; 0x03
+ 74a:	12 82       	std	Z+2, r1	; 0x02
+ 74c:	04 c0       	rjmp	.+8      	; 0x756 <x10encode+0x6e>
 	}
 	else {
 		x10com[(i * 2) - 2] = 0;
- 73e:	11 82       	std	Z+1, r1	; 0x01
- 740:	10 82       	st	Z, r1
+ 74e:	11 82       	std	Z+1, r1	; 0x01
+ 750:	10 82       	st	Z, r1
 		x10com[(i * 2) - 1] = 1;
- 742:	53 83       	std	Z+3, r21	; 0x03
- 744:	42 83       	std	Z+2, r20	; 0x02
+ 752:	53 83       	std	Z+3, r21	; 0x03
+ 754:	42 83       	std	Z+2, r20	; 0x02
 		else {
 			x10add[(i * 2) - 2] = 0;
 			x10add[(i * 2) - 1] = 1;
 			}
 		}		
 	for (int i = 1; i < (COMMAND_LENGTH)+1; i++) {
- 746:	2f 5f       	subi	r18, 0xFF	; 255
- 748:	3f 4f       	sbci	r19, 0xFF	; 255
- 74a:	34 96       	adiw	r30, 0x04	; 4
- 74c:	25 30       	cpi	r18, 0x05	; 5
- 74e:	31 05       	cpc	r19, r1
- 750:	61 f7       	brne	.-40     	; 0x72a <x10encode+0x52>
+ 756:	2f 5f       	subi	r18, 0xFF	; 255
+ 758:	3f 4f       	sbci	r19, 0xFF	; 255
+ 75a:	34 96       	adiw	r30, 0x04	; 4
+ 75c:	25 30       	cpi	r18, 0x05	; 5
+ 75e:	31 05       	cpc	r19, r1
+ 760:	61 f7       	brne	.-40     	; 0x73a <x10encode+0x52>
 	else {
 		x10com[(i * 2) - 2] = 0;
 		x10com[(i * 2) - 1] = 1;
 	}
 }
- 752:	df 91       	pop	r29
- 754:	cf 91       	pop	r28
- 756:	08 95       	ret
+ 762:	df 91       	pop	r29
+ 764:	cf 91       	pop	r28
+ 766:	08 95       	ret
 
-00000758 <toEncode>:
+00000768 <toEncode>:
 * Created: 30-04-2018 12:56:25
 *  Author: Valdemar
 */
 #include "Encoder.h"
 
 void toEncode(const char* source, int * address_dest, int address_length, int* command_dest, int command_length, int * x10add, int * x10com) {
- 758:	8f 92       	push	r8
- 75a:	9f 92       	push	r9
- 75c:	af 92       	push	r10
- 75e:	bf 92       	push	r11
- 760:	cf 92       	push	r12
- 762:	df 92       	push	r13
- 764:	ef 92       	push	r14
- 766:	ff 92       	push	r15
- 768:	0f 93       	push	r16
- 76a:	1f 93       	push	r17
- 76c:	cf 93       	push	r28
- 76e:	df 93       	push	r29
- 770:	ec 01       	movw	r28, r24
- 772:	5b 01       	movw	r10, r22
- 774:	49 01       	movw	r8, r18
+ 768:	8f 92       	push	r8
+ 76a:	9f 92       	push	r9
+ 76c:	af 92       	push	r10
+ 76e:	bf 92       	push	r11
+ 770:	cf 92       	push	r12
+ 772:	df 92       	push	r13
+ 774:	ef 92       	push	r14
+ 776:	ff 92       	push	r15
+ 778:	0f 93       	push	r16
+ 77a:	1f 93       	push	r17
+ 77c:	cf 93       	push	r28
+ 77e:	df 93       	push	r29
+ 780:	ec 01       	movw	r28, r24
+ 782:	5b 01       	movw	r10, r22
+ 784:	49 01       	movw	r8, r18
 	encodeAddress(source, address_dest, address_length);
- 776:	0e 94 f3 02 	call	0x5e6	; 0x5e6 <encodeAddress>
+ 786:	0e 94 fb 02 	call	0x5f6	; 0x5f6 <encodeAddress>
 	encodeCommand(source, command_dest, command_length);
- 77a:	ce 01       	movw	r24, r28
- 77c:	b4 01       	movw	r22, r8
- 77e:	a8 01       	movw	r20, r16
- 780:	0e 94 7a 02 	call	0x4f4	; 0x4f4 <encodeCommand>
+ 78a:	ce 01       	movw	r24, r28
+ 78c:	b4 01       	movw	r22, r8
+ 78e:	a8 01       	movw	r20, r16
+ 790:	0e 94 82 02 	call	0x504	; 0x504 <encodeCommand>
 	x10encode(address_dest, command_dest,x10add,x10com);
- 784:	c5 01       	movw	r24, r10
- 786:	b4 01       	movw	r22, r8
- 788:	a7 01       	movw	r20, r14
- 78a:	96 01       	movw	r18, r12
- 78c:	0e 94 6c 03 	call	0x6d8	; 0x6d8 <x10encode>
+ 794:	c5 01       	movw	r24, r10
+ 796:	b4 01       	movw	r22, r8
+ 798:	a7 01       	movw	r20, r14
+ 79a:	96 01       	movw	r18, r12
+ 79c:	0e 94 74 03 	call	0x6e8	; 0x6e8 <x10encode>
 }
- 790:	df 91       	pop	r29
- 792:	cf 91       	pop	r28
- 794:	1f 91       	pop	r17
- 796:	0f 91       	pop	r16
- 798:	ff 90       	pop	r15
- 79a:	ef 90       	pop	r14
- 79c:	df 90       	pop	r13
- 79e:	cf 90       	pop	r12
- 7a0:	bf 90       	pop	r11
- 7a2:	af 90       	pop	r10
- 7a4:	9f 90       	pop	r9
- 7a6:	8f 90       	pop	r8
- 7a8:	08 95       	ret
+ 7a0:	df 91       	pop	r29
+ 7a2:	cf 91       	pop	r28
+ 7a4:	1f 91       	pop	r17
+ 7a6:	0f 91       	pop	r16
+ 7a8:	ff 90       	pop	r15
+ 7aa:	ef 90       	pop	r14
+ 7ac:	df 90       	pop	r13
+ 7ae:	cf 90       	pop	r12
+ 7b0:	bf 90       	pop	r11
+ 7b2:	af 90       	pop	r10
+ 7b4:	9f 90       	pop	r9
+ 7b6:	8f 90       	pop	r8
+ 7b8:	08 95       	ret
 
-000007aa <main>:
+000007ba <main>:
 volatile int x10address[ADDRESS_LENGTH*2];
 volatile int x10command[COMMAND_LENGTH*2];
 
 
 int main(){
 	setup();
- 7aa:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <setup>
+ 7ba:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <setup>
+while(1){
+	InitUART(9600,8,'N',1);
 	while(getMessage()== 0){}
 	disableINT1();
-	/*if(getStatus() == 'L'){
+	if(getStatus() == 'L'){
 		deleteData(data,(ADDRESS_LENGTH/2)+(COMMAND_LENGTH/2));
-	}*/
+ 7be:	0f 2e       	mov	r0, r31
+ 7c0:	fd e7       	ldi	r31, 0x7D	; 125
+ 7c2:	8f 2e       	mov	r8, r31
+ 7c4:	f2 e0       	ldi	r31, 0x02	; 2
+ 7c6:	9f 2e       	mov	r9, r31
+ 7c8:	f0 2d       	mov	r31, r0
+	}
 	toEncode(data,address,ADDRESS_LENGTH,command,COMMAND_LENGTH,x10address,x10command);
- 7ae:	0f 2e       	mov	r0, r31
- 7b0:	fd e7       	ldi	r31, 0x7D	; 125
- 7b2:	8f 2e       	mov	r8, r31
- 7b4:	f2 e0       	ldi	r31, 0x02	; 2
- 7b6:	9f 2e       	mov	r9, r31
- 7b8:	f0 2d       	mov	r31, r0
- 7ba:	0f 2e       	mov	r0, r31
- 7bc:	fd e5       	ldi	r31, 0x5D	; 93
- 7be:	6f 2e       	mov	r6, r31
- 7c0:	f2 e0       	ldi	r31, 0x02	; 2
- 7c2:	7f 2e       	mov	r7, r31
- 7c4:	f0 2d       	mov	r31, r0
- 7c6:	0f 2e       	mov	r0, r31
- 7c8:	f5 e7       	ldi	r31, 0x75	; 117
- 7ca:	4f 2e       	mov	r4, r31
- 7cc:	f2 e0       	ldi	r31, 0x02	; 2
- 7ce:	5f 2e       	mov	r5, r31
- 7d0:	f0 2d       	mov	r31, r0
- 7d2:	c1 e8       	ldi	r28, 0x81	; 129
- 7d4:	d2 e0       	ldi	r29, 0x02	; 2
+ 7ca:	0f 2e       	mov	r0, r31
+ 7cc:	fd e5       	ldi	r31, 0x5D	; 93
+ 7ce:	6f 2e       	mov	r6, r31
+ 7d0:	f2 e0       	ldi	r31, 0x02	; 2
+ 7d2:	7f 2e       	mov	r7, r31
+ 7d4:	f0 2d       	mov	r31, r0
  7d6:	0f 2e       	mov	r0, r31
- 7d8:	f5 e6       	ldi	r31, 0x65	; 101
- 7da:	af 2e       	mov	r10, r31
+ 7d8:	f5 e7       	ldi	r31, 0x75	; 117
+ 7da:	4f 2e       	mov	r4, r31
  7dc:	f2 e0       	ldi	r31, 0x02	; 2
- 7de:	bf 2e       	mov	r11, r31
+ 7de:	5f 2e       	mov	r5, r31
  7e0:	f0 2d       	mov	r31, r0
+ 7e2:	c1 e8       	ldi	r28, 0x81	; 129
+ 7e4:	d2 e0       	ldi	r29, 0x02	; 2
+ 7e6:	0f 2e       	mov	r0, r31
+ 7e8:	f5 e6       	ldi	r31, 0x65	; 101
+ 7ea:	af 2e       	mov	r10, r31
+ 7ec:	f2 e0       	ldi	r31, 0x02	; 2
+ 7ee:	bf 2e       	mov	r11, r31
+ 7f0:	f0 2d       	mov	r31, r0
 
 
 int main(){
 	setup();
 while(1){
 	InitUART(9600,8,'N',1);
- 7e2:	60 e8       	ldi	r22, 0x80	; 128
- 7e4:	75 e2       	ldi	r23, 0x25	; 37
- 7e6:	80 e0       	ldi	r24, 0x00	; 0
- 7e8:	90 e0       	ldi	r25, 0x00	; 0
- 7ea:	48 e0       	ldi	r20, 0x08	; 8
- 7ec:	2e e4       	ldi	r18, 0x4E	; 78
- 7ee:	01 e0       	ldi	r16, 0x01	; 1
- 7f0:	0e 94 5b 05 	call	0xab6	; 0xab6 <InitUART>
+ 7f2:	60 e8       	ldi	r22, 0x80	; 128
+ 7f4:	75 e2       	ldi	r23, 0x25	; 37
+ 7f6:	80 e0       	ldi	r24, 0x00	; 0
+ 7f8:	90 e0       	ldi	r25, 0x00	; 0
+ 7fa:	48 e0       	ldi	r20, 0x08	; 8
+ 7fc:	2e e4       	ldi	r18, 0x4E	; 78
+ 7fe:	01 e0       	ldi	r16, 0x01	; 1
+ 800:	0e 94 6c 05 	call	0xad8	; 0xad8 <InitUART>
 	while(getMessage()== 0){}
- 7f4:	0e 94 49 06 	call	0xc92	; 0xc92 <getMessage>
- 7f8:	00 97       	sbiw	r24, 0x00	; 0
- 7fa:	e1 f3       	breq	.-8      	; 0x7f4 <main+0x4a>
+ 804:	0e 94 5a 06 	call	0xcb4	; 0xcb4 <getMessage>
+ 808:	00 97       	sbiw	r24, 0x00	; 0
+ 80a:	e1 f3       	breq	.-8      	; 0x804 <main+0x4a>
 	disableINT1();
- 7fc:	0e 94 ae 00 	call	0x15c	; 0x15c <disableINT1>
-	/*if(getStatus() == 'L'){
+ 80c:	0e 94 ae 00 	call	0x15c	; 0x15c <disableINT1>
+	if(getStatus() == 'L'){
+ 810:	0e 94 9c 00 	call	0x138	; 0x138 <getStatus>
+ 814:	8c 34       	cpi	r24, 0x4C	; 76
+ 816:	29 f4       	brne	.+10     	; 0x822 <main+0x68>
 		deleteData(data,(ADDRESS_LENGTH/2)+(COMMAND_LENGTH/2));
-	}*/
-	toEncode(data,address,ADDRESS_LENGTH,command,COMMAND_LENGTH,x10address,x10command);
- 800:	c4 01       	movw	r24, r8
- 802:	b3 01       	movw	r22, r6
- 804:	44 e0       	ldi	r20, 0x04	; 4
- 806:	50 e0       	ldi	r21, 0x00	; 0
- 808:	92 01       	movw	r18, r4
- 80a:	04 e0       	ldi	r16, 0x04	; 4
- 80c:	10 e0       	ldi	r17, 0x00	; 0
- 80e:	7e 01       	movw	r14, r28
- 810:	65 01       	movw	r12, r10
- 812:	0e 94 ac 03 	call	0x758	; 0x758 <toEncode>
-	startTransmission(x10address,x10command);
- 816:	ce 01       	movw	r24, r28
- 818:	b5 01       	movw	r22, r10
- 81a:	0e 94 22 02 	call	0x444	; 0x444 <startTransmission>
-	reset();
- 81e:	0e 94 39 01 	call	0x272	; 0x272 <reset>
+ 818:	c4 01       	movw	r24, r8
+ 81a:	64 e0       	ldi	r22, 0x04	; 4
+ 81c:	70 e0       	ldi	r23, 0x00	; 0
+ 81e:	0e 94 64 06 	call	0xcc8	; 0xcc8 <deleteData>
 	}
- 822:	df cf       	rjmp	.-66     	; 0x7e2 <main+0x38>
+	toEncode(data,address,ADDRESS_LENGTH,command,COMMAND_LENGTH,x10address,x10command);
+ 822:	c4 01       	movw	r24, r8
+ 824:	b3 01       	movw	r22, r6
+ 826:	44 e0       	ldi	r20, 0x04	; 4
+ 828:	50 e0       	ldi	r21, 0x00	; 0
+ 82a:	92 01       	movw	r18, r4
+ 82c:	04 e0       	ldi	r16, 0x04	; 4
+ 82e:	10 e0       	ldi	r17, 0x00	; 0
+ 830:	7e 01       	movw	r14, r28
+ 832:	65 01       	movw	r12, r10
+ 834:	0e 94 b4 03 	call	0x768	; 0x768 <toEncode>
+	startTransmission(x10address,x10command);
+ 838:	ce 01       	movw	r24, r28
+ 83a:	b5 01       	movw	r22, r10
+ 83c:	0e 94 26 02 	call	0x44c	; 0x44c <startTransmission>
+	reset();
+ 840:	0e 94 39 01 	call	0x272	; 0x272 <reset>
+	}
+ 844:	d6 cf       	rjmp	.-84     	; 0x7f2 <main+0x38>
 
-00000824 <__vector_1>:
+00000846 <__vector_1>:
 }
 
 ISR(INT0_vect){
- 824:	1f 92       	push	r1
- 826:	0f 92       	push	r0
- 828:	0f b6       	in	r0, 0x3f	; 63
- 82a:	0f 92       	push	r0
- 82c:	0b b6       	in	r0, 0x3b	; 59
- 82e:	0f 92       	push	r0
- 830:	11 24       	eor	r1, r1
- 832:	2f 93       	push	r18
- 834:	3f 93       	push	r19
- 836:	4f 93       	push	r20
- 838:	5f 93       	push	r21
- 83a:	6f 93       	push	r22
- 83c:	7f 93       	push	r23
- 83e:	8f 93       	push	r24
- 840:	9f 93       	push	r25
- 842:	af 93       	push	r26
- 844:	bf 93       	push	r27
- 846:	ef 93       	push	r30
- 848:	ff 93       	push	r31
+ 846:	1f 92       	push	r1
+ 848:	0f 92       	push	r0
+ 84a:	0f b6       	in	r0, 0x3f	; 63
+ 84c:	0f 92       	push	r0
+ 84e:	0b b6       	in	r0, 0x3b	; 59
+ 850:	0f 92       	push	r0
+ 852:	11 24       	eor	r1, r1
+ 854:	2f 93       	push	r18
+ 856:	3f 93       	push	r19
+ 858:	4f 93       	push	r20
+ 85a:	5f 93       	push	r21
+ 85c:	6f 93       	push	r22
+ 85e:	7f 93       	push	r23
+ 860:	8f 93       	push	r24
+ 862:	9f 93       	push	r25
+ 864:	af 93       	push	r26
+ 866:	bf 93       	push	r27
+ 868:	ef 93       	push	r30
+ 86a:	ff 93       	push	r31
 	if(getWait() == 1){
- 84a:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <getWait>
- 84e:	81 30       	cpi	r24, 0x01	; 1
- 850:	91 05       	cpc	r25, r1
- 852:	29 f4       	brne	.+10     	; 0x85e <__vector_1+0x3a>
+ 86c:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <getWait>
+ 870:	81 30       	cpi	r24, 0x01	; 1
+ 872:	91 05       	cpc	r25, r1
+ 874:	29 f4       	brne	.+10     	; 0x880 <__vector_1+0x3a>
 		//setSend(0);
 		setWait(0);
- 854:	80 e0       	ldi	r24, 0x00	; 0
- 856:	90 e0       	ldi	r25, 0x00	; 0
- 858:	0e 94 ef 00 	call	0x1de	; 0x1de <setWait>
- 85c:	04 c0       	rjmp	.+8      	; 0x866 <__vector_1+0x42>
+ 876:	80 e0       	ldi	r24, 0x00	; 0
+ 878:	90 e0       	ldi	r25, 0x00	; 0
+ 87a:	0e 94 ef 00 	call	0x1de	; 0x1de <setWait>
+ 87e:	04 c0       	rjmp	.+8      	; 0x888 <__vector_1+0x42>
 	}
 	else {
 		initTimer3(1);
- 85e:	81 e0       	ldi	r24, 0x01	; 1
- 860:	90 e0       	ldi	r25, 0x00	; 0
- 862:	0e 94 6a 06 	call	0xcd4	; 0xcd4 <initTimer3>
+ 880:	81 e0       	ldi	r24, 0x01	; 1
+ 882:	90 e0       	ldi	r25, 0x00	; 0
+ 884:	0e 94 89 06 	call	0xd12	; 0xd12 <initTimer3>
 	}
 }
- 866:	ff 91       	pop	r31
- 868:	ef 91       	pop	r30
- 86a:	bf 91       	pop	r27
- 86c:	af 91       	pop	r26
- 86e:	9f 91       	pop	r25
- 870:	8f 91       	pop	r24
- 872:	7f 91       	pop	r23
- 874:	6f 91       	pop	r22
- 876:	5f 91       	pop	r21
- 878:	4f 91       	pop	r20
- 87a:	3f 91       	pop	r19
- 87c:	2f 91       	pop	r18
- 87e:	0f 90       	pop	r0
- 880:	0b be       	out	0x3b, r0	; 59
- 882:	0f 90       	pop	r0
- 884:	0f be       	out	0x3f, r0	; 63
- 886:	0f 90       	pop	r0
- 888:	1f 90       	pop	r1
- 88a:	18 95       	reti
+ 888:	ff 91       	pop	r31
+ 88a:	ef 91       	pop	r30
+ 88c:	bf 91       	pop	r27
+ 88e:	af 91       	pop	r26
+ 890:	9f 91       	pop	r25
+ 892:	8f 91       	pop	r24
+ 894:	7f 91       	pop	r23
+ 896:	6f 91       	pop	r22
+ 898:	5f 91       	pop	r21
+ 89a:	4f 91       	pop	r20
+ 89c:	3f 91       	pop	r19
+ 89e:	2f 91       	pop	r18
+ 8a0:	0f 90       	pop	r0
+ 8a2:	0b be       	out	0x3b, r0	; 59
+ 8a4:	0f 90       	pop	r0
+ 8a6:	0f be       	out	0x3f, r0	; 63
+ 8a8:	0f 90       	pop	r0
+ 8aa:	1f 90       	pop	r1
+ 8ac:	18 95       	reti
 
-0000088c <__vector_25>:
+000008ae <__vector_25>:
 ISR (USART0_RX_vect){
- 88c:	1f 92       	push	r1
- 88e:	0f 92       	push	r0
- 890:	0f b6       	in	r0, 0x3f	; 63
- 892:	0f 92       	push	r0
- 894:	0b b6       	in	r0, 0x3b	; 59
- 896:	0f 92       	push	r0
- 898:	11 24       	eor	r1, r1
- 89a:	2f 93       	push	r18
- 89c:	3f 93       	push	r19
- 89e:	4f 93       	push	r20
- 8a0:	5f 93       	push	r21
- 8a2:	6f 93       	push	r22
- 8a4:	7f 93       	push	r23
- 8a6:	8f 93       	push	r24
- 8a8:	9f 93       	push	r25
- 8aa:	af 93       	push	r26
- 8ac:	bf 93       	push	r27
- 8ae:	ef 93       	push	r30
- 8b0:	ff 93       	push	r31
+ 8ae:	1f 92       	push	r1
+ 8b0:	0f 92       	push	r0
+ 8b2:	0f b6       	in	r0, 0x3f	; 63
+ 8b4:	0f 92       	push	r0
+ 8b6:	0b b6       	in	r0, 0x3b	; 59
+ 8b8:	0f 92       	push	r0
+ 8ba:	11 24       	eor	r1, r1
+ 8bc:	2f 93       	push	r18
+ 8be:	3f 93       	push	r19
+ 8c0:	4f 93       	push	r20
+ 8c2:	5f 93       	push	r21
+ 8c4:	6f 93       	push	r22
+ 8c6:	7f 93       	push	r23
+ 8c8:	8f 93       	push	r24
+ 8ca:	9f 93       	push	r25
+ 8cc:	af 93       	push	r26
+ 8ce:	bf 93       	push	r27
+ 8d0:	ef 93       	push	r30
+ 8d2:	ff 93       	push	r31
 	fillArray(data);
- 8b2:	8d e7       	ldi	r24, 0x7D	; 125
- 8b4:	92 e0       	ldi	r25, 0x02	; 2
- 8b6:	0e 94 2b 06 	call	0xc56	; 0xc56 <fillArray>
+ 8d4:	8d e7       	ldi	r24, 0x7D	; 125
+ 8d6:	92 e0       	ldi	r25, 0x02	; 2
+ 8d8:	0e 94 3c 06 	call	0xc78	; 0xc78 <fillArray>
 }
- 8ba:	ff 91       	pop	r31
- 8bc:	ef 91       	pop	r30
- 8be:	bf 91       	pop	r27
- 8c0:	af 91       	pop	r26
- 8c2:	9f 91       	pop	r25
- 8c4:	8f 91       	pop	r24
- 8c6:	7f 91       	pop	r23
- 8c8:	6f 91       	pop	r22
- 8ca:	5f 91       	pop	r21
- 8cc:	4f 91       	pop	r20
- 8ce:	3f 91       	pop	r19
- 8d0:	2f 91       	pop	r18
- 8d2:	0f 90       	pop	r0
- 8d4:	0b be       	out	0x3b, r0	; 59
- 8d6:	0f 90       	pop	r0
- 8d8:	0f be       	out	0x3f, r0	; 63
- 8da:	0f 90       	pop	r0
- 8dc:	1f 90       	pop	r1
- 8de:	18 95       	reti
+ 8dc:	ff 91       	pop	r31
+ 8de:	ef 91       	pop	r30
+ 8e0:	bf 91       	pop	r27
+ 8e2:	af 91       	pop	r26
+ 8e4:	9f 91       	pop	r25
+ 8e6:	8f 91       	pop	r24
+ 8e8:	7f 91       	pop	r23
+ 8ea:	6f 91       	pop	r22
+ 8ec:	5f 91       	pop	r21
+ 8ee:	4f 91       	pop	r20
+ 8f0:	3f 91       	pop	r19
+ 8f2:	2f 91       	pop	r18
+ 8f4:	0f 90       	pop	r0
+ 8f6:	0b be       	out	0x3b, r0	; 59
+ 8f8:	0f 90       	pop	r0
+ 8fa:	0f be       	out	0x3f, r0	; 63
+ 8fc:	0f 90       	pop	r0
+ 8fe:	1f 90       	pop	r1
+ 900:	18 95       	reti
 
-000008e0 <__vector_23>:
+00000902 <__vector_23>:
 
 ISR(TIMER0_OVF_vect)
 {
- 8e0:	1f 92       	push	r1
- 8e2:	0f 92       	push	r0
- 8e4:	0f b6       	in	r0, 0x3f	; 63
- 8e6:	0f 92       	push	r0
- 8e8:	0b b6       	in	r0, 0x3b	; 59
- 8ea:	0f 92       	push	r0
- 8ec:	11 24       	eor	r1, r1
- 8ee:	2f 93       	push	r18
- 8f0:	3f 93       	push	r19
- 8f2:	4f 93       	push	r20
- 8f4:	5f 93       	push	r21
- 8f6:	6f 93       	push	r22
- 8f8:	7f 93       	push	r23
- 8fa:	8f 93       	push	r24
- 8fc:	9f 93       	push	r25
- 8fe:	af 93       	push	r26
- 900:	bf 93       	push	r27
- 902:	ef 93       	push	r30
- 904:	ff 93       	push	r31
+ 902:	1f 92       	push	r1
+ 904:	0f 92       	push	r0
+ 906:	0f b6       	in	r0, 0x3f	; 63
+ 908:	0f 92       	push	r0
+ 90a:	0b b6       	in	r0, 0x3b	; 59
+ 90c:	0f 92       	push	r0
+ 90e:	11 24       	eor	r1, r1
+ 910:	2f 93       	push	r18
+ 912:	3f 93       	push	r19
+ 914:	4f 93       	push	r20
+ 916:	5f 93       	push	r21
+ 918:	6f 93       	push	r22
+ 91a:	7f 93       	push	r23
+ 91c:	8f 93       	push	r24
+ 91e:	9f 93       	push	r25
+ 920:	af 93       	push	r26
+ 922:	bf 93       	push	r27
+ 924:	ef 93       	push	r30
+ 926:	ff 93       	push	r31
 	setSend(1);
- 906:	81 e0       	ldi	r24, 0x01	; 1
- 908:	90 e0       	ldi	r25, 0x00	; 0
- 90a:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
+ 928:	81 e0       	ldi	r24, 0x01	; 1
+ 92a:	90 e0       	ldi	r25, 0x00	; 0
+ 92c:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
 }
- 90e:	ff 91       	pop	r31
- 910:	ef 91       	pop	r30
- 912:	bf 91       	pop	r27
- 914:	af 91       	pop	r26
- 916:	9f 91       	pop	r25
- 918:	8f 91       	pop	r24
- 91a:	7f 91       	pop	r23
- 91c:	6f 91       	pop	r22
- 91e:	5f 91       	pop	r21
- 920:	4f 91       	pop	r20
- 922:	3f 91       	pop	r19
- 924:	2f 91       	pop	r18
- 926:	0f 90       	pop	r0
- 928:	0b be       	out	0x3b, r0	; 59
- 92a:	0f 90       	pop	r0
- 92c:	0f be       	out	0x3f, r0	; 63
- 92e:	0f 90       	pop	r0
- 930:	1f 90       	pop	r1
- 932:	18 95       	reti
+ 930:	ff 91       	pop	r31
+ 932:	ef 91       	pop	r30
+ 934:	bf 91       	pop	r27
+ 936:	af 91       	pop	r26
+ 938:	9f 91       	pop	r25
+ 93a:	8f 91       	pop	r24
+ 93c:	7f 91       	pop	r23
+ 93e:	6f 91       	pop	r22
+ 940:	5f 91       	pop	r21
+ 942:	4f 91       	pop	r20
+ 944:	3f 91       	pop	r19
+ 946:	2f 91       	pop	r18
+ 948:	0f 90       	pop	r0
+ 94a:	0b be       	out	0x3b, r0	; 59
+ 94c:	0f 90       	pop	r0
+ 94e:	0f be       	out	0x3f, r0	; 63
+ 950:	0f 90       	pop	r0
+ 952:	1f 90       	pop	r1
+ 954:	18 95       	reti
 
-00000934 <__vector_15>:
+00000956 <__vector_15>:
 
 ISR(TIMER2_OVF_vect){
- 934:	1f 92       	push	r1
- 936:	0f 92       	push	r0
- 938:	0f b6       	in	r0, 0x3f	; 63
- 93a:	0f 92       	push	r0
- 93c:	0b b6       	in	r0, 0x3b	; 59
- 93e:	0f 92       	push	r0
- 940:	11 24       	eor	r1, r1
- 942:	2f 93       	push	r18
- 944:	3f 93       	push	r19
- 946:	4f 93       	push	r20
- 948:	5f 93       	push	r21
- 94a:	6f 93       	push	r22
- 94c:	7f 93       	push	r23
- 94e:	8f 93       	push	r24
- 950:	9f 93       	push	r25
- 952:	af 93       	push	r26
- 954:	bf 93       	push	r27
- 956:	ef 93       	push	r30
- 958:	ff 93       	push	r31
+ 956:	1f 92       	push	r1
+ 958:	0f 92       	push	r0
+ 95a:	0f b6       	in	r0, 0x3f	; 63
+ 95c:	0f 92       	push	r0
+ 95e:	0b b6       	in	r0, 0x3b	; 59
+ 960:	0f 92       	push	r0
+ 962:	11 24       	eor	r1, r1
+ 964:	2f 93       	push	r18
+ 966:	3f 93       	push	r19
+ 968:	4f 93       	push	r20
+ 96a:	5f 93       	push	r21
+ 96c:	6f 93       	push	r22
+ 96e:	7f 93       	push	r23
+ 970:	8f 93       	push	r24
+ 972:	9f 93       	push	r25
+ 974:	af 93       	push	r26
+ 976:	bf 93       	push	r27
+ 978:	ef 93       	push	r30
+ 97a:	ff 93       	push	r31
 	stopTimer1();
- 95a:	0e 94 52 05 	call	0xaa4	; 0xaa4 <stopTimer1>
+ 97c:	0e 94 63 05 	call	0xac6	; 0xac6 <stopTimer1>
 	stopTimer2();
- 95e:	0e 94 54 05 	call	0xaa8	; 0xaa8 <stopTimer2>
+ 980:	0e 94 65 05 	call	0xaca	; 0xaca <stopTimer2>
 }
- 962:	ff 91       	pop	r31
- 964:	ef 91       	pop	r30
- 966:	bf 91       	pop	r27
- 968:	af 91       	pop	r26
- 96a:	9f 91       	pop	r25
- 96c:	8f 91       	pop	r24
- 96e:	7f 91       	pop	r23
- 970:	6f 91       	pop	r22
- 972:	5f 91       	pop	r21
- 974:	4f 91       	pop	r20
- 976:	3f 91       	pop	r19
- 978:	2f 91       	pop	r18
- 97a:	0f 90       	pop	r0
- 97c:	0b be       	out	0x3b, r0	; 59
- 97e:	0f 90       	pop	r0
- 980:	0f be       	out	0x3f, r0	; 63
- 982:	0f 90       	pop	r0
- 984:	1f 90       	pop	r1
- 986:	18 95       	reti
+ 984:	ff 91       	pop	r31
+ 986:	ef 91       	pop	r30
+ 988:	bf 91       	pop	r27
+ 98a:	af 91       	pop	r26
+ 98c:	9f 91       	pop	r25
+ 98e:	8f 91       	pop	r24
+ 990:	7f 91       	pop	r23
+ 992:	6f 91       	pop	r22
+ 994:	5f 91       	pop	r21
+ 996:	4f 91       	pop	r20
+ 998:	3f 91       	pop	r19
+ 99a:	2f 91       	pop	r18
+ 99c:	0f 90       	pop	r0
+ 99e:	0b be       	out	0x3b, r0	; 59
+ 9a0:	0f 90       	pop	r0
+ 9a2:	0f be       	out	0x3f, r0	; 63
+ 9a4:	0f 90       	pop	r0
+ 9a6:	1f 90       	pop	r1
+ 9a8:	18 95       	reti
 
-00000988 <__vector_2>:
+000009aa <__vector_2>:
 
 ISR(INT1_vect){
- 988:	1f 92       	push	r1
- 98a:	0f 92       	push	r0
- 98c:	0f b6       	in	r0, 0x3f	; 63
- 98e:	0f 92       	push	r0
- 990:	0b b6       	in	r0, 0x3b	; 59
- 992:	0f 92       	push	r0
- 994:	11 24       	eor	r1, r1
- 996:	2f 93       	push	r18
- 998:	3f 93       	push	r19
- 99a:	4f 93       	push	r20
- 99c:	5f 93       	push	r21
- 99e:	6f 93       	push	r22
- 9a0:	7f 93       	push	r23
- 9a2:	8f 93       	push	r24
- 9a4:	9f 93       	push	r25
- 9a6:	af 93       	push	r26
- 9a8:	bf 93       	push	r27
- 9aa:	ef 93       	push	r30
- 9ac:	ff 93       	push	r31
+ 9aa:	1f 92       	push	r1
+ 9ac:	0f 92       	push	r0
+ 9ae:	0f b6       	in	r0, 0x3f	; 63
+ 9b0:	0f 92       	push	r0
+ 9b2:	0b b6       	in	r0, 0x3b	; 59
+ 9b4:	0f 92       	push	r0
+ 9b6:	11 24       	eor	r1, r1
+ 9b8:	2f 93       	push	r18
+ 9ba:	3f 93       	push	r19
+ 9bc:	4f 93       	push	r20
+ 9be:	5f 93       	push	r21
+ 9c0:	6f 93       	push	r22
+ 9c2:	7f 93       	push	r23
+ 9c4:	8f 93       	push	r24
+ 9c6:	9f 93       	push	r25
+ 9c8:	af 93       	push	r26
+ 9ca:	bf 93       	push	r27
+ 9cc:	ef 93       	push	r30
+ 9ce:	ff 93       	push	r31
 	setStatus(checkStatus());
- 9ae:	0e 94 96 00 	call	0x12c	; 0x12c <checkStatus>
- 9b2:	0e 94 9f 00 	call	0x13e	; 0x13e <setStatus>
+ 9d0:	0e 94 96 00 	call	0x12c	; 0x12c <checkStatus>
+ 9d4:	0e 94 9f 00 	call	0x13e	; 0x13e <setStatus>
 }
- 9b6:	ff 91       	pop	r31
- 9b8:	ef 91       	pop	r30
- 9ba:	bf 91       	pop	r27
- 9bc:	af 91       	pop	r26
- 9be:	9f 91       	pop	r25
- 9c0:	8f 91       	pop	r24
- 9c2:	7f 91       	pop	r23
- 9c4:	6f 91       	pop	r22
- 9c6:	5f 91       	pop	r21
- 9c8:	4f 91       	pop	r20
- 9ca:	3f 91       	pop	r19
- 9cc:	2f 91       	pop	r18
- 9ce:	0f 90       	pop	r0
- 9d0:	0b be       	out	0x3b, r0	; 59
- 9d2:	0f 90       	pop	r0
- 9d4:	0f be       	out	0x3f, r0	; 63
- 9d6:	0f 90       	pop	r0
- 9d8:	1f 90       	pop	r1
- 9da:	18 95       	reti
+ 9d8:	ff 91       	pop	r31
+ 9da:	ef 91       	pop	r30
+ 9dc:	bf 91       	pop	r27
+ 9de:	af 91       	pop	r26
+ 9e0:	9f 91       	pop	r25
+ 9e2:	8f 91       	pop	r24
+ 9e4:	7f 91       	pop	r23
+ 9e6:	6f 91       	pop	r22
+ 9e8:	5f 91       	pop	r21
+ 9ea:	4f 91       	pop	r20
+ 9ec:	3f 91       	pop	r19
+ 9ee:	2f 91       	pop	r18
+ 9f0:	0f 90       	pop	r0
+ 9f2:	0b be       	out	0x3b, r0	; 59
+ 9f4:	0f 90       	pop	r0
+ 9f6:	0f be       	out	0x3f, r0	; 63
+ 9f8:	0f 90       	pop	r0
+ 9fa:	1f 90       	pop	r1
+ 9fc:	18 95       	reti
 
-000009dc <__vector_35>:
+000009fe <__vector_35>:
 
 ISR(TIMER3_OVF_vect){
- 9dc:	1f 92       	push	r1
- 9de:	0f 92       	push	r0
- 9e0:	0f b6       	in	r0, 0x3f	; 63
- 9e2:	0f 92       	push	r0
- 9e4:	0b b6       	in	r0, 0x3b	; 59
- 9e6:	0f 92       	push	r0
- 9e8:	11 24       	eor	r1, r1
- 9ea:	2f 93       	push	r18
- 9ec:	3f 93       	push	r19
- 9ee:	4f 93       	push	r20
- 9f0:	5f 93       	push	r21
- 9f2:	6f 93       	push	r22
- 9f4:	7f 93       	push	r23
- 9f6:	8f 93       	push	r24
- 9f8:	9f 93       	push	r25
- 9fa:	af 93       	push	r26
- 9fc:	bf 93       	push	r27
- 9fe:	ef 93       	push	r30
- a00:	ff 93       	push	r31
+ 9fe:	1f 92       	push	r1
+ a00:	0f 92       	push	r0
+ a02:	0f b6       	in	r0, 0x3f	; 63
+ a04:	0f 92       	push	r0
+ a06:	0b b6       	in	r0, 0x3b	; 59
+ a08:	0f 92       	push	r0
+ a0a:	11 24       	eor	r1, r1
+ a0c:	2f 93       	push	r18
+ a0e:	3f 93       	push	r19
+ a10:	4f 93       	push	r20
+ a12:	5f 93       	push	r21
+ a14:	6f 93       	push	r22
+ a16:	7f 93       	push	r23
+ a18:	8f 93       	push	r24
+ a1a:	9f 93       	push	r25
+ a1c:	af 93       	push	r26
+ a1e:	bf 93       	push	r27
+ a20:	ef 93       	push	r30
+ a22:	ff 93       	push	r31
 	setSend(1);
- a02:	81 e0       	ldi	r24, 0x01	; 1
- a04:	90 e0       	ldi	r25, 0x00	; 0
- a06:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
+ a24:	81 e0       	ldi	r24, 0x01	; 1
+ a26:	90 e0       	ldi	r25, 0x00	; 0
+ a28:	0e 94 fe 00 	call	0x1fc	; 0x1fc <setSend>
 	if(getCounterTimer() == 0){
- a0a:	0e 94 94 06 	call	0xd28	; 0xd28 <getCounterTimer>
- a0e:	00 97       	sbiw	r24, 0x00	; 0
- a10:	49 f4       	brne	.+18     	; 0xa24 <__vector_35+0x48>
+ a2c:	0e 94 b3 06 	call	0xd66	; 0xd66 <getCounterTimer>
+ a30:	00 97       	sbiw	r24, 0x00	; 0
+ a32:	49 f4       	brne	.+18     	; 0xa46 <__vector_35+0x48>
 		setCounterTimer(1);
- a12:	81 e0       	ldi	r24, 0x01	; 1
- a14:	90 e0       	ldi	r25, 0x00	; 0
- a16:	0e 94 8f 06 	call	0xd1e	; 0xd1e <setCounterTimer>
+ a34:	81 e0       	ldi	r24, 0x01	; 1
+ a36:	90 e0       	ldi	r25, 0x00	; 0
+ a38:	0e 94 ae 06 	call	0xd5c	; 0xd5c <setCounterTimer>
 		initTimer3(10);
- a1a:	8a e0       	ldi	r24, 0x0A	; 10
- a1c:	90 e0       	ldi	r25, 0x00	; 0
- a1e:	0e 94 6a 06 	call	0xcd4	; 0xcd4 <initTimer3>
- a22:	0b c0       	rjmp	.+22     	; 0xa3a <__vector_35+0x5e>
+ a3c:	8a e0       	ldi	r24, 0x0A	; 10
+ a3e:	90 e0       	ldi	r25, 0x00	; 0
+ a40:	0e 94 89 06 	call	0xd12	; 0xd12 <initTimer3>
+ a44:	0b c0       	rjmp	.+22     	; 0xa5c <__vector_35+0x5e>
 	}
 	else if(getCounterTimer() == 1){
- a24:	0e 94 94 06 	call	0xd28	; 0xd28 <getCounterTimer>
- a28:	81 30       	cpi	r24, 0x01	; 1
- a2a:	91 05       	cpc	r25, r1
- a2c:	31 f4       	brne	.+12     	; 0xa3a <__vector_35+0x5e>
+ a46:	0e 94 b3 06 	call	0xd66	; 0xd66 <getCounterTimer>
+ a4a:	81 30       	cpi	r24, 0x01	; 1
+ a4c:	91 05       	cpc	r25, r1
+ a4e:	31 f4       	brne	.+12     	; 0xa5c <__vector_35+0x5e>
 		setCounterTimer(0);
- a2e:	80 e0       	ldi	r24, 0x00	; 0
- a30:	90 e0       	ldi	r25, 0x00	; 0
- a32:	0e 94 8f 06 	call	0xd1e	; 0xd1e <setCounterTimer>
+ a50:	80 e0       	ldi	r24, 0x00	; 0
+ a52:	90 e0       	ldi	r25, 0x00	; 0
+ a54:	0e 94 ae 06 	call	0xd5c	; 0xd5c <setCounterTimer>
 		stopTimer3();
- a36:	0e 94 88 06 	call	0xd10	; 0xd10 <stopTimer3>
+ a58:	0e 94 a7 06 	call	0xd4e	; 0xd4e <stopTimer3>
 	}
- a3a:	ff 91       	pop	r31
- a3c:	ef 91       	pop	r30
- a3e:	bf 91       	pop	r27
- a40:	af 91       	pop	r26
- a42:	9f 91       	pop	r25
- a44:	8f 91       	pop	r24
- a46:	7f 91       	pop	r23
- a48:	6f 91       	pop	r22
- a4a:	5f 91       	pop	r21
- a4c:	4f 91       	pop	r20
- a4e:	3f 91       	pop	r19
- a50:	2f 91       	pop	r18
- a52:	0f 90       	pop	r0
- a54:	0b be       	out	0x3b, r0	; 59
- a56:	0f 90       	pop	r0
- a58:	0f be       	out	0x3f, r0	; 63
- a5a:	0f 90       	pop	r0
- a5c:	1f 90       	pop	r1
- a5e:	18 95       	reti
+ a5c:	ff 91       	pop	r31
+ a5e:	ef 91       	pop	r30
+ a60:	bf 91       	pop	r27
+ a62:	af 91       	pop	r26
+ a64:	9f 91       	pop	r25
+ a66:	8f 91       	pop	r24
+ a68:	7f 91       	pop	r23
+ a6a:	6f 91       	pop	r22
+ a6c:	5f 91       	pop	r21
+ a6e:	4f 91       	pop	r20
+ a70:	3f 91       	pop	r19
+ a72:	2f 91       	pop	r18
+ a74:	0f 90       	pop	r0
+ a76:	0b be       	out	0x3b, r0	; 59
+ a78:	0f 90       	pop	r0
+ a7a:	0f be       	out	0x3f, r0	; 63
+ a7c:	0f 90       	pop	r0
+ a7e:	1f 90       	pop	r1
+ a80:	18 95       	reti
 
-00000a60 <initTimer0>:
+00000a82 <initTimer0>:
 #include "Controller.h"
 #include <avr/io.h>
 
 //Timer 0 functions
 void initTimer0(){
 	TCCR0B |= 0b00000100; // 256 clock prescaler
- a60:	85 b5       	in	r24, 0x25	; 37
- a62:	84 60       	ori	r24, 0x04	; 4
- a64:	85 bd       	out	0x25, r24	; 37
+ a82:	85 b5       	in	r24, 0x25	; 37
+ a84:	84 60       	ori	r24, 0x04	; 4
+ a86:	85 bd       	out	0x25, r24	; 37
 	TIMSK0 |= 0b00000001;
- a66:	ee e6       	ldi	r30, 0x6E	; 110
- a68:	f0 e0       	ldi	r31, 0x00	; 0
- a6a:	80 81       	ld	r24, Z
- a6c:	81 60       	ori	r24, 0x01	; 1
- a6e:	80 83       	st	Z, r24
+ a88:	ee e6       	ldi	r30, 0x6E	; 110
+ a8a:	f0 e0       	ldi	r31, 0x00	; 0
+ a8c:	80 81       	ld	r24, Z
+ a8e:	81 60       	ori	r24, 0x01	; 1
+ a90:	80 83       	st	Z, r24
 	TCNT0 = 48; //3.3 ms to overflow
- a70:	80 e3       	ldi	r24, 0x30	; 48
- a72:	86 bd       	out	0x26, r24	; 38
+ a92:	80 e3       	ldi	r24, 0x30	; 48
+ a94:	86 bd       	out	0x26, r24	; 38
 }
- a74:	08 95       	ret
+ a96:	08 95       	ret
 
-00000a76 <stopTimer0>:
+00000a98 <stopTimer0>:
 void stopTimer0(){
 	TCCR0A = 0;
- a76:	14 bc       	out	0x24, r1	; 36
+ a98:	14 bc       	out	0x24, r1	; 36
 	TCCR0B = 0;
- a78:	15 bc       	out	0x25, r1	; 37
+ a9a:	15 bc       	out	0x25, r1	; 37
 	TIMSK0 = 0;
- a7a:	10 92 6e 00 	sts	0x006E, r1
+ a9c:	10 92 6e 00 	sts	0x006E, r1
 }
- a7e:	08 95       	ret
+ aa0:	08 95       	ret
 
-00000a80 <initTimer2>:
+00000aa2 <initTimer2>:
 	PORTB |= 0b00100000;
 	initTimer2();
 }
 
 void initTimer2(){
 	TIMSK2 |= 1;
- a80:	e0 e7       	ldi	r30, 0x70	; 112
- a82:	f0 e0       	ldi	r31, 0x00	; 0
- a84:	80 81       	ld	r24, Z
- a86:	81 60       	ori	r24, 0x01	; 1
- a88:	80 83       	st	Z, r24
+ aa2:	e0 e7       	ldi	r30, 0x70	; 112
+ aa4:	f0 e0       	ldi	r31, 0x00	; 0
+ aa6:	80 81       	ld	r24, Z
+ aa8:	81 60       	ori	r24, 0x01	; 1
+ aaa:	80 83       	st	Z, r24
 	TCCR2B |= 0b00000110;
- a8a:	e1 eb       	ldi	r30, 0xB1	; 177
- a8c:	f0 e0       	ldi	r31, 0x00	; 0
- a8e:	80 81       	ld	r24, Z
- a90:	86 60       	ori	r24, 0x06	; 6
- a92:	80 83       	st	Z, r24
+ aac:	e1 eb       	ldi	r30, 0xB1	; 177
+ aae:	f0 e0       	ldi	r31, 0x00	; 0
+ ab0:	80 81       	ld	r24, Z
+ ab2:	86 60       	ori	r24, 0x06	; 6
+ ab4:	80 83       	st	Z, r24
 	TCNT2 = 193;
- a94:	81 ec       	ldi	r24, 0xC1	; 193
- a96:	80 93 b2 00 	sts	0x00B2, r24
+ ab6:	81 ec       	ldi	r24, 0xC1	; 193
+ ab8:	80 93 b2 00 	sts	0x00B2, r24
 }
- a9a:	08 95       	ret
+ abc:	08 95       	ret
 
-00000a9c <sendPWM>:
+00000abe <sendPWM>:
 void sendPWM(){
 	/*TCCR1A |= 0b10000010; // initiering af PWM ved timer 1
 	TCCR1B |= 0b00011001;
 	OCR1A = 132/2;
 	ICR1 = 132;*/
 	PORTB |= 0b00100000;
- a9c:	2d 9a       	sbi	0x05, 5	; 5
+ abe:	2d 9a       	sbi	0x05, 5	; 5
 	initTimer2();
- a9e:	0e 94 40 05 	call	0xa80	; 0xa80 <initTimer2>
+ ac0:	0e 94 51 05 	call	0xaa2	; 0xaa2 <initTimer2>
 }
- aa2:	08 95       	ret
+ ac4:	08 95       	ret
 
-00000aa4 <stopTimer1>:
+00000ac6 <stopTimer1>:
 	TCNT2 = 193;
 }
 void stopTimer1(){
 	//TCCR1A = 0;
 	//TCCR1B = 0;
 	PORTB &= 0b11011111;
- aa4:	2d 98       	cbi	0x05, 5	; 5
+ ac6:	2d 98       	cbi	0x05, 5	; 5
 }
- aa6:	08 95       	ret
+ ac8:	08 95       	ret
 
-00000aa8 <stopTimer2>:
+00000aca <stopTimer2>:
 void stopTimer2(){
 	TCCR2A = 0;
- aa8:	10 92 b0 00 	sts	0x00B0, r1
+ aca:	10 92 b0 00 	sts	0x00B0, r1
 	TCCR2B = 0;
- aac:	10 92 b1 00 	sts	0x00B1, r1
+ ace:	10 92 b1 00 	sts	0x00B1, r1
 	TIMSK2 = 0;
- ab0:	10 92 70 00 	sts	0x0070, r1
- ab4:	08 95       	ret
+ ad2:	10 92 70 00 	sts	0x0070, r1
+ ad6:	08 95       	ret
 
-00000ab6 <InitUART>:
+00000ad8 <InitUART>:
 	Databits: Wanted number of Data Bits (5-8).
 	Parity: 'E' (Even parity), 'O' (Odd parity), otherwise No Parity.
 	Rx_Int: If non-zero, receiver interrupt will be enabled.
 *************************************************************************/
 void InitUART(unsigned long BaudRate, unsigned char DataBit, char Parity, unsigned char RX_Int)
 {
- ab6:	cf 92       	push	r12
- ab8:	df 92       	push	r13
- aba:	ef 92       	push	r14
- abc:	ff 92       	push	r15
- abe:	0f 93       	push	r16
- ac0:	dc 01       	movw	r26, r24
- ac2:	cb 01       	movw	r24, r22
+ ad8:	cf 92       	push	r12
+ ada:	df 92       	push	r13
+ adc:	ef 92       	push	r14
+ ade:	ff 92       	push	r15
+ ae0:	0f 93       	push	r16
+ ae2:	dc 01       	movw	r26, r24
+ ae4:	cb 01       	movw	r24, r22
   if ((BaudRate >= 110) && (BaudRate <= 115200) && (DataBit >=5) && (DataBit <= 8))
- ac4:	0f 2e       	mov	r0, r31
- ac6:	f2 e9       	ldi	r31, 0x92	; 146
- ac8:	cf 2e       	mov	r12, r31
- aca:	ff ef       	ldi	r31, 0xFF	; 255
- acc:	df 2e       	mov	r13, r31
- ace:	ff ef       	ldi	r31, 0xFF	; 255
- ad0:	ef 2e       	mov	r14, r31
- ad2:	ff ef       	ldi	r31, 0xFF	; 255
- ad4:	ff 2e       	mov	r15, r31
- ad6:	f0 2d       	mov	r31, r0
- ad8:	c8 0e       	add	r12, r24
- ada:	d9 1e       	adc	r13, r25
- adc:	ea 1e       	adc	r14, r26
- ade:	fb 1e       	adc	r15, r27
- ae0:	33 e9       	ldi	r19, 0x93	; 147
- ae2:	c3 16       	cp	r12, r19
- ae4:	31 ec       	ldi	r19, 0xC1	; 193
- ae6:	d3 06       	cpc	r13, r19
- ae8:	31 e0       	ldi	r19, 0x01	; 1
- aea:	e3 06       	cpc	r14, r19
- aec:	30 e0       	ldi	r19, 0x00	; 0
- aee:	f3 06       	cpc	r15, r19
- af0:	08 f0       	brcs	.+2      	; 0xaf4 <InitUART+0x3e>
- af2:	46 c0       	rjmp	.+140    	; 0xb80 <InitUART+0xca>
- af4:	45 30       	cpi	r20, 0x05	; 5
- af6:	08 f4       	brcc	.+2      	; 0xafa <InitUART+0x44>
- af8:	43 c0       	rjmp	.+134    	; 0xb80 <InitUART+0xca>
- afa:	49 30       	cpi	r20, 0x09	; 9
- afc:	08 f0       	brcs	.+2      	; 0xb00 <InitUART+0x4a>
- afe:	40 c0       	rjmp	.+128    	; 0xb80 <InitUART+0xca>
+ ae6:	0f 2e       	mov	r0, r31
+ ae8:	f2 e9       	ldi	r31, 0x92	; 146
+ aea:	cf 2e       	mov	r12, r31
+ aec:	ff ef       	ldi	r31, 0xFF	; 255
+ aee:	df 2e       	mov	r13, r31
+ af0:	ff ef       	ldi	r31, 0xFF	; 255
+ af2:	ef 2e       	mov	r14, r31
+ af4:	ff ef       	ldi	r31, 0xFF	; 255
+ af6:	ff 2e       	mov	r15, r31
+ af8:	f0 2d       	mov	r31, r0
+ afa:	c8 0e       	add	r12, r24
+ afc:	d9 1e       	adc	r13, r25
+ afe:	ea 1e       	adc	r14, r26
+ b00:	fb 1e       	adc	r15, r27
+ b02:	33 e9       	ldi	r19, 0x93	; 147
+ b04:	c3 16       	cp	r12, r19
+ b06:	31 ec       	ldi	r19, 0xC1	; 193
+ b08:	d3 06       	cpc	r13, r19
+ b0a:	31 e0       	ldi	r19, 0x01	; 1
+ b0c:	e3 06       	cpc	r14, r19
+ b0e:	30 e0       	ldi	r19, 0x00	; 0
+ b10:	f3 06       	cpc	r15, r19
+ b12:	08 f0       	brcs	.+2      	; 0xb16 <InitUART+0x3e>
+ b14:	46 c0       	rjmp	.+140    	; 0xba2 <InitUART+0xca>
+ b16:	45 30       	cpi	r20, 0x05	; 5
+ b18:	08 f4       	brcc	.+2      	; 0xb1c <InitUART+0x44>
+ b1a:	43 c0       	rjmp	.+134    	; 0xba2 <InitUART+0xca>
+ b1c:	49 30       	cpi	r20, 0x09	; 9
+ b1e:	08 f0       	brcs	.+2      	; 0xb22 <InitUART+0x4a>
+ b20:	40 c0       	rjmp	.+128    	; 0xba2 <InitUART+0xca>
   { 
     // "Normal" clock, no multiprocessor mode (= default)
     UCSR0A = 0b00100000;
- b00:	30 e2       	ldi	r19, 0x20	; 32
- b02:	30 93 c0 00 	sts	0x00C0, r19
+ b22:	30 e2       	ldi	r19, 0x20	; 32
+ b24:	30 93 c0 00 	sts	0x00C0, r19
     // No interrupts enabled
     // Receiver enabled
     // Transmitter enabled
     // No 9 bit operation
     UCSR0B = 0b00011000;
- b06:	38 e1       	ldi	r19, 0x18	; 24
- b08:	30 93 c1 00 	sts	0x00C1, r19
+ b28:	38 e1       	ldi	r19, 0x18	; 24
+ b2a:	30 93 c1 00 	sts	0x00C1, r19
     // Enable RX interrupt (if wanted by parameter)
     if (RX_Int)
- b0c:	00 23       	and	r16, r16
- b0e:	29 f0       	breq	.+10     	; 0xb1a <InitUART+0x64>
+ b2e:	00 23       	and	r16, r16
+ b30:	29 f0       	breq	.+10     	; 0xb3c <InitUART+0x64>
 		UCSR0B |= 0b10000000;
- b10:	e1 ec       	ldi	r30, 0xC1	; 193
- b12:	f0 e0       	ldi	r31, 0x00	; 0
- b14:	30 81       	ld	r19, Z
- b16:	30 68       	ori	r19, 0x80	; 128
- b18:	30 83       	st	Z, r19
+ b32:	e1 ec       	ldi	r30, 0xC1	; 193
+ b34:	f0 e0       	ldi	r31, 0x00	; 0
+ b36:	30 81       	ld	r19, Z
+ b38:	30 68       	ori	r19, 0x80	; 128
+ b3a:	30 83       	st	Z, r19
     // Asynchronous operation, 1 stop bit
     // Bit 2 and bit 1 controls the number of data bits
     UCSR0C = (DataBit-5)<<1;
- b1a:	45 50       	subi	r20, 0x05	; 5
- b1c:	44 0f       	add	r20, r20
- b1e:	e2 ec       	ldi	r30, 0xC2	; 194
- b20:	f0 e0       	ldi	r31, 0x00	; 0
- b22:	40 83       	st	Z, r20
+ b3c:	45 50       	subi	r20, 0x05	; 5
+ b3e:	44 0f       	add	r20, r20
+ b40:	e2 ec       	ldi	r30, 0xC2	; 194
+ b42:	f0 e0       	ldi	r31, 0x00	; 0
+ b44:	40 83       	st	Z, r20
 	// Set parity bits (if parity used)
 	UCSR0C |= 0b00001000;
- b24:	30 81       	ld	r19, Z
- b26:	38 60       	ori	r19, 0x08	; 8
- b28:	30 83       	st	Z, r19
+ b46:	30 81       	ld	r19, Z
+ b48:	38 60       	ori	r19, 0x08	; 8
+ b4a:	30 83       	st	Z, r19
     if (Parity == 'E')
- b2a:	25 34       	cpi	r18, 0x45	; 69
- b2c:	21 f4       	brne	.+8      	; 0xb36 <InitUART+0x80>
+ b4c:	25 34       	cpi	r18, 0x45	; 69
+ b4e:	21 f4       	brne	.+8      	; 0xb58 <InitUART+0x80>
     UCSR0C |= 0b00100000;
- b2e:	20 81       	ld	r18, Z
- b30:	20 62       	ori	r18, 0x20	; 32
- b32:	20 83       	st	Z, r18
- b34:	07 c0       	rjmp	.+14     	; 0xb44 <InitUART+0x8e>
+ b50:	20 81       	ld	r18, Z
+ b52:	20 62       	ori	r18, 0x20	; 32
+ b54:	20 83       	st	Z, r18
+ b56:	07 c0       	rjmp	.+14     	; 0xb66 <InitUART+0x8e>
     else if (Parity == 'O')	  
- b36:	2f 34       	cpi	r18, 0x4F	; 79
- b38:	29 f4       	brne	.+10     	; 0xb44 <InitUART+0x8e>
+ b58:	2f 34       	cpi	r18, 0x4F	; 79
+ b5a:	29 f4       	brne	.+10     	; 0xb66 <InitUART+0x8e>
     UCSR0C |= 0b00110000;	
- b3a:	e2 ec       	ldi	r30, 0xC2	; 194
- b3c:	f0 e0       	ldi	r31, 0x00	; 0
- b3e:	20 81       	ld	r18, Z
- b40:	20 63       	ori	r18, 0x30	; 48
- b42:	20 83       	st	Z, r18
+ b5c:	e2 ec       	ldi	r30, 0xC2	; 194
+ b5e:	f0 e0       	ldi	r31, 0x00	; 0
+ b60:	20 81       	ld	r18, Z
+ b62:	20 63       	ori	r18, 0x30	; 48
+ b64:	20 83       	st	Z, r18
     // Set Baud Rate according to the parameter BaudRate:
     // Select Baud Rate (first store "UBRRH--UBRRL" in local 16-bit variable,
     //                   then write the two 8-bit registers separately):
     // Set Baud Rate according to the parameter BaudRate:
     UBRR0 = XTAL/(16*BaudRate) - 1;
- b44:	88 0f       	add	r24, r24
- b46:	99 1f       	adc	r25, r25
- b48:	aa 1f       	adc	r26, r26
- b4a:	bb 1f       	adc	r27, r27
- b4c:	88 0f       	add	r24, r24
- b4e:	99 1f       	adc	r25, r25
- b50:	aa 1f       	adc	r26, r26
- b52:	bb 1f       	adc	r27, r27
- b54:	9c 01       	movw	r18, r24
- b56:	ad 01       	movw	r20, r26
- b58:	22 0f       	add	r18, r18
- b5a:	33 1f       	adc	r19, r19
- b5c:	44 1f       	adc	r20, r20
- b5e:	55 1f       	adc	r21, r21
- b60:	22 0f       	add	r18, r18
- b62:	33 1f       	adc	r19, r19
- b64:	44 1f       	adc	r20, r20
- b66:	55 1f       	adc	r21, r21
- b68:	60 e0       	ldi	r22, 0x00	; 0
- b6a:	74 e2       	ldi	r23, 0x24	; 36
- b6c:	84 ef       	ldi	r24, 0xF4	; 244
- b6e:	90 e0       	ldi	r25, 0x00	; 0
- b70:	0e 94 99 06 	call	0xd32	; 0xd32 <__udivmodsi4>
- b74:	21 50       	subi	r18, 0x01	; 1
- b76:	30 40       	sbci	r19, 0x00	; 0
- b78:	30 93 c5 00 	sts	0x00C5, r19
- b7c:	20 93 c4 00 	sts	0x00C4, r18
+ b66:	88 0f       	add	r24, r24
+ b68:	99 1f       	adc	r25, r25
+ b6a:	aa 1f       	adc	r26, r26
+ b6c:	bb 1f       	adc	r27, r27
+ b6e:	88 0f       	add	r24, r24
+ b70:	99 1f       	adc	r25, r25
+ b72:	aa 1f       	adc	r26, r26
+ b74:	bb 1f       	adc	r27, r27
+ b76:	9c 01       	movw	r18, r24
+ b78:	ad 01       	movw	r20, r26
+ b7a:	22 0f       	add	r18, r18
+ b7c:	33 1f       	adc	r19, r19
+ b7e:	44 1f       	adc	r20, r20
+ b80:	55 1f       	adc	r21, r21
+ b82:	22 0f       	add	r18, r18
+ b84:	33 1f       	adc	r19, r19
+ b86:	44 1f       	adc	r20, r20
+ b88:	55 1f       	adc	r21, r21
+ b8a:	60 e0       	ldi	r22, 0x00	; 0
+ b8c:	74 e2       	ldi	r23, 0x24	; 36
+ b8e:	84 ef       	ldi	r24, 0xF4	; 244
+ b90:	90 e0       	ldi	r25, 0x00	; 0
+ b92:	0e 94 b8 06 	call	0xd70	; 0xd70 <__udivmodsi4>
+ b96:	21 50       	subi	r18, 0x01	; 1
+ b98:	30 40       	sbci	r19, 0x00	; 0
+ b9a:	30 93 c5 00 	sts	0x00C5, r19
+ b9e:	20 93 c4 00 	sts	0x00C4, r18
   }  
 }
- b80:	0f 91       	pop	r16
- b82:	ff 90       	pop	r15
- b84:	ef 90       	pop	r14
- b86:	df 90       	pop	r13
- b88:	cf 90       	pop	r12
- b8a:	08 95       	ret
+ ba2:	0f 91       	pop	r16
+ ba4:	ff 90       	pop	r15
+ ba6:	ef 90       	pop	r14
+ ba8:	df 90       	pop	r13
+ baa:	cf 90       	pop	r12
+ bac:	08 95       	ret
 
-00000b8c <disableUART>:
+00000bae <disableUART>:
 void disableUART(){
 	UCSR0B = 0;
- b8c:	10 92 c1 00 	sts	0x00C1, r1
+ bae:	10 92 c1 00 	sts	0x00C1, r1
 	UCSR0A = 0;
- b90:	10 92 c0 00 	sts	0x00C0, r1
+ bb2:	10 92 c0 00 	sts	0x00C0, r1
 	UCSR0C = 0;
- b94:	10 92 c2 00 	sts	0x00C2, r1
+ bb6:	10 92 c2 00 	sts	0x00C2, r1
 	UBRR0 = 0;
- b98:	10 92 c5 00 	sts	0x00C5, r1
- b9c:	10 92 c4 00 	sts	0x00C4, r1
+ bba:	10 92 c5 00 	sts	0x00C5, r1
+ bbe:	10 92 c4 00 	sts	0x00C4, r1
 }
- ba0:	08 95       	ret
+ bc2:	08 95       	ret
 
-00000ba2 <CharReady>:
+00000bc4 <CharReady>:
   Returns 0 (FALSE), if the UART has NOT received a new character.
   Returns value <> 0 (TRUE), if the UART HAS received a new character.
 *************************************************************************/
 unsigned char CharReady()
 {
    return UCSR0A & (1<<7);
- ba2:	80 91 c0 00 	lds	r24, 0x00C0
+ bc4:	80 91 c0 00 	lds	r24, 0x00C0
 }
- ba6:	80 78       	andi	r24, 0x80	; 128
- ba8:	08 95       	ret
+ bc8:	80 78       	andi	r24, 0x80	; 128
+ bca:	08 95       	ret
 
-00000baa <ReadChar>:
+00000bcc <ReadChar>:
 Then this character is returned.
 *************************************************************************/
 char ReadChar()
 {
   // Wait for new character received
   while ( (UCSR0A & (1<<7)) == 0 )
- baa:	e0 ec       	ldi	r30, 0xC0	; 192
- bac:	f0 e0       	ldi	r31, 0x00	; 0
- bae:	80 81       	ld	r24, Z
- bb0:	88 23       	and	r24, r24
- bb2:	ec f7       	brge	.-6      	; 0xbae <ReadChar+0x4>
+ bcc:	e0 ec       	ldi	r30, 0xC0	; 192
+ bce:	f0 e0       	ldi	r31, 0x00	; 0
+ bd0:	80 81       	ld	r24, Z
+ bd2:	88 23       	and	r24, r24
+ bd4:	ec f7       	brge	.-6      	; 0xbd0 <ReadChar+0x4>
   {}                        
   // Then return it
   return UDR0;
- bb4:	80 91 c6 00 	lds	r24, 0x00C6
+ bd6:	80 91 c6 00 	lds	r24, 0x00C6
 }
- bb8:	08 95       	ret
+ bda:	08 95       	ret
 
-00000bba <SendChar>:
+00000bdc <SendChar>:
 	Tegn : Character for sending. 
 *************************************************************************/
 void SendChar(char Tegn)
 {
   // Wait for transmitter register empty (ready for new character)
   while ( (UCSR0A & (1<<5)) == 0 )
- bba:	e0 ec       	ldi	r30, 0xC0	; 192
- bbc:	f0 e0       	ldi	r31, 0x00	; 0
- bbe:	90 81       	ld	r25, Z
- bc0:	95 ff       	sbrs	r25, 5
- bc2:	fd cf       	rjmp	.-6      	; 0xbbe <SendChar+0x4>
+ bdc:	e0 ec       	ldi	r30, 0xC0	; 192
+ bde:	f0 e0       	ldi	r31, 0x00	; 0
+ be0:	90 81       	ld	r25, Z
+ be2:	95 ff       	sbrs	r25, 5
+ be4:	fd cf       	rjmp	.-6      	; 0xbe0 <SendChar+0x4>
   {}
   // Then send the character
   UDR0 = Tegn;
- bc4:	80 93 c6 00 	sts	0x00C6, r24
+ be6:	80 93 c6 00 	sts	0x00C6, r24
 }
- bc8:	08 95       	ret
+ bea:	08 95       	ret
 
-00000bca <SendString>:
+00000bec <SendString>:
 Sends 0 terminated string.
 Parameter:
    Streng: Pointer to the string. 
 *************************************************************************/
 void SendString(char* Streng)
 {
- bca:	cf 93       	push	r28
- bcc:	df 93       	push	r29
- bce:	ec 01       	movw	r28, r24
+ bec:	cf 93       	push	r28
+ bee:	df 93       	push	r29
+ bf0:	ec 01       	movw	r28, r24
   // Repeat until zero-termination
   while (*Streng != 0)
- bd0:	88 81       	ld	r24, Y
- bd2:	88 23       	and	r24, r24
- bd4:	31 f0       	breq	.+12     	; 0xbe2 <SendString+0x18>
+ bf2:	88 81       	ld	r24, Y
+ bf4:	88 23       	and	r24, r24
+ bf6:	31 f0       	breq	.+12     	; 0xc04 <SendString+0x18>
 /*************************************************************************
 Sends 0 terminated string.
 Parameter:
    Streng: Pointer to the string. 
 *************************************************************************/
 void SendString(char* Streng)
- bd6:	21 96       	adiw	r28, 0x01	; 1
+ bf8:	21 96       	adiw	r28, 0x01	; 1
 {
   // Repeat until zero-termination
   while (*Streng != 0)
   {
     // Send the character pointed to by "Streng"
     SendChar(*Streng);
- bd8:	0e 94 dd 05 	call	0xbba	; 0xbba <SendChar>
+ bfa:	0e 94 ee 05 	call	0xbdc	; 0xbdc <SendChar>
    Streng: Pointer to the string. 
 *************************************************************************/
 void SendString(char* Streng)
 {
   // Repeat until zero-termination
   while (*Streng != 0)
- bdc:	89 91       	ld	r24, Y+
- bde:	88 23       	and	r24, r24
- be0:	d9 f7       	brne	.-10     	; 0xbd8 <SendString+0xe>
+ bfe:	89 91       	ld	r24, Y+
+ c00:	88 23       	and	r24, r24
+ c02:	d9 f7       	brne	.-10     	; 0xbfa <SendString+0xe>
     // Send the character pointed to by "Streng"
     SendChar(*Streng);
     // Advance the pointer one step
     Streng++;
   }
 }
- be2:	df 91       	pop	r29
- be4:	cf 91       	pop	r28
- be6:	08 95       	ret
+ c04:	df 91       	pop	r29
+ c06:	cf 91       	pop	r28
+ c08:	08 95       	ret
 
-00000be8 <SendInteger>:
+00000c0a <SendInteger>:
 Makes use of the C standard library <stdlib.h>.
 Parameter:
     Tal: The integer to be converted and sent. 
 *************************************************************************/
 void SendInteger(int Tal)
 {
- be8:	cf 93       	push	r28
- bea:	df 93       	push	r29
- bec:	cd b7       	in	r28, 0x3d	; 61
- bee:	de b7       	in	r29, 0x3e	; 62
- bf0:	27 97       	sbiw	r28, 0x07	; 7
- bf2:	0f b6       	in	r0, 0x3f	; 63
- bf4:	f8 94       	cli
- bf6:	de bf       	out	0x3e, r29	; 62
- bf8:	0f be       	out	0x3f, r0	; 63
- bfa:	cd bf       	out	0x3d, r28	; 61
-char array[7];
-  // Convert the integer to an ASCII string (array), radix = 10 
-  itoa(Tal, array, 10);
- bfc:	be 01       	movw	r22, r28
- bfe:	6f 5f       	subi	r22, 0xFF	; 255
- c00:	7f 4f       	sbci	r23, 0xFF	; 255
- c02:	4a e0       	ldi	r20, 0x0A	; 10
- c04:	50 e0       	ldi	r21, 0x00	; 0
- c06:	0e 94 bb 06 	call	0xd76	; 0xd76 <itoa>
-  // - then send the string
-  SendString(array);
- c0a:	ce 01       	movw	r24, r28
- c0c:	01 96       	adiw	r24, 0x01	; 1
- c0e:	0e 94 e5 05 	call	0xbca	; 0xbca <SendString>
-}
- c12:	27 96       	adiw	r28, 0x07	; 7
+ c0a:	cf 93       	push	r28
+ c0c:	df 93       	push	r29
+ c0e:	cd b7       	in	r28, 0x3d	; 61
+ c10:	de b7       	in	r29, 0x3e	; 62
+ c12:	27 97       	sbiw	r28, 0x07	; 7
  c14:	0f b6       	in	r0, 0x3f	; 63
  c16:	f8 94       	cli
  c18:	de bf       	out	0x3e, r29	; 62
  c1a:	0f be       	out	0x3f, r0	; 63
  c1c:	cd bf       	out	0x3d, r28	; 61
- c1e:	df 91       	pop	r29
- c20:	cf 91       	pop	r28
- c22:	08 95       	ret
+char array[7];
+  // Convert the integer to an ASCII string (array), radix = 10 
+  itoa(Tal, array, 10);
+ c1e:	be 01       	movw	r22, r28
+ c20:	6f 5f       	subi	r22, 0xFF	; 255
+ c22:	7f 4f       	sbci	r23, 0xFF	; 255
+ c24:	4a e0       	ldi	r20, 0x0A	; 10
+ c26:	50 e0       	ldi	r21, 0x00	; 0
+ c28:	0e 94 da 06 	call	0xdb4	; 0xdb4 <itoa>
+  // - then send the string
+  SendString(array);
+ c2c:	ce 01       	movw	r24, r28
+ c2e:	01 96       	adiw	r24, 0x01	; 1
+ c30:	0e 94 f6 05 	call	0xbec	; 0xbec <SendString>
+}
+ c34:	27 96       	adiw	r28, 0x07	; 7
+ c36:	0f b6       	in	r0, 0x3f	; 63
+ c38:	f8 94       	cli
+ c3a:	de bf       	out	0x3e, r29	; 62
+ c3c:	0f be       	out	0x3f, r0	; 63
+ c3e:	cd bf       	out	0x3d, r28	; 61
+ c40:	df 91       	pop	r29
+ c42:	cf 91       	pop	r28
+ c44:	08 95       	ret
 
-00000c24 <incReadIndex>:
+00000c46 <incReadIndex>:
 		disableUART();
 		setMessage(1);
 	}
 }
 void incReadIndex(){
 	readIndex++;
- c24:	80 91 93 02 	lds	r24, 0x0293
- c28:	90 91 94 02 	lds	r25, 0x0294
- c2c:	01 96       	adiw	r24, 0x01	; 1
- c2e:	90 93 94 02 	sts	0x0294, r25
- c32:	80 93 93 02 	sts	0x0293, r24
+ c46:	80 91 95 02 	lds	r24, 0x0295
+ c4a:	90 91 96 02 	lds	r25, 0x0296
+ c4e:	01 96       	adiw	r24, 0x01	; 1
+ c50:	90 93 96 02 	sts	0x0296, r25
+ c54:	80 93 95 02 	sts	0x0295, r24
 }
- c36:	08 95       	ret
+ c58:	08 95       	ret
 
-00000c38 <getReadIndex>:
+00000c5a <getReadIndex>:
 int getReadIndex(){
 	return readIndex;
- c38:	80 91 93 02 	lds	r24, 0x0293
- c3c:	90 91 94 02 	lds	r25, 0x0294
+ c5a:	80 91 95 02 	lds	r24, 0x0295
+ c5e:	90 91 96 02 	lds	r25, 0x0296
 }
- c40:	08 95       	ret
+ c62:	08 95       	ret
 
-00000c42 <setReadIndex>:
+00000c64 <setReadIndex>:
 void setReadIndex(int r){
 	readIndex = r;
- c42:	90 93 94 02 	sts	0x0294, r25
- c46:	80 93 93 02 	sts	0x0293, r24
+ c64:	90 93 96 02 	sts	0x0296, r25
+ c68:	80 93 95 02 	sts	0x0295, r24
 }
- c4a:	08 95       	ret
+ c6c:	08 95       	ret
 
-00000c4c <setMessage>:
+00000c6e <setMessage>:
 void setMessage(int m){
 	messageReceived = m;
- c4c:	90 93 92 02 	sts	0x0292, r25
- c50:	80 93 91 02 	sts	0x0291, r24
+ c6e:	90 93 92 02 	sts	0x0292, r25
+ c72:	80 93 91 02 	sts	0x0291, r24
 }
- c54:	08 95       	ret
+ c76:	08 95       	ret
 
-00000c56 <fillArray>:
+00000c78 <fillArray>:
   itoa(Tal, array, 10);
   // - then send the string
   SendString(array);
 }
 
 void fillArray(char * a){
- c56:	cf 93       	push	r28
- c58:	df 93       	push	r29
- c5a:	ec 01       	movw	r28, r24
+ c78:	cf 93       	push	r28
+ c7a:	df 93       	push	r29
+ c7c:	ec 01       	movw	r28, r24
 	a[getReadIndex()] = UDR0;
- c5c:	0e 94 1c 06 	call	0xc38	; 0xc38 <getReadIndex>
- c60:	20 91 c6 00 	lds	r18, 0x00C6
- c64:	c8 0f       	add	r28, r24
- c66:	d9 1f       	adc	r29, r25
- c68:	28 83       	st	Y, r18
+ c7e:	0e 94 2d 06 	call	0xc5a	; 0xc5a <getReadIndex>
+ c82:	20 91 c6 00 	lds	r18, 0x00C6
+ c86:	c8 0f       	add	r28, r24
+ c88:	d9 1f       	adc	r29, r25
+ c8a:	28 83       	st	Y, r18
 	incReadIndex();
- c6a:	0e 94 12 06 	call	0xc24	; 0xc24 <incReadIndex>
+ c8c:	0e 94 23 06 	call	0xc46	; 0xc46 <incReadIndex>
 	if(getReadIndex() >= 4){
- c6e:	0e 94 1c 06 	call	0xc38	; 0xc38 <getReadIndex>
- c72:	84 30       	cpi	r24, 0x04	; 4
- c74:	91 05       	cpc	r25, r1
- c76:	54 f0       	brlt	.+20     	; 0xc8c <fillArray+0x36>
+ c90:	0e 94 2d 06 	call	0xc5a	; 0xc5a <getReadIndex>
+ c94:	84 30       	cpi	r24, 0x04	; 4
+ c96:	91 05       	cpc	r25, r1
+ c98:	54 f0       	brlt	.+20     	; 0xcae <fillArray+0x36>
 		setReadIndex(0);
- c78:	80 e0       	ldi	r24, 0x00	; 0
- c7a:	90 e0       	ldi	r25, 0x00	; 0
- c7c:	0e 94 21 06 	call	0xc42	; 0xc42 <setReadIndex>
+ c9a:	80 e0       	ldi	r24, 0x00	; 0
+ c9c:	90 e0       	ldi	r25, 0x00	; 0
+ c9e:	0e 94 32 06 	call	0xc64	; 0xc64 <setReadIndex>
 		disableUART();
- c80:	0e 94 c6 05 	call	0xb8c	; 0xb8c <disableUART>
+ ca2:	0e 94 d7 05 	call	0xbae	; 0xbae <disableUART>
 		setMessage(1);
- c84:	81 e0       	ldi	r24, 0x01	; 1
- c86:	90 e0       	ldi	r25, 0x00	; 0
- c88:	0e 94 26 06 	call	0xc4c	; 0xc4c <setMessage>
+ ca6:	81 e0       	ldi	r24, 0x01	; 1
+ ca8:	90 e0       	ldi	r25, 0x00	; 0
+ caa:	0e 94 37 06 	call	0xc6e	; 0xc6e <setMessage>
 	}
 }
- c8c:	df 91       	pop	r29
- c8e:	cf 91       	pop	r28
- c90:	08 95       	ret
+ cae:	df 91       	pop	r29
+ cb0:	cf 91       	pop	r28
+ cb2:	08 95       	ret
 
-00000c92 <getMessage>:
+00000cb4 <getMessage>:
 }
 void setMessage(int m){
 	messageReceived = m;
 }
 int getMessage(){
 	return messageReceived;
- c92:	80 91 91 02 	lds	r24, 0x0291
- c96:	90 91 92 02 	lds	r25, 0x0292
+ cb4:	80 91 91 02 	lds	r24, 0x0291
+ cb8:	90 91 92 02 	lds	r25, 0x0292
 }
- c9a:	08 95       	ret
+ cbc:	08 95       	ret
 
-00000c9c <deleteData>:
-void deleteData(char * d,int length){
-	for(int i = 0; i < length; i++){
- c9c:	16 16       	cp	r1, r22
- c9e:	17 06       	cpc	r1, r23
- ca0:	4c f4       	brge	.+18     	; 0xcb4 <deleteData+0x18>
- ca2:	e8 2f       	mov	r30, r24
- ca4:	f9 2f       	mov	r31, r25
- ca6:	80 e0       	ldi	r24, 0x00	; 0
- ca8:	90 e0       	ldi	r25, 0x00	; 0
-		d[i] = 0;
- caa:	11 92       	st	Z+, r1
+00000cbe <setDontSend>:
+		
+	}
+	setDontSend(1);
+}
+void setDontSend(int d){
+	dontSend = d;
+ cbe:	90 93 94 02 	sts	0x0294, r25
+ cc2:	80 93 93 02 	sts	0x0293, r24
+}
+ cc6:	08 95       	ret
+
+00000cc8 <deleteData>:
 }
 int getMessage(){
 	return messageReceived;
 }
 void deleteData(char * d,int length){
 	for(int i = 0; i < length; i++){
- cac:	01 96       	adiw	r24, 0x01	; 1
- cae:	86 17       	cp	r24, r22
- cb0:	97 07       	cpc	r25, r23
- cb2:	d9 f7       	brne	.-10     	; 0xcaa <deleteData+0xe>
- cb4:	08 95       	ret
+ cc8:	16 16       	cp	r1, r22
+ cca:	17 06       	cpc	r1, r23
+ ccc:	4c f4       	brge	.+18     	; 0xce0 <deleteData+0x18>
+ cce:	e8 2f       	mov	r30, r24
+ cd0:	f9 2f       	mov	r31, r25
+ cd2:	80 e0       	ldi	r24, 0x00	; 0
+ cd4:	90 e0       	ldi	r25, 0x00	; 0
+		d[i] = 0;
+ cd6:	11 92       	st	Z+, r1
+}
+int getMessage(){
+	return messageReceived;
+}
+void deleteData(char * d,int length){
+	for(int i = 0; i < length; i++){
+ cd8:	01 96       	adiw	r24, 0x01	; 1
+ cda:	86 17       	cp	r24, r22
+ cdc:	97 07       	cpc	r25, r23
+ cde:	d9 f7       	brne	.-10     	; 0xcd6 <deleteData+0xe>
+		d[i] = 0;
+		
+	}
+	setDontSend(1);
+ ce0:	81 e0       	ldi	r24, 0x01	; 1
+ ce2:	90 e0       	ldi	r25, 0x00	; 0
+ ce4:	0e 94 5f 06 	call	0xcbe	; 0xcbe <setDontSend>
+}
+ ce8:	08 95       	ret
 
-00000cb6 <initINT0>:
+00000cea <getDontSend>:
+void setDontSend(int d){
+	dontSend = d;
+}
+int getDontSend(){
+	return dontSend;
+ cea:	80 91 93 02 	lds	r24, 0x0293
+ cee:	90 91 94 02 	lds	r25, 0x0294
+}
+ cf2:	08 95       	ret
+
+00000cf4 <initINT0>:
  *  Author: Valdemar
  */ 
 #include "ZCD.h"
 volatile int counterTimer;
 void initINT0(){
 	DDRD &= 0b11111110;
- cb6:	50 98       	cbi	0x0a, 0	; 10
+ cf4:	50 98       	cbi	0x0a, 0	; 10
 	EIMSK |= 0b00000001; // enable INT0
- cb8:	e8 9a       	sbi	0x1d, 0	; 29
+ cf6:	e8 9a       	sbi	0x1d, 0	; 29
 	EICRA |= 0b00000010; // falling edge triggered
- cba:	e9 e6       	ldi	r30, 0x69	; 105
- cbc:	f0 e0       	ldi	r31, 0x00	; 0
- cbe:	80 81       	ld	r24, Z
- cc0:	82 60       	ori	r24, 0x02	; 2
- cc2:	80 83       	st	Z, r24
+ cf8:	e9 e6       	ldi	r30, 0x69	; 105
+ cfa:	f0 e0       	ldi	r31, 0x00	; 0
+ cfc:	80 81       	ld	r24, Z
+ cfe:	82 60       	ori	r24, 0x02	; 2
+ d00:	80 83       	st	Z, r24
 }
- cc4:	08 95       	ret
+ d02:	08 95       	ret
 
-00000cc6 <disableINT0>:
+00000d04 <disableINT0>:
 void disableINT0(){
 	EIMSK &= 0b11111110;
- cc6:	e8 98       	cbi	0x1d, 0	; 29
+ d04:	e8 98       	cbi	0x1d, 0	; 29
 	EICRA &= 0b11111100;
- cc8:	e9 e6       	ldi	r30, 0x69	; 105
- cca:	f0 e0       	ldi	r31, 0x00	; 0
- ccc:	80 81       	ld	r24, Z
- cce:	8c 7f       	andi	r24, 0xFC	; 252
- cd0:	80 83       	st	Z, r24
+ d06:	e9 e6       	ldi	r30, 0x69	; 105
+ d08:	f0 e0       	ldi	r31, 0x00	; 0
+ d0a:	80 81       	ld	r24, Z
+ d0c:	8c 7f       	andi	r24, 0xFC	; 252
+ d0e:	80 83       	st	Z, r24
 }
- cd2:	08 95       	ret
+ d10:	08 95       	ret
 
-00000cd4 <initTimer3>:
+00000d12 <initTimer3>:
 void initTimer3(int ms){
 	if(ms == 1){
- cd4:	81 30       	cpi	r24, 0x01	; 1
- cd6:	91 05       	cpc	r25, r1
- cd8:	71 f4       	brne	.+28     	; 0xcf6 <initTimer3+0x22>
+ d12:	81 30       	cpi	r24, 0x01	; 1
+ d14:	91 05       	cpc	r25, r1
+ d16:	71 f4       	brne	.+28     	; 0xd34 <initTimer3+0x22>
 		TCCR3A = 0;
- cda:	10 92 90 00 	sts	0x0090, r1
+ d18:	10 92 90 00 	sts	0x0090, r1
 		TIMSK3 = 1;
- cde:	21 e0       	ldi	r18, 0x01	; 1
- ce0:	20 93 71 00 	sts	0x0071, r18
+ d1c:	21 e0       	ldi	r18, 0x01	; 1
+ d1e:	20 93 71 00 	sts	0x0071, r18
 		TCNT3 = 65535 - 5984;
- ce4:	8f e9       	ldi	r24, 0x9F	; 159
- ce6:	98 ee       	ldi	r25, 0xE8	; 232
- ce8:	90 93 95 00 	sts	0x0095, r25
- cec:	80 93 94 00 	sts	0x0094, r24
+ d22:	8f e9       	ldi	r24, 0x9F	; 159
+ d24:	98 ee       	ldi	r25, 0xE8	; 232
+ d26:	90 93 95 00 	sts	0x0095, r25
+ d2a:	80 93 94 00 	sts	0x0094, r24
 		TCCR3B = 1;
- cf0:	20 93 91 00 	sts	0x0091, r18
- cf4:	08 95       	ret
+ d2e:	20 93 91 00 	sts	0x0091, r18
+ d32:	08 95       	ret
 	}	
 	else if(ms == 10){
- cf6:	8a 30       	cpi	r24, 0x0A	; 10
- cf8:	91 05       	cpc	r25, r1
- cfa:	49 f4       	brne	.+18     	; 0xd0e <initTimer3+0x3a>
+ d34:	8a 30       	cpi	r24, 0x0A	; 10
+ d36:	91 05       	cpc	r25, r1
+ d38:	49 f4       	brne	.+18     	; 0xd4c <initTimer3+0x3a>
 		TCCR3B = 2;
- cfc:	82 e0       	ldi	r24, 0x02	; 2
- cfe:	80 93 91 00 	sts	0x0091, r24
+ d3a:	82 e0       	ldi	r24, 0x02	; 2
+ d3c:	80 93 91 00 	sts	0x0091, r24
 		TCNT3 = 65536 - 20000;
- d02:	80 ee       	ldi	r24, 0xE0	; 224
- d04:	91 eb       	ldi	r25, 0xB1	; 177
- d06:	90 93 95 00 	sts	0x0095, r25
- d0a:	80 93 94 00 	sts	0x0094, r24
- d0e:	08 95       	ret
+ d40:	80 ee       	ldi	r24, 0xE0	; 224
+ d42:	91 eb       	ldi	r25, 0xB1	; 177
+ d44:	90 93 95 00 	sts	0x0095, r25
+ d48:	80 93 94 00 	sts	0x0094, r24
+ d4c:	08 95       	ret
 
-00000d10 <stopTimer3>:
+00000d4e <stopTimer3>:
 	}
 }
 void stopTimer3(){
 	TCCR3A = 0;
- d10:	10 92 90 00 	sts	0x0090, r1
+ d4e:	10 92 90 00 	sts	0x0090, r1
 	TCCR3B = 0;
- d14:	10 92 91 00 	sts	0x0091, r1
+ d52:	10 92 91 00 	sts	0x0091, r1
 	TIMSK3 = 0;
- d18:	10 92 71 00 	sts	0x0071, r1
+ d56:	10 92 71 00 	sts	0x0071, r1
 }
- d1c:	08 95       	ret
+ d5a:	08 95       	ret
 
-00000d1e <setCounterTimer>:
+00000d5c <setCounterTimer>:
 void setCounterTimer(int c){
 	counterTimer = c;
- d1e:	90 93 96 02 	sts	0x0296, r25
- d22:	80 93 95 02 	sts	0x0295, r24
+ d5c:	90 93 98 02 	sts	0x0298, r25
+ d60:	80 93 97 02 	sts	0x0297, r24
 }
- d26:	08 95       	ret
+ d64:	08 95       	ret
 
-00000d28 <getCounterTimer>:
+00000d66 <getCounterTimer>:
 int getCounterTimer(){
 	return counterTimer;
- d28:	80 91 95 02 	lds	r24, 0x0295
- d2c:	90 91 96 02 	lds	r25, 0x0296
+ d66:	80 91 97 02 	lds	r24, 0x0297
+ d6a:	90 91 98 02 	lds	r25, 0x0298
 }
- d30:	08 95       	ret
+ d6e:	08 95       	ret
 
-00000d32 <__udivmodsi4>:
- d32:	a1 e2       	ldi	r26, 0x21	; 33
- d34:	1a 2e       	mov	r1, r26
- d36:	aa 1b       	sub	r26, r26
- d38:	bb 1b       	sub	r27, r27
- d3a:	fd 01       	movw	r30, r26
- d3c:	0d c0       	rjmp	.+26     	; 0xd58 <__udivmodsi4_ep>
+00000d70 <__udivmodsi4>:
+ d70:	a1 e2       	ldi	r26, 0x21	; 33
+ d72:	1a 2e       	mov	r1, r26
+ d74:	aa 1b       	sub	r26, r26
+ d76:	bb 1b       	sub	r27, r27
+ d78:	fd 01       	movw	r30, r26
+ d7a:	0d c0       	rjmp	.+26     	; 0xd96 <__udivmodsi4_ep>
 
-00000d3e <__udivmodsi4_loop>:
- d3e:	aa 1f       	adc	r26, r26
- d40:	bb 1f       	adc	r27, r27
- d42:	ee 1f       	adc	r30, r30
- d44:	ff 1f       	adc	r31, r31
- d46:	a2 17       	cp	r26, r18
- d48:	b3 07       	cpc	r27, r19
- d4a:	e4 07       	cpc	r30, r20
- d4c:	f5 07       	cpc	r31, r21
- d4e:	20 f0       	brcs	.+8      	; 0xd58 <__udivmodsi4_ep>
- d50:	a2 1b       	sub	r26, r18
- d52:	b3 0b       	sbc	r27, r19
- d54:	e4 0b       	sbc	r30, r20
- d56:	f5 0b       	sbc	r31, r21
+00000d7c <__udivmodsi4_loop>:
+ d7c:	aa 1f       	adc	r26, r26
+ d7e:	bb 1f       	adc	r27, r27
+ d80:	ee 1f       	adc	r30, r30
+ d82:	ff 1f       	adc	r31, r31
+ d84:	a2 17       	cp	r26, r18
+ d86:	b3 07       	cpc	r27, r19
+ d88:	e4 07       	cpc	r30, r20
+ d8a:	f5 07       	cpc	r31, r21
+ d8c:	20 f0       	brcs	.+8      	; 0xd96 <__udivmodsi4_ep>
+ d8e:	a2 1b       	sub	r26, r18
+ d90:	b3 0b       	sbc	r27, r19
+ d92:	e4 0b       	sbc	r30, r20
+ d94:	f5 0b       	sbc	r31, r21
 
-00000d58 <__udivmodsi4_ep>:
- d58:	66 1f       	adc	r22, r22
- d5a:	77 1f       	adc	r23, r23
- d5c:	88 1f       	adc	r24, r24
- d5e:	99 1f       	adc	r25, r25
- d60:	1a 94       	dec	r1
- d62:	69 f7       	brne	.-38     	; 0xd3e <__udivmodsi4_loop>
- d64:	60 95       	com	r22
- d66:	70 95       	com	r23
- d68:	80 95       	com	r24
- d6a:	90 95       	com	r25
- d6c:	9b 01       	movw	r18, r22
- d6e:	ac 01       	movw	r20, r24
- d70:	bd 01       	movw	r22, r26
- d72:	cf 01       	movw	r24, r30
- d74:	08 95       	ret
+00000d96 <__udivmodsi4_ep>:
+ d96:	66 1f       	adc	r22, r22
+ d98:	77 1f       	adc	r23, r23
+ d9a:	88 1f       	adc	r24, r24
+ d9c:	99 1f       	adc	r25, r25
+ d9e:	1a 94       	dec	r1
+ da0:	69 f7       	brne	.-38     	; 0xd7c <__udivmodsi4_loop>
+ da2:	60 95       	com	r22
+ da4:	70 95       	com	r23
+ da6:	80 95       	com	r24
+ da8:	90 95       	com	r25
+ daa:	9b 01       	movw	r18, r22
+ dac:	ac 01       	movw	r20, r24
+ dae:	bd 01       	movw	r22, r26
+ db0:	cf 01       	movw	r24, r30
+ db2:	08 95       	ret
 
-00000d76 <itoa>:
- d76:	fb 01       	movw	r30, r22
- d78:	9f 01       	movw	r18, r30
- d7a:	e8 94       	clt
- d7c:	42 30       	cpi	r20, 0x02	; 2
- d7e:	c4 f0       	brlt	.+48     	; 0xdb0 <itoa+0x3a>
- d80:	45 32       	cpi	r20, 0x25	; 37
- d82:	b4 f4       	brge	.+44     	; 0xdb0 <itoa+0x3a>
- d84:	4a 30       	cpi	r20, 0x0A	; 10
- d86:	29 f4       	brne	.+10     	; 0xd92 <itoa+0x1c>
- d88:	97 fb       	bst	r25, 7
- d8a:	1e f4       	brtc	.+6      	; 0xd92 <itoa+0x1c>
- d8c:	90 95       	com	r25
- d8e:	81 95       	neg	r24
- d90:	9f 4f       	sbci	r25, 0xFF	; 255
- d92:	64 2f       	mov	r22, r20
- d94:	77 27       	eor	r23, r23
- d96:	0e 94 ec 06 	call	0xdd8	; 0xdd8 <__udivmodhi4>
- d9a:	80 5d       	subi	r24, 0xD0	; 208
- d9c:	8a 33       	cpi	r24, 0x3A	; 58
- d9e:	0c f0       	brlt	.+2      	; 0xda2 <itoa+0x2c>
- da0:	89 5d       	subi	r24, 0xD9	; 217
- da2:	81 93       	st	Z+, r24
- da4:	cb 01       	movw	r24, r22
- da6:	00 97       	sbiw	r24, 0x00	; 0
- da8:	a1 f7       	brne	.-24     	; 0xd92 <itoa+0x1c>
- daa:	16 f4       	brtc	.+4      	; 0xdb0 <itoa+0x3a>
- dac:	5d e2       	ldi	r21, 0x2D	; 45
- dae:	51 93       	st	Z+, r21
- db0:	10 82       	st	Z, r1
- db2:	c9 01       	movw	r24, r18
- db4:	0c 94 dc 06 	jmp	0xdb8	; 0xdb8 <strrev>
+00000db4 <itoa>:
+ db4:	fb 01       	movw	r30, r22
+ db6:	9f 01       	movw	r18, r30
+ db8:	e8 94       	clt
+ dba:	42 30       	cpi	r20, 0x02	; 2
+ dbc:	c4 f0       	brlt	.+48     	; 0xdee <itoa+0x3a>
+ dbe:	45 32       	cpi	r20, 0x25	; 37
+ dc0:	b4 f4       	brge	.+44     	; 0xdee <itoa+0x3a>
+ dc2:	4a 30       	cpi	r20, 0x0A	; 10
+ dc4:	29 f4       	brne	.+10     	; 0xdd0 <itoa+0x1c>
+ dc6:	97 fb       	bst	r25, 7
+ dc8:	1e f4       	brtc	.+6      	; 0xdd0 <itoa+0x1c>
+ dca:	90 95       	com	r25
+ dcc:	81 95       	neg	r24
+ dce:	9f 4f       	sbci	r25, 0xFF	; 255
+ dd0:	64 2f       	mov	r22, r20
+ dd2:	77 27       	eor	r23, r23
+ dd4:	0e 94 0b 07 	call	0xe16	; 0xe16 <__udivmodhi4>
+ dd8:	80 5d       	subi	r24, 0xD0	; 208
+ dda:	8a 33       	cpi	r24, 0x3A	; 58
+ ddc:	0c f0       	brlt	.+2      	; 0xde0 <itoa+0x2c>
+ dde:	89 5d       	subi	r24, 0xD9	; 217
+ de0:	81 93       	st	Z+, r24
+ de2:	cb 01       	movw	r24, r22
+ de4:	00 97       	sbiw	r24, 0x00	; 0
+ de6:	a1 f7       	brne	.-24     	; 0xdd0 <itoa+0x1c>
+ de8:	16 f4       	brtc	.+4      	; 0xdee <itoa+0x3a>
+ dea:	5d e2       	ldi	r21, 0x2D	; 45
+ dec:	51 93       	st	Z+, r21
+ dee:	10 82       	st	Z, r1
+ df0:	c9 01       	movw	r24, r18
+ df2:	0c 94 fb 06 	jmp	0xdf6	; 0xdf6 <strrev>
 
-00000db8 <strrev>:
- db8:	dc 01       	movw	r26, r24
- dba:	fc 01       	movw	r30, r24
- dbc:	67 2f       	mov	r22, r23
- dbe:	71 91       	ld	r23, Z+
- dc0:	77 23       	and	r23, r23
- dc2:	e1 f7       	brne	.-8      	; 0xdbc <strrev+0x4>
- dc4:	32 97       	sbiw	r30, 0x02	; 2
- dc6:	04 c0       	rjmp	.+8      	; 0xdd0 <strrev+0x18>
- dc8:	7c 91       	ld	r23, X
- dca:	6d 93       	st	X+, r22
- dcc:	70 83       	st	Z, r23
- dce:	62 91       	ld	r22, -Z
- dd0:	ae 17       	cp	r26, r30
- dd2:	bf 07       	cpc	r27, r31
- dd4:	c8 f3       	brcs	.-14     	; 0xdc8 <strrev+0x10>
- dd6:	08 95       	ret
+00000df6 <strrev>:
+ df6:	dc 01       	movw	r26, r24
+ df8:	fc 01       	movw	r30, r24
+ dfa:	67 2f       	mov	r22, r23
+ dfc:	71 91       	ld	r23, Z+
+ dfe:	77 23       	and	r23, r23
+ e00:	e1 f7       	brne	.-8      	; 0xdfa <strrev+0x4>
+ e02:	32 97       	sbiw	r30, 0x02	; 2
+ e04:	04 c0       	rjmp	.+8      	; 0xe0e <strrev+0x18>
+ e06:	7c 91       	ld	r23, X
+ e08:	6d 93       	st	X+, r22
+ e0a:	70 83       	st	Z, r23
+ e0c:	62 91       	ld	r22, -Z
+ e0e:	ae 17       	cp	r26, r30
+ e10:	bf 07       	cpc	r27, r31
+ e12:	c8 f3       	brcs	.-14     	; 0xe06 <strrev+0x10>
+ e14:	08 95       	ret
 
-00000dd8 <__udivmodhi4>:
- dd8:	aa 1b       	sub	r26, r26
- dda:	bb 1b       	sub	r27, r27
- ddc:	51 e1       	ldi	r21, 0x11	; 17
- dde:	07 c0       	rjmp	.+14     	; 0xdee <__udivmodhi4_ep>
+00000e16 <__udivmodhi4>:
+ e16:	aa 1b       	sub	r26, r26
+ e18:	bb 1b       	sub	r27, r27
+ e1a:	51 e1       	ldi	r21, 0x11	; 17
+ e1c:	07 c0       	rjmp	.+14     	; 0xe2c <__udivmodhi4_ep>
 
-00000de0 <__udivmodhi4_loop>:
- de0:	aa 1f       	adc	r26, r26
- de2:	bb 1f       	adc	r27, r27
- de4:	a6 17       	cp	r26, r22
- de6:	b7 07       	cpc	r27, r23
- de8:	10 f0       	brcs	.+4      	; 0xdee <__udivmodhi4_ep>
- dea:	a6 1b       	sub	r26, r22
- dec:	b7 0b       	sbc	r27, r23
+00000e1e <__udivmodhi4_loop>:
+ e1e:	aa 1f       	adc	r26, r26
+ e20:	bb 1f       	adc	r27, r27
+ e22:	a6 17       	cp	r26, r22
+ e24:	b7 07       	cpc	r27, r23
+ e26:	10 f0       	brcs	.+4      	; 0xe2c <__udivmodhi4_ep>
+ e28:	a6 1b       	sub	r26, r22
+ e2a:	b7 0b       	sbc	r27, r23
 
-00000dee <__udivmodhi4_ep>:
- dee:	88 1f       	adc	r24, r24
- df0:	99 1f       	adc	r25, r25
- df2:	5a 95       	dec	r21
- df4:	a9 f7       	brne	.-22     	; 0xde0 <__udivmodhi4_loop>
- df6:	80 95       	com	r24
- df8:	90 95       	com	r25
- dfa:	bc 01       	movw	r22, r24
- dfc:	cd 01       	movw	r24, r26
- dfe:	08 95       	ret
+00000e2c <__udivmodhi4_ep>:
+ e2c:	88 1f       	adc	r24, r24
+ e2e:	99 1f       	adc	r25, r25
+ e30:	5a 95       	dec	r21
+ e32:	a9 f7       	brne	.-22     	; 0xe1e <__udivmodhi4_loop>
+ e34:	80 95       	com	r24
+ e36:	90 95       	com	r25
+ e38:	bc 01       	movw	r22, r24
+ e3a:	cd 01       	movw	r24, r26
+ e3c:	08 95       	ret
 
-00000e00 <_exit>:
- e00:	f8 94       	cli
+00000e3e <_exit>:
+ e3e:	f8 94       	cli
 
-00000e02 <__stop_program>:
- e02:	ff cf       	rjmp	.-2      	; 0xe02 <__stop_program>
+00000e40 <__stop_program>:
+ e40:	ff cf       	rjmp	.-2      	; 0xe40 <__stop_program>

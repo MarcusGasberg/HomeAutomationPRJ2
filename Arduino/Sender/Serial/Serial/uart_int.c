@@ -17,6 +17,7 @@
 #include <util/delay.h>
 volatile int messageReceived;
 volatile int readIndex;
+volatile int dontSend;
 
 
 /*************************************************************************
@@ -165,6 +166,14 @@ int getMessage(){
 void deleteData(char * d,int length){
 	for(int i = 0; i < length; i++){
 		d[i] = 0;
+		
 	}
+	setDontSend(1);
+}
+void setDontSend(int d){
+	dontSend = d;
+}
+int getDontSend(){
+	return dontSend;
 }
 /************************************************************************/
