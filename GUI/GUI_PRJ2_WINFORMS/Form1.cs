@@ -18,6 +18,7 @@ namespace GUI_PRJ2_WINFORMS
         private SerialCom serialCom;
         private int currentApparatPort = 0;
         private Func currentApparatFunc = Func.OnOff;
+        private string log;
 
         public Form1()
         {
@@ -41,9 +42,9 @@ namespace GUI_PRJ2_WINFORMS
 
             SystemInformation = " Machine Name = " + System.Environment.MachineName;                                         // Get the Machine Name 
             SystemInformation = SystemInformation + Environment.NewLine + " OS Version = " + System.Environment.OSVersion;    // Get the OS version
-            SystemInformation = SystemInformation + Environment.NewLine + " Processor Cores = " + Environment.ProcessorCount; // Get the Number of Processors on the System
+            SystemInformation = SystemInformation + Environment.NewLine + " Processor Cores = " + Environment.ProcessorCount + Environment.NewLine; // Get the Number of Processors on the System
 
-            TextBox_System_Log.Text = SystemInformation; //Display into the Log Text Box
+            TextBox_System_Log.AppendText(SystemInformation); //Display into the Log Text Box
         }
         
         /// <summary>
@@ -58,7 +59,7 @@ namespace GUI_PRJ2_WINFORMS
             // extend 2nd column
             ListViewButtonColumn buttonAction = new ListViewButtonColumn(1);
             //Add action for button
-            buttonAction.Click += OnButtonActionClick;
+            buttonAction.Click += Apparat_Click;
             buttonAction.FixedWidth = true;
             //Add column with dummy data
             extender.AddColumn(buttonAction);
@@ -106,7 +107,7 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
+        private void Apparat_Click(object sender, ListViewColumnMouseEventArgs e)
         {
             //Check if com is selected
             if (comboBox_available_serialPorts.SelectedIndex == -1)
@@ -232,6 +233,9 @@ namespace GUI_PRJ2_WINFORMS
             }
             //update listview
             UpdateListView(listView1);
+            //Write to log
+            log = apparatToAdd.Name + " on port " + apparatToAdd.Port.ToString() + " added to list" + Environment.NewLine;
+            TextBox_System_Log.AppendText(log);
             //change page to apparat menu
             mainView.SelectTab(ApparatMenu);
             ApparatMenu.Enabled = true;
@@ -276,14 +280,17 @@ namespace GUI_PRJ2_WINFORMS
                 //If port is On turn it Off
                 if (isPortOn(currentApparatPort))
                 {
-                    TextBox_System_Log1.Text = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
+                    log = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort)) + Environment.NewLine;
+                    TextBox_System_Log1.AppendText(log);
                     //Invert on/off
                     availableApparats.Find(item => item.Port == currentApparatPort).OnOff = false;
                 }
                 //else dimm instead of setting max
                 else
                 {
-                    TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+                    //Also write to log
+                    log = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value) + Environment.NewLine;
+                    TextBox_System_Log1.AppendText(log);
                     //Invert on/off
                     availableApparats.Find(item => item.Port == currentApparatPort).OnOff = true;
                 }
@@ -292,8 +299,9 @@ namespace GUI_PRJ2_WINFORMS
             }
             else
             {
-                //Turn the light on/off
-                TextBox_System_Log1.Text = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort));
+                //Turn the light on/off and write to log
+                log = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort)) + Environment.NewLine;
+                TextBox_System_Log1.AppendText(log);
                 //Invert on/off
                 availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
                 //Change text of onOffButton
@@ -311,7 +319,8 @@ namespace GUI_PRJ2_WINFORMS
             //Set the value of the dimmer
             availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
             //Dimm the light
-            TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+            log = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value) + Environment.NewLine;
+            TextBox_System_Log1.AppendText(log);
         }
 
         /// <summary>
@@ -324,6 +333,10 @@ namespace GUI_PRJ2_WINFORMS
             //Foreach selected item in listview1: Delete
             foreach(ListViewItem selected in listView1.SelectedItems)
             {
+                //Write it to log
+                log = availableApparats[selected.Index].Name + " removed." + Environment.NewLine;
+                TextBox_System_Log.AppendText(log);
+                //Remove it
                 availableApparats.RemoveAt(selected.Index);
                 selected.Remove();
             }
@@ -337,9 +350,9 @@ namespace GUI_PRJ2_WINFORMS
         private void comboBox_available_serialPorts_SelectionChangeCommitted(object sender, EventArgs e)
         {
             // Store the Selected COM port
-            string selectedCom = comboBox_available_serialPorts.SelectedItem.ToString() + " Selected"; 
+            log = comboBox_available_serialPorts.SelectedItem.ToString() + " Selected" + Environment.NewLine;
             // Display the Selected COM port in the Log Text Box
-            TextBox_System_Log.Text = selectedCom;
+            TextBox_System_Log.AppendText(log);
             //Sets the portName
             serialPort1.PortName = comboBox_available_serialPorts.SelectedItem.ToString();
         }
@@ -352,9 +365,9 @@ namespace GUI_PRJ2_WINFORMS
         private void comboBox_baudRate_SelectionChangeCommitted(object sender, EventArgs e)
         {
             // Store the Selected Baud rate
-            string selectedBaudrate = "Baudrate of " + comboBox_baudRate.SelectedItem.ToString() + " Selected"; 
+            log = "Baudrate of " + comboBox_baudRate.SelectedItem.ToString() + " Selected" + Environment.NewLine;
             // Display the Selected COM port in the Log Text Box
-            TextBox_System_Log.Text = selectedBaudrate;  
+            TextBox_System_Log.AppendText(log);
             //Sets the baudrate of serialPort1
             serialPort1.BaudRate = Convert.ToInt32(comboBox_baudRate.SelectedItem.ToString());
         }
@@ -366,7 +379,8 @@ namespace GUI_PRJ2_WINFORMS
             if (isPortOn(currentApparatPort))
             {
                 //Dimm the light
-                TextBox_System_Log1.Text = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value);
+                log = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value) + Environment.NewLine;
+                TextBox_System_Log1.Text = log;
             }
         }
     }
