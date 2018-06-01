@@ -14,11 +14,11 @@ namespace GUI_PRJ2_WINFORMS
 {
     public partial class Form1 : Form
     {
-        private List<Apparat> availableApparats = new List<Apparat>();
-        private SerialCom serialCom;
-        private int currentApparatPort = 0;
-        private Func currentApparatFunc = Func.OnOff;
-        private string log;
+        private List<Apparat> availableApparats = new List<Apparat>(); //List used to store the available apparats of the app
+        private SerialCom serialCom; //Serial Com class used for UART communication
+        private int currentApparatPort = 0; //The port of the currently chosen apparat
+        private Func currentApparatFunc = Func.OnOff; //The functionality of the currently chosen apparat
+        private string log; //The string used to store the log data on
 
         public Form1()
         {
@@ -40,6 +40,7 @@ namespace GUI_PRJ2_WINFORMS
 
             string SystemInformation;//Used for Storing System Information 
 
+            //Log the system information
             SystemInformation = " Machine Name = " + System.Environment.MachineName;                                         // Get the Machine Name 
             SystemInformation = SystemInformation + Environment.NewLine + " OS Version = " + System.Environment.OSVersion;    // Get the OS version
             SystemInformation = SystemInformation + Environment.NewLine + " Processor Cores = " + Environment.ProcessorCount + Environment.NewLine; // Get the Number of Processors on the System
@@ -97,11 +98,44 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="port">The port to check</param>
         /// <returns></returns>
-        private bool isPortOn(int port)
+        private bool IsPortOn(int port)
         {
             return availableApparats.Find(item => item.Port == port).OnOff;
         }
 
+        /// <summary>
+        /// Function for changing page
+        /// </summary>
+        /// <param name="applicationPage"></param>
+        private void ChangePage(ApplicationPage applicationPage)
+        {
+            switch (applicationPage)
+            {
+                case ApplicationPage.ApparatMenu:
+                    //Change page to ApparatMenu
+                    ApparatMenu.Enabled = true;
+                    AddMenu.Enabled = false;
+                    Settings.Enabled = false;
+                    mainView.SelectTab(ApparatMenu);
+                    break;
+                case ApplicationPage.ApparatSettings:
+                    //Change page to ApparatSettings
+                    ApparatMenu.Enabled = false;
+                    AddMenu.Enabled = false;
+                    Settings.Enabled = true;
+                    mainView.SelectTab(Settings);
+                    break;
+                case ApplicationPage.AddApparat:
+                    //Change page to AddMenu
+                    ApparatMenu.Enabled = false;
+                    Settings.Enabled = false;
+                    AddMenu.Enabled = true;
+                    mainView.SelectTab(AddMenu);
+                    break;
+                default:
+                    break;
+            }
+        }
         /// <summary>
         /// Private helper method for list view button click
         /// </summary>
@@ -124,26 +158,32 @@ namespace GUI_PRJ2_WINFORMS
             AppAction current = new AppAction(availableApparats[e.Item.Index]);
             if (current.SelectedOnOff)
             {
+                //Enable On Off functionality
                 onOffButton.Visible = true;
                 onOffButton.Enabled = true;
                 //Sets the text of the on of button
-                onOffButton.Text = (isPortOn(availableApparats[e.Item.Index].Port) ? "Turn Off" : "Turn On");
+                onOffButton.Text = (IsPortOn(availableApparats[e.Item.Index].Port) ? "Turn Off" : "Turn On");
             }
             else
             {
+                //Disable On Off functionality
                 onOffButton.Visible = false;
                 onOffButton.Enabled = false;
             }
             if (current.SelectedDimmer)
             {
+                //Enable dimmer functionality
                 dimmerScroll.Visible = true;
+                dimmerScroll.Enabled = true;
                 dimmerText.Visible = true;
                 //Sets the dimmerscroll value
                 dimmerScroll.Value = current.SelectedDimmerValue;
             }
             else
             {
+                //Disable dimmer functionality
                 dimmerScroll.Visible = false;
+                dimmerScroll.Enabled = false;
                 dimmerText.Visible = false;
             }
             //Set the current apparat port
@@ -152,11 +192,8 @@ namespace GUI_PRJ2_WINFORMS
             currentApparatFunc = availableApparats[e.Item.Index].Functionality;
             //Set the label for current apparat
             currentApparatLabel.Text = availableApparats[e.Item.Index].Name;
-            //Change page
-            ApparatMenu.Enabled = false;
-            AddMenu.Enabled = false;
-            Settings.Enabled = true;
-            mainView.SelectTab(Settings);
+            //Change page to Apparat settings
+            ChangePage(ApplicationPage.ApparatSettings);
         }
 
         /// <summary>
@@ -178,10 +215,7 @@ namespace GUI_PRJ2_WINFORMS
         private void AddApparat_Click(object sender, EventArgs e)
         {
             //Change page to AddMenu
-            mainView.SelectTab(AddMenu);
-            ApparatMenu.Enabled = false;
-            Settings.Enabled = false;
-            AddMenu.Enabled = true;
+            ChangePage(ApplicationPage.AddApparat);
         }
 
         /// <summary>
@@ -192,10 +226,7 @@ namespace GUI_PRJ2_WINFORMS
         private void BackButton_Click(object sender, EventArgs e)
         {
             //Change page to ApparatMenu
-            mainView.SelectTab(ApparatMenu);
-            ApparatMenu.Enabled = true;
-            AddMenu.Enabled = false;
-            Settings.Enabled = false;
+            ChangePage(ApplicationPage.ApparatMenu);
         }
 
         /// <summary>
@@ -203,7 +234,7 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void addButton_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             //Create new apparat
             Apparat apparatToAdd = new Apparat();
@@ -237,10 +268,7 @@ namespace GUI_PRJ2_WINFORMS
             log = apparatToAdd.Name + " on port " + apparatToAdd.Port.ToString() + " added to list" + Environment.NewLine;
             TextBox_System_Log.AppendText(log);
             //change page to apparat menu
-            mainView.SelectTab(ApparatMenu);
-            ApparatMenu.Enabled = true;
-            AddMenu.Enabled = false;
-            Settings.Enabled = false;
+            ChangePage(ApplicationPage.ApparatMenu);
         }
 
         /// <summary>
@@ -278,9 +306,9 @@ namespace GUI_PRJ2_WINFORMS
             if ((currentApparatFunc & Func.Dimmer) == Func.Dimmer)
             {
                 //If port is On turn it Off
-                if (isPortOn(currentApparatPort))
+                if (IsPortOn(currentApparatPort))
                 {
-                    log = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort)) + Environment.NewLine;
+                    log = "Send: " + serialCom.OnOff(currentApparatPort, IsPortOn(currentApparatPort)) + Environment.NewLine;
                     TextBox_System_Log1.AppendText(log);
                     //Invert on/off
                     availableApparats.Find(item => item.Port == currentApparatPort).OnOff = false;
@@ -295,17 +323,17 @@ namespace GUI_PRJ2_WINFORMS
                     availableApparats.Find(item => item.Port == currentApparatPort).OnOff = true;
                 }
                 //Change text of onOffButton
-                onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
+                onOffButton.Text = (IsPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
             }
             else
             {
                 //Turn the light on/off and write to log
-                log = "Send: " + serialCom.OnOff(currentApparatPort, isPortOn(currentApparatPort)) + Environment.NewLine;
+                log = "Send: " + serialCom.OnOff(currentApparatPort, IsPortOn(currentApparatPort)) + Environment.NewLine;
                 TextBox_System_Log1.AppendText(log);
                 //Invert on/off
                 availableApparats.Find(item => item.Port == currentApparatPort).OnOff ^= true;
                 //Change text of onOffButton
-                onOffButton.Text = (isPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
+                onOffButton.Text = (IsPortOn(currentApparatPort) ? "Turn Off" : "Turn On");
             }
         }
 
@@ -314,7 +342,7 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dimmer_Scroll(object sender, EventArgs e)
+        private void Dimmer_Scroll(object sender, EventArgs e)
         {
             //Set the value of the dimmer
             availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
@@ -328,7 +356,7 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
             //Foreach selected item in listview1: Delete
             foreach(ListViewItem selected in listView1.SelectedItems)
@@ -347,7 +375,7 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void comboBox_available_serialPorts_SelectionChangeCommitted(object sender, EventArgs e)
+        private void ComboBox_available_serialPorts_SelectionChangeCommitted(object sender, EventArgs e)
         {
             // Store the Selected COM port
             log = comboBox_available_serialPorts.SelectedItem.ToString() + " Selected" + Environment.NewLine;
@@ -362,7 +390,7 @@ namespace GUI_PRJ2_WINFORMS
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void comboBox_baudRate_SelectionChangeCommitted(object sender, EventArgs e)
+        private void ComboBox_baudRate_SelectionChangeCommitted(object sender, EventArgs e)
         {
             // Store the Selected Baud rate
             log = "Baudrate of " + comboBox_baudRate.SelectedItem.ToString() + " Selected" + Environment.NewLine;
@@ -372,15 +400,15 @@ namespace GUI_PRJ2_WINFORMS
             serialPort1.BaudRate = Convert.ToInt32(comboBox_baudRate.SelectedItem.ToString());
         }
 
-        private void dimmerScroll_MouseUp(object sender, MouseEventArgs e)
+        private void DimmerScroll_MouseUp(object sender, MouseEventArgs e)
         {
             //Set the value of the dimmer
             availableApparats.Find(item => item.Port == currentApparatPort).DimmerValue = dimmerScroll.Value;
-            if (isPortOn(currentApparatPort))
+            if (IsPortOn(currentApparatPort))
             {
                 //Dimm the light
                 log = "Send: " + serialCom.Dimm(currentApparatPort, dimmerScroll.Value) + Environment.NewLine;
-                TextBox_System_Log1.Text = log;
+                TextBox_System_Log1.AppendText(log);
             }
         }
     }

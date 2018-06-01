@@ -171,7 +171,7 @@ namespace GUI_PRJ2_WINFORMS
             this.comboBox_baudRate.Name = "comboBox_baudRate";
             this.comboBox_baudRate.Size = new System.Drawing.Size(180, 33);
             this.comboBox_baudRate.TabIndex = 3;
-            this.comboBox_baudRate.SelectionChangeCommitted += new System.EventHandler(this.comboBox_baudRate_SelectionChangeCommitted);
+            this.comboBox_baudRate.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_baudRate_SelectionChangeCommitted);
             // 
             // baudRateLabel
             // 
@@ -201,7 +201,7 @@ namespace GUI_PRJ2_WINFORMS
             this.comboBox_available_serialPorts.Name = "comboBox_available_serialPorts";
             this.comboBox_available_serialPorts.Size = new System.Drawing.Size(180, 33);
             this.comboBox_available_serialPorts.TabIndex = 0;
-            this.comboBox_available_serialPorts.SelectionChangeCommitted += new System.EventHandler(this.comboBox_available_serialPorts_SelectionChangeCommitted);
+            this.comboBox_available_serialPorts.SelectionChangeCommitted += new System.EventHandler(this.ComboBox_available_serialPorts_SelectionChangeCommitted);
             // 
             // apparatsGroup
             // 
@@ -226,7 +226,7 @@ namespace GUI_PRJ2_WINFORMS
             this.deleteButton.TabIndex = 6;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // listView1
             // 
@@ -262,7 +262,7 @@ namespace GUI_PRJ2_WINFORMS
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // backButton1
             // 
@@ -468,7 +468,7 @@ namespace GUI_PRJ2_WINFORMS
             this.dimmerScroll.Size = new System.Drawing.Size(160, 69);
             this.dimmerScroll.SmallChange = 0;
             this.dimmerScroll.TabIndex = 1;
-            this.dimmerScroll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dimmerScroll_MouseUp);
+            this.dimmerScroll.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DimmerScroll_MouseUp);
             // 
             // serialPort1
             // 
