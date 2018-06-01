@@ -7,7 +7,7 @@
 #include "ZCD.h"
 volatile int counterTimer;
 void initINT0(){
-	DDRD &= 0b11111110;
+	DDRD &= 0b11111110; // PD0 som udgang
 	EIMSK |= 0b00000001; // enable INT0
 	EICRA |= 0b00000010; // falling edge triggered
 }

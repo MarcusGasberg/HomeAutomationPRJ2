@@ -14,4 +14,4 @@ void encodeCommand(const char *, int*, int);
 void encodeBIN(const char *, int*, int);
 void encodeAddress(const char *, int*, int);
 void x10encode(int*, int*, int*, int*);
-void toEncode(const char *, int *, int, int *, int,int*,int*);
+void toEncode(const char *,int*,int*);

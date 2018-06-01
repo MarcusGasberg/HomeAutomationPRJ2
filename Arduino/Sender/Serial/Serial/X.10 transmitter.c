@@ -7,10 +7,10 @@
 
 #define F_CPU 160000000
 #include <avr/io.h>
-#include "Controller.h"
+#include "X.10 transmitter.h"
 #include "Encoder.h"
 #include "Timers.h"
-#include "uart_int.h"
+#include "UART app.h"
 #include "ZCD.h"
 volatile int index;
 volatile int mode;
@@ -23,7 +23,6 @@ void reset(){
 	setCycle(0);
 	setExit(0);
 	setMessage(0);
-	setReadIndex(0);
 	setSend(0);
 	initINT1();
 	setDontSend(0);
@@ -72,50 +71,48 @@ int getIndex(){
 void setIndex(int i){
 	index = i;
 }
+void incIndex(){
+	index++;
+}
 void startTransmission(int* x10add,int * x10com){
-	if(getDontSend() == 0){
-		setWait(1);
-		initINT0();
-		setCounterTimer(0);
+		setWait(1); // venter 1 zerocrossing før der sendes
+		initINT0(); // initierer zerocrossing
 		// initiering af x.10 sender sekvens
 		DDRB |= 0b00100000; // PB5 sættes som udgang
 		setMode(1);
 		while(getExit() == 0){
 			if(getCycle() < 3){
 				if(getSend() == 1){
-				while(sendx10(x10add,x10com) == 0){}
+				sendx10(x10add,x10com);
 				setSend(0);
 			}
 		}
-		else if(getCycle() >= 3){
+		else if(getCycle() >= 3){ // stopper hvis der er sendt 3 gange.
 			endTransmission();
 			setExit(1);
 		}
 	}
 }
-}
 
 void endTransmission(){
-	disableINT0();// disable INT0
-	stopTimer0();
-	//stopTimer3();
+	disableINT0();
 }	
 
-int sendx10(int * x10address, int* x10command){
+void sendx10(int * x10address, int* x10command){
 	if(getMode() == 1) // sender startkode
 	{
-		switch(index){
+		switch(getIndex()){
 			case 0:
 			sendPWM(); // der sendes et 1 tal
-			setIndex(index +1);
+			incIndex();
 			break;
 			case 1:
 			sendPWM();
-			setIndex(index +1);
+			incIndex();
 			break;
 			case 2:
 			sendPWM();
-			setIndex(index +1);
+			incIndex();
 			break;
 			case 3:
 			setMode(2);
@@ -127,27 +124,27 @@ int sendx10(int * x10address, int* x10command){
 			initTimer0();
 		if(getMode() == 2) // sender addresse kode
 		{
-			if(x10address[index] == 1){
+			if(x10address[getIndex()] == 1){
 				sendPWM();
-				setIndex(index +1);
+				incIndex();
 			}
 			else {
-				setIndex(index +1);
+				incIndex();
 			}
-			if(getIndex() == 8){
+			if(getIndex() == (ADDRESS_LENGTH*2){
 				setMode(3);
 			}
 
 		}
 		else if(getMode() == 3){
-			if(x10command[index] == 1){
+			if(x10command[getIndex()] == 1){
 				sendPWM();
-				setIndex(index +1);
+				incIndex();
 			}
 			else{
-				setIndex(index +1);
+				incIndex();
 			}
-			if(getIndex() == 8){
+			if(getIndex() == (COMMAND_LENGTH*2)){
 				setMode(0);
 			}
 		}
@@ -161,7 +158,6 @@ int sendx10(int * x10address, int* x10command){
 		setMode(1);
 		initINT0();
 	}
-	return 1;
 }
 
 

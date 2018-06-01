@@ -7,18 +7,16 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "uart_int.h"
-#include "Controller.h"
+#include "UART app.h"
+#include "X.10 transmitter.h"
 #include "Encoder.h"
 #include "Timers.h"
-#include "DE2.h"
+#include "CodeLock.h"
 #include "ZCD.h"
 
 #define F_CPU 16000000
 #include <util/delay.h>
 volatile unsigned char data[(ADDRESS_LENGTH/2)+(COMMAND_LENGTH/2)];
-volatile int address[ADDRESS_LENGTH];
-volatile int command[COMMAND_LENGTH];
 volatile int x10address[ADDRESS_LENGTH*2];
 volatile int x10command[COMMAND_LENGTH*2];
 
@@ -31,16 +29,18 @@ while(1){
 	disableINT1();
 	if(getStatus() == 'L'){
 		deleteData(data,(ADDRESS_LENGTH/2)+(COMMAND_LENGTH/2));
+		setDontSend(1);
 	}
-	toEncode(data,address,ADDRESS_LENGTH,command,COMMAND_LENGTH,x10address,x10command);
+	if(getDontSend() == 0){
+	toEncode(data,x10address,x10command);
 	startTransmission(x10address,x10command);
+	}	
 	reset();
 	}
 }
 
 ISR(INT0_vect){
 	if(getWait() == 1){
-		//setSend(0);
 		setWait(0);
 	}
 	else {

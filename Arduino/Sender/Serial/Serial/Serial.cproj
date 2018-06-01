@@ -67,22 +67,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DE2.c">
+    <Compile Include="CodeLock.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="DE2.h">
+    <Compile Include="CodeLock.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="led.c">
+    <Compile Include="X.10 transmitter.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="led.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Controller.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Controller.h">
+    <Compile Include="X.10 transmitter.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Encoder.c">
@@ -91,7 +85,7 @@
     <Compile Include="Encoder.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Test.c">
+    <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Timers.c">
@@ -100,10 +94,10 @@
     <Compile Include="Timers.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="uart_int.c">
+    <Compile Include="UART app.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="uart_int.h">
+    <Compile Include="UART app.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="ZCD.c">

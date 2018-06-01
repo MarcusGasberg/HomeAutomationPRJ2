@@ -1,5 +1,5 @@
 /****************************************
-* "uart_int.h":                         *
+* "UART app.h":                         *
 * Header file for Mega2560 UART driver. *
 * Using UART 0.                         *
 * If parameter Rx_Int <> 0 :            *
@@ -21,6 +21,5 @@ void setMessage(int);
 int getMessage();
 void fillArray(char*);
 void deleteData(char *,int length);
-void setDontSend(int);
-int getDontSend();
+
 /****************************************/

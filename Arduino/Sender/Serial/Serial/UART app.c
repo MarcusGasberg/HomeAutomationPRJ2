@@ -10,7 +10,7 @@
 #include <avr/io.h>
 #include <stdlib.h>
 #include "uart_int.h"
-#include "Controller.h"
+#include "X.10 transmitter.h"
 // Constants
 #define XTAL 16000000
 #define F_CPU 16000000
@@ -39,10 +39,8 @@ void InitUART(unsigned long BaudRate, unsigned char DataBit, char Parity, unsign
   { 
     // "Normal" clock, no multiprocessor mode (= default)
     UCSR0A = 0b00100000;
-    // No interrupts enabled
     // Receiver enabled
     // Transmitter enabled
-    // No 9 bit operation
     UCSR0B = 0b00011000;
     // Enable RX interrupt (if wanted by parameter)
     if (RX_Int)
@@ -56,9 +54,6 @@ void InitUART(unsigned long BaudRate, unsigned char DataBit, char Parity, unsign
     UCSR0C |= 0b00100000;
     else if (Parity == 'O')	  
     UCSR0C |= 0b00110000;	
-    // Set Baud Rate according to the parameter BaudRate:
-    // Select Baud Rate (first store "UBRRH--UBRRL" in local 16-bit variable,
-    //                   then write the two 8-bit registers separately):
     // Set Baud Rate according to the parameter BaudRate:
     UBRR0 = XTAL/(16*BaudRate) - 1;
   }  
@@ -168,12 +163,6 @@ void deleteData(char * d,int length){
 		d[i] = 0;
 		
 	}
-	setDontSend(1);
 }
-void setDontSend(int d){
-	dontSend = d;
-}
-int getDontSend(){
-	return dontSend;
-}
+
 /************************************************************************/

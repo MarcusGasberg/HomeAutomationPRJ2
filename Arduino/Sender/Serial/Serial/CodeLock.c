@@ -5,7 +5,7 @@
  *  Author: Valdemar
  */ 
 #include <avr/io.h>
-#include "DE2.h"
+#include "CodeLock.h"
 
 char checkStatus(){
 	if((PIND & 1<<1))
@@ -28,4 +28,10 @@ void setStatus(char s){
 void disableINT1(){
 	EIMSK &= 0b11111101;
 	EICRA &= 0b11111011;
+}
+void setDontSend(int d){
+	dontSend = d;
+}
+int getDontSend(){
+	return dontSend;
 }

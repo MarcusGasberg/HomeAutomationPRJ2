@@ -5,11 +5,12 @@
 *  Author: Valdemar
 */
 #include "Encoder.h"
-
-void toEncode(const char* source, int * address_dest, int address_length, int* command_dest, int command_length, int * x10add, int * x10com) {
-	encodeAddress(source, address_dest, address_length);
-	encodeCommand(source, command_dest, command_length);
-	x10encode(address_dest, command_dest,x10add,x10com);
+volatile int address[ADDRESS_LENGTH];
+volatile int command[COMMAND_LENGTH];
+void toEncode(const char* source, int * x10add, int * x10com) {
+	encodeAddress(source, address, ADDRESS_LENGTH);
+	encodeCommand(source, command, COMMAND_LENGTH);
+	x10encode(address, command,x10add,x10com);
 }
 
 
@@ -124,7 +125,7 @@ void encodeBIN(const char * convert, int * dest, int length) {
 	}
 }
 void x10encode(int * adr, int * com,int * x10add,int * x10com) {	
-	for (int i = 1; i < (ADDRESS_LENGTH)+1; i++) {
+	for (int i = 1; i < (ADDRESS_LENGTH)+1; i++) {          // Konvertering af adresse til komplimentære bits
 		if (adr[i-1] == 1) {
 			x10add[(i * 2) - 2] = 1;
 			x10add[(i * 2) - 1] = 0;
@@ -135,7 +136,7 @@ void x10encode(int * adr, int * com,int * x10add,int * x10com) {
 			}
 		}		
 	for (int i = 1; i < (COMMAND_LENGTH)+1; i++) {
-		if (com[((i)-1)] == 1) {							// Konvertering af kommandoer til komplimentære bits
+		if (com[((i)-1)] == 1) {							// Konvertering af kommando til komplimentære bits
 		x10com[(i * 2) - 2] = 1;
 		x10com[(i * 2) - 1] = 0;
 	}
@@ -145,3 +146,5 @@ void x10encode(int * adr, int * com,int * x10add,int * x10com) {
 	}
 }
 }
+
+S

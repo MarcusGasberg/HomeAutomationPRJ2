@@ -21,7 +21,7 @@ void setMode(int);
 int getMode();
 void startTransmission(int *,int*);
 void endTransmission();
-int sendx10(int*,int*);
+void sendx10(int*,int*);
 void setSend(int);
 int getSend();
 void setCycle(int);
