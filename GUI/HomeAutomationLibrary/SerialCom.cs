@@ -73,35 +73,35 @@ namespace HomeAutomationLibrary
             if (serial_.IsOpen)
             {
                 //Set the data address from the port
-                string DataAddress = (port < 10 ? "0" + port.ToString() : port.ToString());
-                string DataFunc = "00"; //Default to turn off
+                string dataAddress = (port < 10 ? "0" + port.ToString() : port.ToString());
+                string dataFunc = "00"; //Default to turn off
                 switch (bar)
                 {
                     case 0:
-                        DataFunc = "02"; //20% on
+                        dataFunc = "02"; //20% on
                         break;
                     case 1:
-                        DataFunc = "03"; //40% on
+                        dataFunc = "03"; //40% on
                         break;
                     case 2:
-                        DataFunc = "04"; //60% on
+                        dataFunc = "04"; //60% on
                         break;
                     case 3:
-                        DataFunc = "05"; //80% on
+                        dataFunc = "05"; //80% on
                         break;
                     case 4:
-                        DataFunc = "01"; //100% on / TurnOn code
+                        dataFunc = "01"; //100% on / TurnOn code
                         break;
                     default:
                         break;
                 }
                 //Create Data string to be sent
-                string Data = DataAddress + DataFunc;
+                string data = dataAddress + dataFunc;
 
                 //Send data
-                serial_.WriteLine(Data);
+                serial_.WriteLine(data);
                 serial_.Close();
-                return Data;
+                return data;
             }
             return null;
         }
@@ -148,13 +148,13 @@ namespace HomeAutomationLibrary
             if (serial_.IsOpen)
             {
                 //Set the data address from the port
-                string DataAddress = (port < 10 ? "0" + port.ToString() : port.ToString());
-                string DataFunc = (isOn ? "00" : "01");
-                string Data = DataAddress + DataFunc;
+                string dataAddress = (port < 10 ? "0" + port.ToString() : port.ToString());
+                string dataFunc = (isOn ? "00" : "01");
+                string data = dataAddress + dataFunc;
                 //Send data
-                serial_.WriteLine(Data);
+                serial_.WriteLine(data);
                 serial_.Close();
-                return Data;
+                return data;
             }
             return null;
         }

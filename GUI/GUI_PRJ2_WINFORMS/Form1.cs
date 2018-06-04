@@ -399,7 +399,11 @@ namespace GUI_PRJ2_WINFORMS
             //Sets the baudrate of serialPort1
             serialPort1.BaudRate = Convert.ToInt32(comboBox_baudRate.SelectedItem.ToString());
         }
-
+        /// <summary>
+        /// Event for when the user lets go off the dimmer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DimmerScroll_MouseUp(object sender, MouseEventArgs e)
         {
             //Set the value of the dimmer
