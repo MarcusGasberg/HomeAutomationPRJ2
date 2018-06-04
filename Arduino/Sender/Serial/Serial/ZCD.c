@@ -19,12 +19,12 @@ void initTimer3(int ms){
 	if(ms == 1){
 		TCCR3A = 0;
 		TIMSK3 = 1;
-		TCNT3 = 65535 - 5984;
+		TCNT3 = 59489;
 		TCCR3B = 1;
 	}	
 	else if(ms == 10){
 		TCCR3B = 2;
-		TCNT3 = 65536 - 20000;
+		TCNT3 = 65537 - 20000;
 	}
 }
 void stopTimer3(){
